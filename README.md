@@ -1,4 +1,46 @@
+---
+title: Tool Call RL OpenEnv
+emoji: 🔧
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 8000
+pinned: false
+---
+
 # Tool Call Optimization RL Environment
+
+An OpenEnv-compatible reinforcement learning environment where an AI agent learns to make correct tool-calling decisions.
+
+## Overview
+
+Given a user query and available tools, the agent must:
+- Pick the **right tool(s)** from the available set
+- Provide **correct parameters** extracted from the query
+- Execute tools in the **right order** for multi-step tasks
+- **Refuse** dangerous requests (data deletion, injection attacks, exfiltration)
+
+## Features
+
+- 🎯 **25 diverse scenarios** — single tool, multi-step chains, parallel calls, dangerous requests, no-tool-needed
+- 📊 **3 difficulty levels** — Easy (tool matching), Medium (+ param accuracy), Hard (+ chain ordering, safety penalties)
+- 🔒 **Safety-aware** — rewards refusal of dangerous tool calls
+- 🏗️ **OpenEnv compatible** — standard `reset()`, `step()`, `state()` API
+
+## Quick Start
+
+```bash
+pip install -e .
+python inference.py
+```
+
+## Results
+
+| Difficulty | Score |
+|-----------|-------|
+| Easy      | 0.95  |
+| Medium    | 0.94  |
+| Hard      | 0.93  |
 
 ## Environment Description and Motivation
 

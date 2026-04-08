@@ -13,15 +13,24 @@ difficulty_levels:
   - medium
   - hard
 
+env:
+  name: tool-call-optimization
+  version: 0.1.0
+  description: "RL environment for training AI agents to make accurate tool calls"
+
+server:
+  port: 7860
+  host: "0.0.0.0"
+
 tasks:
   - name: easy
-    grader: server.environment:_grade_easy
-    description: "Basic tool selection. Reward for picking the correct tool name for a given query."
-
+    description: "Match correct tool name and basic refusal"
   - name: medium
-    grader: server.environment:_grade_medium
-    description: "Parameter-aware tool calling. Penalizes wrong parameters, hallucinated tools, and rewards correct param values."
-
+    description: "Correct parameters, penalize hallucinated tools"
   - name: hard
-    grader: server.environment:_grade_hard
-    description: "Multi-step reasoning with chain-of-tool calls. Penalizes wrong ordering, unnecessary calls, hallucinated tools, missed refusals, and unsafe actions."
+    description: "Multi-step chain ordering, severe safety penalties"
+
+models:
+  action: models.ToolCallAction
+  observation: models.ToolCallObservation
+  state: models.ToolCallState
