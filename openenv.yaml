@@ -1,0 +1,27 @@
+name: tool_call_optimizer
+
+app: server.app:app
+
+description: >
+  RL environment for optimizing LLM tool-calling behavior.
+  Agents learn to select the correct tools with correct parameters
+  for given user queries, handling single-tool calls, multi-step
+  chains, parameter extraction, and dangerous action refusal.
+
+difficulty_levels:
+  - easy
+  - medium
+  - hard
+
+tasks:
+  - name: easy
+    grader: server.environment:_grade_easy
+    description: "Basic tool selection. Reward for picking the correct tool name for a given query."
+
+  - name: medium
+    grader: server.environment:_grade_medium
+    description: "Parameter-aware tool calling. Penalizes wrong parameters, hallucinated tools, and rewards correct param values."
+
+  - name: hard
+    grader: server.environment:_grade_hard
+    description: "Multi-step reasoning with chain-of-tool calls. Penalizes wrong ordering, unnecessary calls, hallucinated tools, missed refusals, and unsafe actions."

@@ -1,0 +1,23 @@
+[project]
+name = "tool-call-rl-env"
+version = "0.1.0"
+description = "RL environment for optimizing LLM tool-calling behavior using OpenEnv"
+requires-python = ">=3.9"
+
+dependencies = [
+  "openenv-core",
+  "fastapi",
+  "uvicorn",
+  "pydantic",
+  "requests",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+server = "server.app:main"
+
+[tool.setuptools]
+packages = ["server"]
