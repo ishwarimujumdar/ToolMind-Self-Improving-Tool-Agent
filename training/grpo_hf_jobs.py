@@ -535,7 +535,7 @@ training_args_r1 = GRPOConfig(
 
 trainer_r1 = GRPOTrainer(
     model=model,
-    tokenizer=tokenizer,
+    processing_class=tokenizer,
     args=training_args_r1,
     reward_funcs=reward_fn,
     train_dataset=dataset_r1,
@@ -647,7 +647,7 @@ if args.rounds == 2:
 
     trainer_r2 = GRPOTrainer(
         model=model,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
         args=training_args_r2,
         reward_funcs=reward_fn,
         train_dataset=dataset_r2,
