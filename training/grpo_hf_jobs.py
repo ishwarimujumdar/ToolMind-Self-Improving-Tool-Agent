@@ -63,7 +63,7 @@ parser.add_argument("--data-fallback-url", type=str,
                     default="https://raw.githubusercontent.com/Harshitawake/tool-call-rl-OpenEnv/main/data/scenarios.json",
                     help="Fallback raw URL if expanded file not present")
 parser.add_argument("--model-id", type=str,
-                    default="unsloth/Qwen2.5-3B-Instruct-bnb-4bit")
+                    default="unsloth/Qwen2.5-3B-Instruct")
 parser.add_argument("--mode", type=str, choices=["fast", "full", "demo"], default="demo")
 parser.add_argument("--rounds", type=int, choices=[1, 2], default=2,
                     help="Run only Round 1 (GRPO) or both rounds (GRPO + memory-enriched)")
@@ -186,8 +186,8 @@ from unsloth import FastLanguageModel
 model, tokenizer = FastLanguageModel.from_pretrained(
     MODEL_ID,
     max_seq_length=MAX_SEQ_LENGTH,
-    load_in_4bit=True,
-    dtype=None,
+    load_in_4bit=False,
+    dtype=torch.bfloat16,
 )
 
 model = FastLanguageModel.get_peft_model(
@@ -507,7 +507,7 @@ training_args_r1 = GRPOConfig(
     logging_steps=LOGGING_STEPS,
     save_steps=SAVE_STEPS,
     save_total_limit=2,
-    fp16=True,
+    bf16=True,
     report_to=("trackio" if USE_TRACKIO else "none"),
     remove_unused_columns=False,
 )
@@ -619,7 +619,7 @@ if args.rounds == 2:
         logging_steps=LOGGING_STEPS,
         save_steps=SAVE_STEPS,
         save_total_limit=2,
-        fp16=True,
+        bf16=True,
         report_to=("trackio" if USE_TRACKIO else "none"),
         remove_unused_columns=False,
     )
