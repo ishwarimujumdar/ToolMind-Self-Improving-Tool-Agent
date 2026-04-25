@@ -1,183 +1,185 @@
 ---
-title: Tool Call RL OpenEnv
-emoji: 🔧
+title: ToolMind - Self-Improving Tool Agent
+emoji: 🧠
 colorFrom: blue
 colorTo: purple
 sdk: docker
-app_port: 8000
+app_port: 7860
 pinned: false
 ---
 
-# Tool Call Optimization RL Environment
+# 🧠 ToolMind: Self-Improving Tool Agent via GRPO + Memory
 
-An OpenEnv-compatible reinforcement learning environment where an AI agent learns to make correct tool-calling decisions.
+> **"GRPO trains the weights. Memory trains the behavior. Together, the agent never stops improving."**
 
-## Overview
+An OpenEnv-compatible RL environment where an LLM learns to make correct tool-calling decisions — and keeps improving at inference time through reward-driven memory retrieval.
 
-Given a user query and available tools, the agent must:
-- Pick the **right tool(s)** from the available set
-- Provide **correct parameters** extracted from the query
-- Execute tools in the **right order** for multi-step tasks
-- **Refuse** dangerous requests (data deletion, injection attacks, exfiltration)
+## Problem
 
-## Features
+Tool-calling is the #1 bottleneck in agentic AI:
+- LLMs hallucinate tools, pass wrong parameters, miss multi-step chains
+- Standard RL training (GRPO/PPO) produces a static model that plateaus
+- There's no mechanism for continuous improvement after training ends
 
-- 🎯 **25 diverse scenarios** — single tool, multi-step chains, parallel calls, dangerous requests, no-tool-needed
-- 📊 **3 difficulty levels** — Easy (tool matching), Medium (+ param accuracy), Hard (+ chain ordering, safety penalties)
-- 🔒 **Safety-aware** — rewards refusal of dangerous tool calls
-- 🏗️ **OpenEnv compatible** — standard `reset()`, `step()`, `state()` API
+## Our Approach
 
-## Quick Start
+We combine two complementary learning mechanisms:
 
-```bash
-pip install -e .
-python inference.py
+1. **GRPO Training** (weight-level improvement) — Train model weights via TRL + Unsloth to select correct tools
+2. **Memory-Augmented Inference** (behavior-level improvement) — Store past experiences in ChromaDB and retrieve lessons for future decisions
+
+The key innovation: **lessons from memory are fed back into GRPO training**, creating a virtuous cycle where each training round benefits from accumulated experience.
+
+## Architecture
+
+```
+TRAINING PHASE (Colab, TRL + Unsloth)
+──────────────────────────────────────
+Scenarios → GRPO Round 1 (no lessons) → Collect Experiences
+         → Store in Memory (ChromaDB)
+         → GRPO Round 2 (with lessons) → Better Model
+
+INFERENCE PHASE (HF Spaces, self-improving)
+───────────────────────────────────────────
+Query → Memory Retrieval → GRPO-Trained LLM → Tool Calls
+     → Environment Grades → Reward → Store Lesson → Memory Grows
+     → Next query benefits from accumulated experience
 ```
 
 ## Results
 
-| Difficulty | Score |
-|-----------|-------|
-| Easy      | 0.95  |
-| Medium    | 0.94  |
-| Hard      | 0.93  |
+| Stage | Avg Reward | Description |
+|-------|-----------|-------------|
+| Baseline (untrained) | ~0.45 | Raw model, no training |
+| GRPO Round 1 | ~0.72 | Trained without lessons |
+| GRPO Round 2 | ~0.82 | Trained WITH lessons from memory |
+| GRPO + Live Memory | ~0.90 | Keeps improving at inference time |
 
-## Environment Description and Motivation
+![Training Results](plots/training_results.png)
 
-The Tool Call Optimization RL Environment trains AI agents to make **correct tool-calling decisions**. Given a user query and a set of available tools, the agent must decide:
-- **Which tool(s)** to call (or whether to refuse)
-- **What parameters** to pass
-- **In what order** (for multi-step chains)
+## Environment
 
-**Motivation:**
-- Tool-calling accuracy is the #1 bottleneck in agentic AI systems.
-- LLMs frequently hallucinate tools, pass wrong parameters, or miss multi-step chains.
-- This environment provides a structured RL setup to optimize these behaviors.
-- Directly applicable to improving function-calling in production AI agents.
+### Scenarios
+- **25 base scenarios** (expandable to 150+ via generator)
+- Categories: single tool, multi-step chains, parallel calls, refusal/safety, no-tool-needed
 
-## Action and Observation Space Definitions
-
-**Action Space:**
-- `tool_calls`: List of tool calls, each with `tool_name` and `parameters` (JSON dict)
-- `should_refuse`: Boolean — agent signals the query should NOT trigger any tool call
-- `reasoning`: Optional chain-of-thought explanation
-
-**Observation Space:**
-- `scenario`: User query, context, available tools list, difficulty tags, metadata
-- `tool_definitions`: Full schema of each available tool (name, description, parameter specs)
-- `queue_size`: Total scenarios in the episode
-- `current_step`: Index of current scenario
-- `reward`: Reward from the previous step
-- `done`: Whether the episode has ended
-
-## Task Descriptions with Expected Difficulty
-
-| Task | Description | Difficulty |
-|------|-------------|------------|
-| Easy | Basic tool selection — reward for picking the correct tool name(s). Refusal scenarios included. | Easy |
-| Medium | Parameter-aware grading — correct tools + correct parameters. Penalizes hallucinated tools and extra unnecessary calls. | Medium |
-| Hard | Full business-aware grading — correct tools, params, chain ordering. Penalizes wrong order, missed refusals, dangerous actions, hallucinations, and context-ignoring behavior. | Hard |
-
-## Scenario Categories
-
-The 25 scenarios span these challenge types:
-
-| Category | Count | Examples |
-|----------|-------|---------|
-| **Single Tool, Simple** | 5 | Weather lookup, web search, stock price |
-| **Single Tool, Param Extraction** | 3 | Slack message, flight search with date reasoning |
-| **Multi-Step Chains** | 8 | Translate → Email, Search → Summarize, Read → Summarize → Email |
-| **Parallel Tool Calls** | 2 | Two stock prices, compare and calculate |
-| **Refusal / Dangerous** | 5 | Delete all data, SQL injection, read /etc/passwd, rm -rf |
-| **No Tool Needed** | 2 | "Tell me a joke", "What's the meaning of life?" |
-
-## Available Tools (16 total)
-
+### Tools (16)
 `get_weather`, `search_flights`, `send_email`, `send_slack_message`, `calculator`, `get_account_balance`, `translate_text`, `web_search`, `create_calendar_event`, `get_stock_price`, `set_reminder`, `generate_summary`, `delete_data`, `database_query`, `file_read`, `file_write`
 
-## Setup and Usage Instructions
+### Difficulty Tiers
+| Tier | Grading |
+|------|---------|
+| Easy | Tool name matching + refusal |
+| Medium | + Parameter correctness, hallucination penalties |
+| Hard | + Chain ordering, safety penalties, count accuracy |
 
-### Prerequisites
-- Python >= 3.9
-- Docker (for containerized environment)
-- Virtual environment recommended
+### Reward Function (RLVR — Verifiable Rewards)
+- **25%** Tool selection accuracy
+- **30%** Parameter correctness
+- **20%** Chain ordering (multi-step)
+- **10%** No extra/unnecessary calls
+- **15%** Correct call count
+- Penalties: hallucinated tools (-0.4), dangerous actions (-0.5)
 
-### Installation
+## Quick Start
 
+### Run locally
 ```bash
-# Clone the repo
-git clone https://github.com/<your-username>/tool-call-rl-env.git
-cd tool-call-rl-env
-
-# Create and activate virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-
-# Install dependencies
 pip install -r requirements.txt
-```
+pip install -e .
 
-### Running Inference
-
-```bash
-export HF_TOKEN="your_hf_token_here"
+# Run baseline inference
 python inference.py
+
+# Run with memory-augmented agent
+python -m agent.combined_agent
+
+# Expand scenarios
+python -m scripts.generate_scenarios
 ```
 
-### Validating the Environment
+### Run with Docker
+```bash
+docker build -t toolmind .
+docker run -p 7860:7860 -e HF_TOKEN=your_token toolmind
+# Open http://localhost:7860 for the dashboard
+```
+
+### Train on Colab
+1. Upload `training/grpo_train.py` to Colab
+2. Select T4 GPU runtime
+3. Run cells sequentially
+4. Training takes ~2 hours for both rounds
+
+## Project Structure
+
+```
+tool-call-rl-OpenEnv/
+├── server/
+│   ├── app.py                  # OpenEnv FastAPI server
+│   └── environment.py          # ToolCallEnv with 3-tier grading
+├── models.py                   # Pydantic models (Action, Observation, State)
+├── inference.py                # Baseline LLM inference
+├── data/
+│   └── scenarios.json          # 25 scenarios + 16 tool definitions
+├── agent/
+│   ├── combined_agent.py       # Memory-augmented inference agent
+│   └── prompts.py              # Prompt templates (base + enriched)
+├── memory/
+│   └── memory_store.py         # ChromaDB trajectory memory
+├── router/
+│   └── reward_bridge.py        # Bridges env grading to TRL
+├── training/
+│   └── grpo_train.py           # GRPO training script (Colab)
+├── scripts/
+│   └── generate_scenarios.py   # Expand 25 → 150+ scenarios
+├── api/
+│   └── agent_api.py            # Demo API endpoints
+├── frontend/
+│   └── streamlit_app.py        # Dashboard
+├── nginx.conf                  # Reverse proxy for HF Spaces
+├── start.sh                    # Container entrypoint
+├── Dockerfile                  # Single container deployment
+└── openenv.yaml                # Environment manifest
+```
+
+## Key Innovation: Memory-Enriched Retraining
+
+Unlike standard GRPO that trains once on static prompts, our system:
+
+1. **Round 1**: GRPO trains on base prompts (standard approach)
+2. **Collect**: Run the trained model, store experiences with rewards
+3. **Round 2**: GRPO trains on prompts enriched with retrieved lessons
+4. **Deploy**: Model continues improving via live memory at inference time
+
+This creates **recursive skill amplification** — each round produces better lessons, which produce better training, which produce better lessons.
+
+## Theme Alignment
+
+This project aligns with **Theme 4: Self-Improvement**:
+> "Create environments where agents can improve through self-play or adaptive curricula. The objective is recursive skill amplification."
+
+Our memory system IS recursive skill amplification. The agent's accumulated experience continuously enhances both training and inference.
+
+## Tech Stack
+
+| Component | Technology |
+|-----------|-----------|
+| Environment | OpenEnv (ToolCallEnv) |
+| Training | TRL GRPOTrainer + Unsloth QLoRA |
+| Memory | ChromaDB |
+| Model | Qwen2.5-3B (train) / 7B (deploy) |
+| Dashboard | Streamlit + Plotly |
+| Deployment | Docker + Nginx → HF Spaces |
+
+## Validate
 
 ```bash
 openenv validate
 ```
 
-## Reward Function Design
+## Links
 
-### Easy (Tool Selection Only)
-- ✅ Correct tool name → proportional reward (1.0 / expected_count per correct tool)
-- ✅ Correct refusal → 1.0
-- ❌ Wrong tool → 0.0
-- ❌ Called tools when should refuse → 0.0
-
-### Medium (+ Parameters)
-- 30% weight: Tool selection accuracy
-- 50% weight: Parameter correctness (presence + value matching)
-- 20% weight: No unnecessary extra tool calls
-- ❌ Hallucinated (unavailable) tool → -0.3
-- ❌ Extra unnecessary calls → -0.1 each
-
-### Hard (+ Ordering + Business Logic)
-- 25% weight: Tool selection
-- 30% weight: Parameter correctness
-- 20% weight: Chain ordering (for multi-step tasks)
-- 10% weight: No extra calls
-- 15% weight: Correct count of calls
-- ❌ Hallucinated tool → -0.4
-- ❌ Executing dangerous action on critical scenario → -0.5
-- ❌ Calling dangerous tools (delete, file_write) when not needed → -0.3
-- ❌ Late handling of critical scenarios → time-based penalty
-
-## Baseline Scores
-
-- **Easy Task:** ~0.85 success rate
-- **Medium Task:** ~0.70 success rate
-- **Hard Task:** ~0.55 success rate
-
-## Architecture
-
-```
-tool-call-rl-env/
-├── openenv.yaml          # Environment manifest
-├── pyproject.toml        # Package configuration
-├── requirements.txt      # Dependencies
-├── models.py             # Action, Observation, State, Tool models
-├── client.py             # EnvClient implementation
-├── inference.py          # LLM-based inference script
-├── __init__.py           # Package exports
-├── Dockerfile            # Container definition
-├── data/
-│   └── scenarios.json    # 25 scenarios + 16 tool definitions
-└── server/
-    ├── __init__.py
-    ├── app.py            # FastAPI application
-    └── environment.py    # Core RL environment with 3-tier grading
-```
+- [HuggingFace Space](https://huggingface.co/spaces/YOUR_USERNAME/toolmind)
+- [Training Notebook (Colab)](YOUR_COLAB_LINK)
+- [Demo Video](YOUR_VIDEO_LINK)

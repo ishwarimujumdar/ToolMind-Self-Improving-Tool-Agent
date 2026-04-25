@@ -30,7 +30,7 @@ class ToolCallEnv(Environment):
               dangerous actions, and context-ignoring behavior
     """
 
-    def __init__(self, task_type="easy"):
+    def __init__(self, task_type="easy", use_expanded=False):
         self.task_type = task_type
         self.scenarios = []
         self.tools = []
@@ -41,7 +41,12 @@ class ToolCallEnv(Environment):
         self.processed = []
 
         BASE_DIR = Path(__file__).resolve().parent.parent
-        self.data_file = BASE_DIR / "data" / "scenarios.json"
+        expanded = BASE_DIR / "data" / "scenarios_expanded.json"
+        base = BASE_DIR / "data" / "scenarios.json"
+        if use_expanded and expanded.exists():
+            self.data_file = expanded
+        else:
+            self.data_file = base
 
     def reset(self) -> ToolCallObservation:
         self._load_data()

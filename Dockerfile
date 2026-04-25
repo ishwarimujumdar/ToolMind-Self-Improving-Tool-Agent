@@ -2,7 +2,12 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install dependencies
+# Install nginx
+RUN apt-get update && \
+    apt-get install -y nginx && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
@@ -12,8 +17,16 @@ COPY . .
 # Install the package itself
 RUN pip install --no-cache-dir -e .
 
+# Copy nginx config
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Create data directories
+RUN mkdir -p /app/data/chroma_data
+
+# Make start script executable
+RUN chmod +x start.sh
+
 # HF Spaces expects port 7860 by default
 EXPOSE 7860
 
-# Run the FastAPI server
-CMD ["uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["./start.sh"]

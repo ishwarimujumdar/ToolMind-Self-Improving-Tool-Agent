@@ -7,3 +7,14 @@ uvicorn>=0.35
 pydantic-settings==2.13.1
 python-dotenv==1.2.2
 httpx==0.28.1
+
+# Memory & embeddings
+chromadb>=0.4.0
+
+# Dashboard
+streamlit>=1.30.0
+plotly>=5.18.0
+pandas>=2.0.0
+
+# Utilities
+numpy>=1.24.0
