@@ -75,6 +75,10 @@ parser.add_argument("--no-trackio", action="store_true",
                     help="Disable Trackio live monitoring")
 parser.add_argument("--push-private", action="store_true",
                     help="Push trained adapter as private repo")
+parser.add_argument("--no-quantization", action="store_true",
+                    help="Skip 4-bit QLoRA, use plain bf16 LoRA (faster on A100/H100)")
+parser.add_argument("--seed", type=int, default=42,
+                    help="Seed for deterministic eval and trainer")
 args = parser.parse_args()
 
 # ============================================================
@@ -88,24 +92,26 @@ if args.mode == "fast":
 elif args.mode == "demo":
     TRAIN_SCENARIOS = 60
     EVAL_SCENARIOS = 40
-    NUM_TRAIN_EPOCHS = 2
-    NUM_GENERATIONS = 6
+    NUM_TRAIN_EPOCHS = 3
+    NUM_GENERATIONS = 4
 else:  # full
-    TRAIN_SCENARIOS = 80
+    TRAIN_SCENARIOS = 100
     EVAL_SCENARIOS = 40
-    NUM_TRAIN_EPOCHS = 2
-    NUM_GENERATIONS = 8
+    NUM_TRAIN_EPOCHS = 4
+    NUM_GENERATIONS = 4
 
 MODEL_ID = args.model_id
 MAX_SEQ_LENGTH = 2048
 LORA_R = 16
 LORA_ALPHA = 16
 MAX_COMPLETION_LENGTH = 256
-LEARNING_RATE = 3e-6
+LEARNING_RATE = 1e-5  # raised from 3e-6 (most steps had grad_norm=0 so effective LR was much lower)
 BATCH_SIZE = 2
 GRADIENT_ACCUMULATION = max(2, NUM_GENERATIONS // BATCH_SIZE)
 LOGGING_STEPS = 5
 SAVE_STEPS = 100
+GENERATION_TEMPERATURE = 0.9  # higher temp during GRPO generation to keep exploration
+GENERATION_TOP_P = 0.95
 
 SAVE_DIR = "./grpo_checkpoints"
 PLOTS_DIR = "./plots"
@@ -119,6 +125,10 @@ print(f"Output repo:    {args.output_repo}")
 print(f"Train / Eval:   {TRAIN_SCENARIOS} / {EVAL_SCENARIOS} scenarios")
 print(f"Epochs:         {NUM_TRAIN_EPOCHS}")
 print(f"Generations:    {NUM_GENERATIONS}")
+print(f"Learning rate:  {LEARNING_RATE}")
+print(f"Gen temp/top_p: {GENERATION_TEMPERATURE} / {GENERATION_TOP_P}")
+print(f"Quantization:   {'OFF (bf16 LoRA)' if args.no_quantization else 'ON (4-bit QLoRA)'}")
+print(f"Seed:           {args.seed}")
 print(f"Rounds:         {args.rounds}")
 print(f"Trackio:        {'disabled' if args.no_trackio else 'enabled'}")
 print("=" * 70)
@@ -194,24 +204,31 @@ VANILLA_MODEL_ID = MODEL_ID if not MODEL_ID.startswith("unsloth/") else MODEL_ID
     "unsloth/", "Qwen/"
 ).replace("-bnb-4bit", "")
 
-print(f"Loading {VANILLA_MODEL_ID} with 4-bit QLoRA + bf16 compute...")
-
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_compute_dtype=torch.bfloat16,
-    bnb_4bit_use_double_quant=True,
-    bnb_4bit_quant_type="nf4",
-)
-
-model = AutoModelForCausalLM.from_pretrained(
-    VANILLA_MODEL_ID,
-    quantization_config=bnb_config,
-    device_map="auto",
-    torch_dtype=torch.bfloat16,
-)
-tokenizer = AutoTokenizer.from_pretrained(VANILLA_MODEL_ID)
-
-model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
+if args.no_quantization:
+    print(f"Loading {VANILLA_MODEL_ID} in plain bf16 + LoRA (no quantization)...")
+    model = AutoModelForCausalLM.from_pretrained(
+        VANILLA_MODEL_ID,
+        device_map="auto",
+        dtype=torch.bfloat16,
+    )
+    tokenizer = AutoTokenizer.from_pretrained(VANILLA_MODEL_ID)
+    model.gradient_checkpointing_enable()
+else:
+    print(f"Loading {VANILLA_MODEL_ID} with 4-bit QLoRA + bf16 compute...")
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_type="nf4",
+    )
+    model = AutoModelForCausalLM.from_pretrained(
+        VANILLA_MODEL_ID,
+        quantization_config=bnb_config,
+        device_map="auto",
+        dtype=torch.bfloat16,
+    )
+    tokenizer = AutoTokenizer.from_pretrained(VANILLA_MODEL_ID)
+    model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
 
 lora_config = LoraConfig(
     r=LORA_R,
@@ -431,6 +448,9 @@ def reward_fn(completions, scenario_id=None, **kwargs):
 # ============================================================
 def evaluate_model(scenarios, lessons_fn=None, label="EVAL"):
     model.eval()
+    torch.manual_seed(args.seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(args.seed)
     rewards = []
     experiences = []
     print(f"\n{'-' * 70}\n{label} ({len(scenarios)} scenarios)\n{'-' * 70}")
@@ -454,8 +474,8 @@ def evaluate_model(scenarios, lessons_fn=None, label="EVAL"):
                 outputs = model.generate(
                     **inputs,
                     max_new_tokens=MAX_COMPLETION_LENGTH,
-                    temperature=0.3,
-                    do_sample=True,
+                    do_sample=False,
+                    pad_token_id=tokenizer.pad_token_id,
                 )
             completion = tokenizer.decode(
                 outputs[0][inputs["input_ids"].shape[-1]:],
@@ -529,6 +549,9 @@ training_args_r1 = GRPOConfig(
     save_steps=SAVE_STEPS,
     save_total_limit=2,
     bf16=True,
+    temperature=GENERATION_TEMPERATURE,
+    top_p=GENERATION_TOP_P,
+    seed=args.seed,
     report_to=("trackio" if USE_TRACKIO else "none"),
     remove_unused_columns=False,
 )
@@ -641,6 +664,9 @@ if args.rounds == 2:
         save_steps=SAVE_STEPS,
         save_total_limit=2,
         bf16=True,
+        temperature=GENERATION_TEMPERATURE,
+        top_p=GENERATION_TOP_P,
+        seed=args.seed,
         report_to=("trackio" if USE_TRACKIO else "none"),
         remove_unused_columns=False,
     )
