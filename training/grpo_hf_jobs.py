@@ -187,7 +187,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     MODEL_ID,
     max_seq_length=MAX_SEQ_LENGTH,
     load_in_4bit=True,
-    dtype=torch.bfloat16,
+    dtype=None,
 )
 
 model = FastLanguageModel.get_peft_model(
@@ -507,7 +507,7 @@ training_args_r1 = GRPOConfig(
     logging_steps=LOGGING_STEPS,
     save_steps=SAVE_STEPS,
     save_total_limit=2,
-    bf16=True,
+    fp16=True,
     report_to=("trackio" if USE_TRACKIO else "none"),
     remove_unused_columns=False,
 )
@@ -619,7 +619,7 @@ if args.rounds == 2:
         logging_steps=LOGGING_STEPS,
         save_steps=SAVE_STEPS,
         save_total_limit=2,
-        bf16=True,
+        fp16=True,
         report_to=("trackio" if USE_TRACKIO else "none"),
         remove_unused_columns=False,
     )
