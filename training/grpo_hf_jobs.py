@@ -2,8 +2,12 @@
 # /// script
 # requires-python = ">=3.10"
 # dependencies = [
-#     "unsloth",
+#     "torch>=2.4",
+#     "transformers>=4.45",
 #     "trl>=0.14.0",
+#     "peft>=0.13",
+#     "accelerate>=1.0",
+#     "bitsandbytes>=0.43",
 #     "datasets",
 #     "matplotlib",
 #     "huggingface_hub",
@@ -63,7 +67,7 @@ parser.add_argument("--data-fallback-url", type=str,
                     default="https://raw.githubusercontent.com/Harshitawake/tool-call-rl-OpenEnv/main/data/scenarios.json",
                     help="Fallback raw URL if expanded file not present")
 parser.add_argument("--model-id", type=str,
-                    default="unsloth/Qwen2.5-3B-Instruct")
+                    default="Qwen/Qwen2.5-3B-Instruct")
 parser.add_argument("--mode", type=str, choices=["fast", "full", "demo"], default="demo")
 parser.add_argument("--rounds", type=int, choices=[1, 2], default=2,
                     help="Run only Round 1 (GRPO) or both rounds (GRPO + memory-enriched)")
@@ -176,38 +180,55 @@ SCENARIO_MAP = {s["id"]: s for s in SCENARIOS}
 print(f"Total scenarios available: {len(SCENARIOS)}")
 
 # ============================================================
-# Load model with Unsloth (A10G supports bf16!)
+# Load model with vanilla transformers + peft + bitsandbytes (QLoRA)
+# (avoids Unsloth's GRPO+LoRA dtype edge cases on A10G)
 # ============================================================
 print("\n" + "=" * 70)
 print("LOADING MODEL")
 print("=" * 70)
-from unsloth import FastLanguageModel
 
-model, tokenizer = FastLanguageModel.from_pretrained(
-    MODEL_ID,
-    max_seq_length=MAX_SEQ_LENGTH,
-    load_in_4bit=False,
-    dtype=torch.bfloat16,
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+
+VANILLA_MODEL_ID = MODEL_ID if not MODEL_ID.startswith("unsloth/") else MODEL_ID.replace(
+    "unsloth/", "Qwen/"
+).replace("-bnb-4bit", "")
+
+print(f"Loading {VANILLA_MODEL_ID} with 4-bit QLoRA + bf16 compute...")
+
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_compute_dtype=torch.bfloat16,
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_quant_type="nf4",
 )
 
-model = FastLanguageModel.get_peft_model(
-    model,
+model = AutoModelForCausalLM.from_pretrained(
+    VANILLA_MODEL_ID,
+    quantization_config=bnb_config,
+    device_map="auto",
+    torch_dtype=torch.bfloat16,
+)
+tokenizer = AutoTokenizer.from_pretrained(VANILLA_MODEL_ID)
+
+model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
+
+lora_config = LoraConfig(
     r=LORA_R,
-    lora_alpha=LORA_ALPHA,
-    target_modules=[
-        "q_proj", "k_proj", "v_proj", "o_proj",
-        "gate_proj", "up_proj", "down_proj",
-    ],
-    lora_dropout=0,
+    lora_alpha=LORA_ALPHA * 2,
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
+                    "gate_proj", "up_proj", "down_proj"],
+    lora_dropout=0.0,
     bias="none",
-    use_gradient_checkpointing="unsloth",
+    task_type="CAUSAL_LM",
 )
+model = get_peft_model(model, lora_config)
 
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
-    tokenizer.padding_side = "left"
+tokenizer.padding_side = "left"
 
-print(f"Model loaded: {MODEL_ID}")
+print(f"Model loaded: {VANILLA_MODEL_ID}")
 model.print_trainable_parameters()
 
 # ============================================================
@@ -409,7 +430,7 @@ def reward_fn(completions, scenario_id=None, **kwargs):
 # Evaluation helper
 # ============================================================
 def evaluate_model(scenarios, lessons_fn=None, label="EVAL"):
-    FastLanguageModel.for_inference(model)
+    model.eval()
     rewards = []
     experiences = []
     print(f"\n{'-' * 70}\n{label} ({len(scenarios)} scenarios)\n{'-' * 70}")
@@ -492,7 +513,7 @@ print("ROUND 1: GRPO TRAINING (no memory)")
 print("=" * 70)
 from trl import GRPOTrainer, GRPOConfig
 
-FastLanguageModel.for_training(model)
+model.train()
 os.makedirs(SAVE_DIR, exist_ok=True)
 os.makedirs(PLOTS_DIR, exist_ok=True)
 
@@ -603,7 +624,7 @@ if args.rounds == 2:
     print("\n" + "=" * 70)
     print("ROUND 2: GRPO TRAINING (with memory lessons)")
     print("=" * 70)
-    FastLanguageModel.for_training(model)
+    model.train()
 
     dataset_r2 = create_dataset(SCENARIOS[:TRAIN_SCENARIOS], lessons_fn=get_lessons)
     print(f"Round 2 dataset: {len(dataset_r2)} examples (with memory lessons)")
