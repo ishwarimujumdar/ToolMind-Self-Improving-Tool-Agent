@@ -77,8 +77,8 @@ args = parser.parse_args()
 # Mode-specific hyperparameters
 # ============================================================
 if args.mode == "fast":
-    TRAIN_SCENARIOS = 30
-    EVAL_SCENARIOS = 20
+    TRAIN_SCENARIOS = 5
+    EVAL_SCENARIOS = 5
     NUM_TRAIN_EPOCHS = 1
     NUM_GENERATIONS = 4
 elif args.mode == "demo":
