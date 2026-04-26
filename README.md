@@ -183,7 +183,7 @@ openenv validate
 - [HuggingFace Space](https://huggingface.co/spaces/GunsiGTX00/Enigma)
 - [Training Notebook (Colab)](https://colab.research.google.com/drive/1MjxvhcfJHYTmANH-393k_q0S8I-U1mUY#scrollTo=ec2e-Uux1j8Q)
 - [Training Logs (Full)](https://huggingface.co/spaces/GunsiGTX00/Enigma/blob/main/hf_job_full_logs.txt)
-- [HF Blog](https://huggingface.co/spaces/GunsiGTX00/Enigma/blob/main/submission/HF_BLOG.md)
+- [HF Blog](https://github.com/ishwarimujumdar/ToolMind-Self-Improving-Tool-Agent/blob/main/submission/HF_BLOG.md)
 
 ---
 
