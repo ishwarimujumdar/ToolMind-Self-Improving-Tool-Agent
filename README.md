@@ -180,6 +180,21 @@ openenv validate
 
 ## Links
 
-- [HuggingFace Space](https://huggingface.co/spaces/YOUR_USERNAME/toolmind)
-- [Training Notebook (Colab)](YOUR_COLAB_LINK)
-- [Demo Video](YOUR_VIDEO_LINK)
+- [HuggingFace Space](https://huggingface.co/spaces/IshwaM/Enigma)
+- [Training Notebook (Colab)](https://colab.research.google.com/drive/1MjxvhcfJHYTmANH-393k_q0S8I-U1mUY#scrollTo=ec2e-Uux1j8Q)
+
+---
+
+## Training Logs & Evidence
+
+> **Note:** The Colab link above is the **smoke test** where we ran for **1 epoch** to validate code correctness before committing to the full GPU job. The actual full training was done on **HuggingFace Jobs (A10G)** — two complete GRPO rounds (4 epochs each, 400 steps per round).
+
+The full training logs from the HuggingFace Job are available in [`hf_job_full_logs.txt`](hf_job_full_logs.txt) (1,674 lines covering baseline eval, Round 1 training + eval, memory build, Round 2 training + eval, and final summary).
+
+**HF Job Screenshot:**
+
+![HF Jobs Run — Completed](Final_run_logs_SS.png)
+
+> **Note:** The HF Jobs page (`69ed4b4ed70108f37acdf1ec`) is not publicly accessible due to permission restrictions on the job namespace. The screenshot above and the extracted logs file serve as proof of the completed run.
+
+
