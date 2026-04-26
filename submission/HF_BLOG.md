@@ -290,7 +290,7 @@ python3 submission/generate_story_charts.py
 4. **Two-tool chains saw 2.8x improvement** (0.30 → 0.84), proving GRPO teaches multi-step sequencing
 5. **The pipeline is reproducible:** one script, one GPU, two hours, measurable gains on a held-out benchmark
 
-### For readers who only remember one line:
+### TL;DR
 
 > **Reinforcement learning matches weights to the environment; memory matches the *next* training run to what we already saw on eval.**
 
