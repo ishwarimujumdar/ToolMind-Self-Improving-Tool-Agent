@@ -1,0 +1,1673 @@
+Downloading pillow (6.8MiB)
+Downloading sympy (6.0MiB)
+Downloading pydantic-core (2.0MiB)
+Downloading aiohttp (1.7MiB)
+Downloading nvidia-cufft (204.2MiB)
+Downloading pandas (10.4MiB)
+Downloading pygments (1.2MiB)
+Downloading hf-xet (4.0MiB)
+Downloading networkx (2.0MiB)
+Downloading tokenizers (3.1MiB)
+Downloading transformers (9.9MiB)
+Downloading kubernetes (1.9MiB)
+Downloading fonttools (4.8MiB)
+Downloading nvidia-cuda-cupti (10.2MiB)
+Downloading grpcio (6.5MiB)
+Downloading nvidia-nccl-cu13 (187.4MiB)
+Downloading scikit-learn (8.5MiB)
+Downloading torch (506.1MiB)
+Downloading pyarrow (46.6MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading nvidia-nvshmem-cu13 (57.6MiB)
+Downloading numpy (15.9MiB)
+Downloading nvidia-cusparselt-cu13 (162.0MiB)
+Downloading nvidia-cuda-runtime (2.1MiB)
+Downloading nvidia-cudnn-cu13 (349.1MiB)
+Downloading uvloop (4.2MiB)
+Downloading triton (179.5MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading nvidia-nvjitlink (38.8MiB)
+Downloading nvidia-cusparse (139.2MiB)
+Downloading scipy (33.6MiB)
+Downloading matplotlib (8.4MiB)
+Downloading nvidia-cufile (1.2MiB)
+Downloading nvidia-cuda-nvrtc (86.0MiB)
+Downloading cuda-bindings (6.0MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading setuptools (1.0MiB)
+Downloading nvidia-curand (56.8MiB)
+Downloading chromadb (22.1MiB)
+Downloading bitsandbytes (57.8MiB)
+Downloading trackio (1.6MiB)
+Downloading onnxruntime (17.2MiB)
+ Downloaded setuptools
+ Downloaded pygments
+ Downloaded nvidia-cufile
+ Downloaded kiwisolver
+ Downloaded trackio
+ Downloaded aiohttp
+ Downloaded pydantic-core
+ Downloaded nvidia-cuda-runtime
+ Downloaded kubernetes
+ Downloaded networkx
+ Downloaded tokenizers
+ Downloaded hf-xet
+ Downloaded uvloop
+ Downloaded fonttools
+ Downloaded cuda-bindings
+ Downloaded grpcio
+ Downloaded pillow
+ Downloaded sympy
+ Downloaded scikit-learn
+ Downloaded matplotlib
+ Downloaded nvidia-cuda-cupti
+ Downloaded numpy
+ Downloaded onnxruntime
+ Downloaded chromadb
+ Downloaded transformers
+ Downloaded pandas
+ Downloaded scipy
+ Downloaded nvidia-nvjitlink
+ Downloaded nvidia-curand
+ Downloaded nvidia-nvshmem-cu13
+ Downloaded bitsandbytes
+ Downloaded pyarrow
+ Downloaded nvidia-cuda-nvrtc
+ Downloaded nvidia-cusparse
+ Downloaded nvidia-cusparselt-cu13
+ Downloaded nvidia-nccl-cu13
+ Downloaded nvidia-cusolver
+ Downloaded triton
+ Downloaded nvidia-cufft
+ Downloaded nvidia-cudnn-cu13
+ Downloaded nvidia-cublas
+ Downloaded torch
+Installed 137 packages in 465ms
+======================================================================
+HF JOBS — GRPO TRAINING FOR TOOL-CALL AGENT
+======================================================================
+Mode:           full
+Model:          Qwen/Qwen2.5-3B-Instruct
+Output repo:    Harshitawake/tool-call-grpo-a10g-v2
+Train / Eval:   100 / 40 scenarios
+Epochs:         4
+Generations:    4
+Learning rate:  1e-05
+Gen temp/top_p: 0.9 / 0.95
+Quantization:   OFF (bf16 LoRA)
+Seed:           42
+Rounds:         2
+Trackio:        enabled
+======================================================================
+* Trackio project initialized: tool-call-grpo
+* Trackio metrics logged to: /root/.cache/huggingface/trackio
+* View dashboard by running in your terminal:
+[1m[38;5;208mtrackio show --project "tool-call-grpo"[0m
+* or by running in Python: trackio.show(project="tool-call-grpo")
+* Created new run: hfjobs-full-1777159020
+Trackio initialized — view live at: https://huggingface.co/trackio
+Fetching scenarios from: https://raw.githubusercontent.com/Harshitawake/tool-call-rl-OpenEnv/main/data/scenarios_expanded.json
+  Loaded 137 scenarios, 16 tools
+Total scenarios available: 137
+
+======================================================================
+LOADING MODEL
+======================================================================
+Loading Qwen/Qwen2.5-3B-Instruct in plain bf16 + LoRA (no quantization)...
+
+config.json:   0%|          | 0.00/661 [00:00<?, ?B/s][Aconfig.json: 100%|██████████| 661/661 [00:00<00:00, 4.81MB/s]
+
+model.safetensors.index.json:   0%|          | 0.00/35.6k [00:00<?, ?B/s][Amodel.safetensors.index.json: 100%|██████████| 35.6k/35.6k [00:00<00:00, 116MB/s]
+
+Downloading (incomplete total...): 0.00B [00:00, ?B/s][A
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s][A
+Downloading (incomplete total...):   0%|          | 0.00/3.97G [00:00<?, ?B/s][A
+Downloading (incomplete total...):   0%|          | 0.00/6.17G [00:00<?, ?B/s][A
+Downloading (incomplete total...):   1%|          | 67.0M/6.17G [00:01<01:35, 63.6MB/s][A
+Downloading (incomplete total...):  10%|█         | 627M/6.17G [00:02<00:15, 349MB/s]  [A
+Downloading (incomplete total...):  26%|██▌       | 1.60G/6.17G [00:03<00:07, 581MB/s][A
+Downloading (incomplete total...):  48%|████▊     | 2.94G/6.17G [00:04<00:03, 862MB/s][A
+Downloading (incomplete total...):  76%|███████▋  | 4.72G/6.17G [00:05<00:01, 1.18GB/s][A
+Downloading (incomplete total...): 100%|██████████| 6.17G/6.17G [00:07<00:00, 909MB/s] [A
+Fetching 2 files:  50%|█████     | 1/2 [00:07<00:07,  7.45s/it][AFetching 2 files: 100%|██████████| 2/2 [00:07<00:00,  3.73s/it]
+
+Download complete: 100%|██████████| 6.17G/6.17G [00:07<00:00, 909MB/s]                [ADownload complete: 100%|██████████| 6.17G/6.17G [00:07<00:00, 827MB/s]
+
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 434/434 [00:00<00:00, 755.46it/s]
+
+generation_config.json:   0%|          | 0.00/242 [00:00<?, ?B/s][Ageneration_config.json: 100%|██████████| 242/242 [00:00<00:00, 1.64MB/s]
+
+tokenizer_config.json:   0%|          | 0.00/7.30k [00:00<?, ?B/s][Atokenizer_config.json: 100%|██████████| 7.30k/7.30k [00:00<00:00, 46.1MB/s]
+
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s][Avocab.json: 100%|██████████| 2.78M/2.78M [00:00<00:00, 70.4MB/s]
+
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s][Amerges.txt: 100%|██████████| 1.67M/1.67M [00:00<00:00, 47.8MB/s]
+
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s][Atokenizer.json: 100%|██████████| 7.03M/7.03M [00:00<00:00, 116MB/s]
+Model loaded: Qwen/Qwen2.5-3B-Instruct
+trainable params: 29,933,568 || all params: 3,115,872,256 || trainable%: 0.9607
+
+Round 1 dataset: 100 examples
+
+======================================================================
+BASELINE EVALUATION (before training)
+======================================================================
+
+----------------------------------------------------------------------
+BASELINE (40 scenarios)
+----------------------------------------------------------------------
+[transformers] The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  Scenario   1 | ['get_weather']                          | reward=1.00
+  Scenario   2 | ['search_flights']                       | reward=0.95
+  Scenario   3 | []                                       | reward=0.00
+  Scenario   4 | []                                       | reward=0.00
+  Scenario   5 | []                                       | reward=1.00
+  Scenario   6 | []                                       | reward=0.00
+  Scenario   7 | ['get_account_balance', 'calculator']    | reward=0.95
+  Scenario   8 | []                                       | reward=1.00
+  Scenario   9 | ['create_calendar_event', 'set_reminder'] | reward=0.15
+  Scenario  10 | []                                       | reward=0.00
+  Scenario  11 | ['web_search', 'generate_summary']       | reward=0.93
+  Scenario  12 | []                                       | reward=1.00
+  Scenario  13 | ['get_weather']                          | reward=0.42
+  Scenario  14 | []                                       | reward=1.00
+  Scenario  15 | ['set_reminder']                         | reward=0.93
+  Scenario  16 | []                                       | reward=1.00
+  Scenario  17 | ['get_stock_price']                      | reward=0.42
+  Scenario  18 | []                                       | reward=0.00
+  Scenario  19 | []                                       | reward=1.00
+  Scenario  20 | ['file_read', 'generate_summary', 'send_email'] | reward=0.93
+  Scenario  21 | []                                       | reward=0.00
+  Scenario  22 | []                                       | reward=1.00
+  Scenario  23 | ['web_search']                           | reward=1.00
+  Scenario  24 | ['get_stock_price', 'get_stock_price', 'calculator'] | reward=0.49
+  Scenario  25 | []                                       | reward=0.00
+  Scenario  26 | ['web_search', 'generate_summary', 'translate_text', 'send_email'] | reward=0.93
+  Scenario  27 | ['get_stock_price', 'get_stock_price', 'get_stock_price', 'calculator'] | reward=0.46
+  Scenario  28 | ['database_query']                       | reward=0.00
+  Scenario  29 | ['get_weather', 'get_weather', 'web_search'] | reward=0.36
+  Scenario  30 | []                                       | reward=1.00
+  Scenario  31 | ['file_read', 'calculator', 'calculator', 'calculator', 'calculator', 'send_email', 'send_slack_message'] | reward=0.63
+  Scenario  32 | ['web_search']                           | reward=0.35
+  Scenario  33 | ['get_account_balance', 'calculator']    | reward=0.50
+  Scenario  34 | ['translate_text', 'send_slack_message'] | reward=0.22
+  Scenario  35 | []                                       | reward=1.00
+  Scenario  36 | ['get_weather']                          | reward=1.00
+  Scenario  37 | ['get_weather', 'get_weather', 'search_flights', 'calculator', 'send_email'] | reward=0.72
+  Scenario  38 | []                                       | reward=0.00
+  Scenario  39 | []                                       | reward=0.00
+  Scenario  40 | ['create_calendar_event', 'create_calendar_event'] | reward=0.25
+
+BASELINE: avg_reward=0.565, accuracy=47.5%
+
+======================================================================
+ROUND 1: GRPO TRAINING (no memory)
+======================================================================
+Training Round 1 on 100 scenarios...
+[transformers] The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None, 'pad_token_id': 151643}.
+* Run finished. Uploading logs to Trackio (please wait...)
+* Trackio project initialized: huggingface
+* Trackio metrics logged to: /root/.cache/huggingface/trackio
+* View dashboard by running in your terminal:
+[1m[38;5;208mtrackio show --project "huggingface"[0m
+* or by running in Python: trackio.show(project="huggingface")
+* Created new run: dainty-sunset-0
+
+  0%|          | 0/400 [00:00<?, ?it/s][A
+  0%|          | 1/400 [00:05<38:47,  5.83s/it][A
+  0%|          | 2/400 [00:11<37:57,  5.72s/it][A
+  1%|          | 3/400 [00:17<38:10,  5.77s/it][A
+  1%|          | 4/400 [00:23<40:27,  6.13s/it][A
+{'loss': '-0.005688', 'grad_norm': '0', 'learning_rate': '9.9e-06', 'num_tokens': '7108', 'completions/mean_length': '59.8', 'completions/min_length': '55.6', 'completions/max_length': '65.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '59.8', 'completions/min_terminated_length': '55.6', 'completions/max_terminated_length': '65.2', 'rewards/reward_fn/mean': '0.2922', 'rewards/reward_fn/std': '0.0425', 'reward': '0.2922', 'reward_std': '0.0425', 'frac_reward_zero_std': '0.8', 'entropy': '0.1811', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '5.917', 'epoch': '0.05'}
+  1%|▏         | 5/400 [00:30<40:20,  6.13s/it][A
+                                               [A
+  1%|▏         | 5/400 [00:30<40:20,  6.13s/it][A
+  2%|▏         | 6/400 [00:37<42:59,  6.55s/it][A
+  2%|▏         | 7/400 [00:44<43:13,  6.60s/it][A
+  2%|▏         | 8/400 [00:49<39:25,  6.03s/it][A
+  2%|▏         | 9/400 [00:53<35:20,  5.42s/it][A
+{'loss': '-0.001115', 'grad_norm': '1.011', 'learning_rate': '9.775e-06', 'num_tokens': '1.424e+04', 'completions/mean_length': '64', 'completions/min_length': '55.6', 'completions/max_length': '73.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '64', 'completions/min_terminated_length': '55.6', 'completions/max_terminated_length': '73.6', 'rewards/reward_fn/mean': '0.315', 'rewards/reward_fn/std': '0.2034', 'reward': '0.315', 'reward_std': '0.2034', 'frac_reward_zero_std': '0.6', 'entropy': '0.2079', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.44', 'epoch': '0.1'}
+  2%|▎         | 10/400 [01:02<43:33,  6.70s/it][A
+                                                [A
+  2%|▎         | 10/400 [01:02<43:33,  6.70s/it][A
+  3%|▎         | 11/400 [01:08<41:37,  6.42s/it][A
+  3%|▎         | 12/400 [01:11<35:19,  5.46s/it][A
+  3%|▎         | 13/400 [01:19<40:07,  6.22s/it][A
+  4%|▎         | 14/400 [01:25<39:23,  6.12s/it][A
+{'loss': '-0.01852', 'grad_norm': '1.382', 'learning_rate': '9.65e-06', 'num_tokens': '2.125e+04', 'completions/mean_length': '55.55', 'completions/min_length': '48.6', 'completions/max_length': '66.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '55.55', 'completions/min_terminated_length': '48.6', 'completions/max_terminated_length': '66.8', 'rewards/reward_fn/mean': '0.4528', 'rewards/reward_fn/std': '0.0056', 'reward': '0.4528', 'reward_std': '0.0056', 'frac_reward_zero_std': '0.8', 'entropy': '0.2431', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.029', 'epoch': '0.15'}
+  4%|▍         | 15/400 [01:33<42:02,  6.55s/it][A
+                                                [A
+  4%|▍         | 15/400 [01:33<42:02,  6.55s/it][A
+  4%|▍         | 16/400 [01:39<41:19,  6.46s/it][A
+  4%|▍         | 17/400 [01:47<43:32,  6.82s/it][A
+  4%|▍         | 18/400 [02:01<58:15,  9.15s/it][A
+  5%|▍         | 19/400 [02:10<57:08,  9.00s/it][A
+{'loss': '-2.98e-09', 'grad_norm': '0', 'learning_rate': '9.525e-06', 'num_tokens': '2.93e+04', 'completions/mean_length': '92.8', 'completions/min_length': '75.4', 'completions/max_length': '109', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '92.8', 'completions/min_terminated_length': '75.4', 'completions/max_terminated_length': '109', 'rewards/reward_fn/mean': '0.4445', 'rewards/reward_fn/std': '0.0056', 'reward': '0.4445', 'reward_std': '0.0056', 'frac_reward_zero_std': '0.8', 'entropy': '0.2154', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.322', 'epoch': '0.2'}
+  5%|▌         | 20/400 [02:20<58:50,  9.29s/it][A
+                                                [A
+  5%|▌         | 20/400 [02:20<58:50,  9.29s/it][A
+  5%|▌         | 21/400 [02:26<53:35,  8.49s/it][A
+  6%|▌         | 22/400 [02:33<50:13,  7.97s/it][A
+  6%|▌         | 23/400 [02:39<46:47,  7.45s/it][A
+  6%|▌         | 24/400 [02:46<44:54,  7.17s/it][A
+{'loss': '-0.02816', 'grad_norm': '2.119', 'learning_rate': '9.4e-06', 'num_tokens': '3.659e+04', 'completions/mean_length': '66', 'completions/min_length': '58.4', 'completions/max_length': '74.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '66', 'completions/min_terminated_length': '58.4', 'completions/max_terminated_length': '74.6', 'rewards/reward_fn/mean': '0.4252', 'rewards/reward_fn/std': '0.158', 'reward': '0.4252', 'reward_std': '0.158', 'frac_reward_zero_std': '0.6', 'entropy': '0.239', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.704', 'epoch': '0.25'}
+  6%|▋         | 25/400 [02:54<46:04,  7.37s/it][A
+                                                [A
+  6%|▋         | 25/400 [02:54<46:04,  7.37s/it][A
+  6%|▋         | 26/400 [03:12<1:05:47, 10.55s/it][A
+  7%|▋         | 27/400 [03:20<1:00:38,  9.75s/it][A
+  7%|▋         | 28/400 [03:26<53:44,  8.67s/it]  [A
+  7%|▋         | 29/400 [03:31<48:16,  7.81s/it][A
+{'loss': '-0.03859', 'grad_norm': '0', 'learning_rate': '9.275e-06', 'num_tokens': '4.429e+04', 'completions/mean_length': '87.55', 'completions/min_length': '71.8', 'completions/max_length': '103', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '87.55', 'completions/min_terminated_length': '71.8', 'completions/max_terminated_length': '103', 'rewards/reward_fn/mean': '0.5366', 'rewards/reward_fn/std': '0.07875', 'reward': '0.5366', 'reward_std': '0.07875', 'frac_reward_zero_std': '0.8', 'entropy': '0.1255', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.597', 'epoch': '0.3'}
+  8%|▊         | 30/400 [03:37<44:02,  7.14s/it][A
+                                                [A
+  8%|▊         | 30/400 [03:37<44:02,  7.14s/it][A
+  8%|▊         | 31/400 [03:50<54:11,  8.81s/it][A
+  8%|▊         | 32/400 [03:56<49:55,  8.14s/it][A
+  8%|▊         | 33/400 [04:02<46:04,  7.53s/it][A
+  8%|▊         | 34/400 [04:10<46:03,  7.55s/it][A
+  9%|▉         | 35/400 [04:16<42:53,  7.05s/it][A
+                                                [A
+{'loss': '-0.016', 'grad_norm': '0', 'learning_rate': '9.15e-06', 'num_tokens': '5.236e+04', 'completions/mean_length': '78.55', 'completions/min_length': '72', 'completions/max_length': '87.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '78.55', 'completions/min_terminated_length': '72', 'completions/max_terminated_length': '87.6', 'rewards/reward_fn/mean': '0.487', 'rewards/reward_fn/std': '0.1433', 'reward': '0.487', 'reward_std': '0.1433', 'frac_reward_zero_std': '0.6', 'entropy': '0.1563', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.68', 'epoch': '0.35'}
+  9%|▉         | 35/400 [04:16<42:53,  7.05s/it][A
+  9%|▉         | 36/400 [04:23<42:24,  6.99s/it][A
+  9%|▉         | 37/400 [04:26<35:35,  5.88s/it][A
+ 10%|▉         | 38/400 [04:34<38:52,  6.44s/it][A
+ 10%|▉         | 39/400 [04:41<39:46,  6.61s/it][A
+ 10%|█         | 40/400 [04:47<38:33,  6.43s/it][A
+                                                [A
+{'loss': '0.002126', 'grad_norm': '0', 'learning_rate': '9.025e-06', 'num_tokens': '5.91e+04', 'completions/mean_length': '62.4', 'completions/min_length': '57.4', 'completions/max_length': '68.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '62.4', 'completions/min_terminated_length': '57.4', 'completions/max_terminated_length': '68.6', 'rewards/reward_fn/mean': '0.3795', 'rewards/reward_fn/std': '0.035', 'reward': '0.3795', 'reward_std': '0.035', 'frac_reward_zero_std': '0.8', 'entropy': '0.1145', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.108', 'epoch': '0.4'}
+ 10%|█         | 40/400 [04:47<38:33,  6.43s/it][A
+ 10%|█         | 41/400 [04:53<37:14,  6.22s/it][A
+ 10%|█         | 42/400 [04:59<37:00,  6.20s/it][A
+ 11%|█         | 43/400 [05:05<36:46,  6.18s/it][A
+ 11%|█         | 44/400 [05:08<31:30,  5.31s/it][A
+ 11%|█▏        | 45/400 [05:14<33:15,  5.62s/it][A
+                                                [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '8.9e-06', 'num_tokens': '6.608e+04', 'completions/mean_length': '57.95', 'completions/min_length': '56.8', 'completions/max_length': '59.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '57.95', 'completions/min_terminated_length': '56.8', 'completions/max_terminated_length': '59.8', 'rewards/reward_fn/mean': '0.535', 'rewards/reward_fn/std': '0', 'reward': '0.535', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.1021', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '5.45', 'epoch': '0.45'}
+ 11%|█▏        | 45/400 [05:14<33:15,  5.62s/it][A
+ 12%|█▏        | 46/400 [05:19<31:42,  5.37s/it][A
+ 12%|█▏        | 47/400 [05:26<33:13,  5.65s/it][A
+ 12%|█▏        | 48/400 [05:33<36:37,  6.24s/it][A
+ 12%|█▏        | 49/400 [05:40<36:53,  6.31s/it][A
+ 12%|█▎        | 50/400 [05:46<37:03,  6.35s/it][A
+                                                [A
+{'loss': '0.004612', 'grad_norm': '0', 'learning_rate': '8.775e-06', 'num_tokens': '7.305e+04', 'completions/mean_length': '64.05', 'completions/min_length': '57.6', 'completions/max_length': '71.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '64.05', 'completions/min_terminated_length': '57.6', 'completions/max_terminated_length': '71.4', 'rewards/reward_fn/mean': '0.4165', 'rewards/reward_fn/std': '0.031', 'reward': '0.4165', 'reward_std': '0.031', 'frac_reward_zero_std': '0.8', 'entropy': '0.2242', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.254', 'epoch': '0.5'}
+ 12%|█▎        | 50/400 [05:46<37:03,  6.35s/it][A
+ 13%|█▎        | 51/400 [05:58<46:22,  7.97s/it][A
+ 13%|█▎        | 52/400 [06:05<44:18,  7.64s/it][A
+ 13%|█▎        | 53/400 [06:12<42:52,  7.41s/it][A
+ 14%|█▎        | 54/400 [06:24<52:09,  9.04s/it][A
+ 14%|█▍        | 55/400 [06:35<54:28,  9.47s/it][A
+{'loss': '-0.01947', 'grad_norm': '0', 'learning_rate': '8.65e-06', 'num_tokens': '8.087e+04', 'completions/mean_length': '99.05', 'completions/min_length': '85.4', 'completions/max_length': '116.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '99.05', 'completions/min_terminated_length': '85.4', 'completions/max_terminated_length': '116.6', 'rewards/reward_fn/mean': '0.7932', 'rewards/reward_fn/std': '0.0575', 'reward': '0.7932', 'reward_std': '0.0575', 'frac_reward_zero_std': '0.8', 'entropy': '0.2185', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.67', 'epoch': '0.55'}
+                                                [A
+ 14%|█▍        | 55/400 [06:35<54:28,  9.47s/it][A
+ 14%|█▍        | 56/400 [06:41<48:20,  8.43s/it][A
+ 14%|█▍        | 57/400 [06:48<46:37,  8.16s/it][A
+ 14%|█▍        | 58/400 [06:56<45:10,  7.93s/it][A
+ 15%|█▍        | 59/400 [07:01<40:22,  7.10s/it][A
+ 15%|█▌        | 60/400 [07:21<1:02:26, 11.02s/it][A
+                                                  [A
+{'loss': '-0.09847', 'grad_norm': '0.768', 'learning_rate': '8.525e-06', 'num_tokens': '8.89e+04', 'completions/mean_length': '82.85', 'completions/min_length': '50.8', 'completions/max_length': '109.2', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '78.1', 'completions/min_terminated_length': '50.8', 'completions/max_terminated_length': '101.2', 'rewards/reward_fn/mean': '0.3224', 'rewards/reward_fn/std': '0.1593', 'reward': '0.3224', 'reward_std': '0.1593', 'frac_reward_zero_std': '0.4', 'entropy': '0.1805', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.151', 'epoch': '0.6'}
+ 15%|█▌        | 60/400 [07:21<1:02:26, 11.02s/it][A
+ 15%|█▌        | 61/400 [07:27<52:42,  9.33s/it]  [A
+ 16%|█▌        | 62/400 [07:32<46:41,  8.29s/it][A
+ 16%|█▌        | 63/400 [07:45<53:35,  9.54s/it][A
+ 16%|█▌        | 64/400 [07:51<46:55,  8.38s/it][A
+{'loss': '-0.01695', 'grad_norm': '0', 'learning_rate': '8.4e-06', 'num_tokens': '9.643e+04', 'completions/mean_length': '78.7', 'completions/min_length': '69.8', 'completions/max_length': '86.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '78.7', 'completions/min_terminated_length': '69.8', 'completions/max_terminated_length': '86.6', 'rewards/reward_fn/mean': '0.457', 'rewards/reward_fn/std': '0.05', 'reward': '0.457', 'reward_std': '0.05', 'frac_reward_zero_std': '0.8', 'entropy': '0.2208', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.496', 'epoch': '0.65'}
+ 16%|█▋        | 65/400 [07:59<47:04,  8.43s/it][A
+                                                [A
+ 16%|█▋        | 65/400 [07:59<47:04,  8.43s/it][A
+ 16%|█▋        | 66/400 [08:07<45:12,  8.12s/it][A
+ 17%|█▋        | 67/400 [08:13<42:12,  7.60s/it][A
+ 17%|█▋        | 68/400 [08:19<39:26,  7.13s/it][A
+ 17%|█▋        | 69/400 [08:27<40:46,  7.39s/it][A
+ 18%|█▊        | 70/400 [08:36<43:08,  7.84s/it][A
+                                                [A
+{'loss': '0.06731', 'grad_norm': '1.392', 'learning_rate': '8.275e-06', 'num_tokens': '1.038e+05', 'completions/mean_length': '68', 'completions/min_length': '56.6', 'completions/max_length': '84', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '68', 'completions/min_terminated_length': '56.6', 'completions/max_terminated_length': '84', 'rewards/reward_fn/mean': '0.3345', 'rewards/reward_fn/std': '0.1755', 'reward': '0.3345', 'reward_std': '0.1755', 'frac_reward_zero_std': '0.2', 'entropy': '0.2107', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.253', 'epoch': '0.7'}
+ 18%|█▊        | 70/400 [08:36<43:08,  7.84s/it][A
+ 18%|█▊        | 71/400 [08:42<40:48,  7.44s/it][A
+ 18%|█▊        | 72/400 [08:48<38:20,  7.01s/it][A
+ 18%|█▊        | 73/400 [08:56<39:03,  7.17s/it][A
+ 18%|█▊        | 74/400 [09:03<39:06,  7.20s/it][A
+ 19%|█▉        | 75/400 [09:09<37:08,  6.86s/it][A
+                                                [A
+{'loss': '-0.0263', 'grad_norm': '1.843', 'learning_rate': '8.15e-06', 'num_tokens': '1.112e+05', 'completions/mean_length': '66.6', 'completions/min_length': '59', 'completions/max_length': '73.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '66.6', 'completions/min_terminated_length': '59', 'completions/max_terminated_length': '73.6', 'rewards/reward_fn/mean': '0.5688', 'rewards/reward_fn/std': '0.0425', 'reward': '0.5688', 'reward_std': '0.0425', 'frac_reward_zero_std': '0.8', 'entropy': '0.2248', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.585', 'epoch': '0.75'}
+ 19%|█▉        | 75/400 [09:09<37:08,  6.86s/it][A
+ 19%|█▉        | 76/400 [09:15<35:46,  6.63s/it][A
+ 19%|█▉        | 77/400 [09:36<58:03, 10.78s/it][A
+ 20%|█▉        | 78/400 [09:47<58:19, 10.87s/it][A
+ 20%|█▉        | 79/400 [09:56<55:59, 10.47s/it][A
+ 20%|██        | 80/400 [10:03<49:12,  9.23s/it][A
+{'loss': '-0.02709', 'grad_norm': '0', 'learning_rate': '8.025e-06', 'num_tokens': '1.196e+05', 'completions/mean_length': '111.6', 'completions/min_length': '99', 'completions/max_length': '126.8', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '110.8', 'completions/min_terminated_length': '99', 'completions/max_terminated_length': '125', 'rewards/reward_fn/mean': '0.6243', 'rewards/reward_fn/std': '0.2317', 'reward': '0.6243', 'reward_std': '0.2317', 'frac_reward_zero_std': '0.4', 'entropy': '0.2364', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.6', 'epoch': '0.8'}
+                                                [A
+ 20%|██        | 80/400 [10:03<49:12,  9.23s/it][A
+ 20%|██        | 81/400 [10:09<45:08,  8.49s/it][A
+ 20%|██        | 82/400 [10:17<43:01,  8.12s/it][A
+ 21%|██        | 83/400 [10:34<57:31, 10.89s/it][A
+ 21%|██        | 84/400 [10:43<54:04, 10.27s/it][A
+{'loss': '-0.1085', 'grad_norm': '2.031', 'learning_rate': '7.9e-06', 'num_tokens': '1.28e+05', 'completions/mean_length': '104.8', 'completions/min_length': '85.4', 'completions/max_length': '138', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '104.8', 'completions/min_terminated_length': '85.4', 'completions/max_terminated_length': '138', 'rewards/reward_fn/mean': '0.3216', 'rewards/reward_fn/std': '0.2199', 'reward': '0.3216', 'reward_std': '0.2199', 'frac_reward_zero_std': '0', 'entropy': '0.202', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.38', 'epoch': '0.85'}
+ 21%|██▏       | 85/400 [11:00<1:04:50, 12.35s/it][A
+                                                  [A
+ 21%|██▏       | 85/400 [11:00<1:04:50, 12.35s/it][A
+ 22%|██▏       | 86/400 [11:07<56:25, 10.78s/it]  [A
+ 22%|██▏       | 87/400 [11:19<58:02, 11.13s/it][A
+ 22%|██▏       | 88/400 [11:39<1:12:07, 13.87s/it][A
+ 22%|██▏       | 89/400 [11:45<59:33, 11.49s/it]  [A
+ 22%|██▎       | 90/400 [11:51<50:46,  9.83s/it][A
+                                                [A
+{'loss': '0.06189', 'grad_norm': '0', 'learning_rate': '7.775e-06', 'num_tokens': '1.357e+05', 'completions/mean_length': '97.6', 'completions/min_length': '80.8', 'completions/max_length': '122.6', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '90.53', 'completions/min_terminated_length': '80.8', 'completions/max_terminated_length': '104.8', 'rewards/reward_fn/mean': '0.4134', 'rewards/reward_fn/std': '0.0843', 'reward': '0.4134', 'reward_std': '0.0843', 'frac_reward_zero_std': '0.6', 'entropy': '0.1002', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.15', 'epoch': '0.9'}
+ 22%|██▎       | 90/400 [11:51<50:46,  9.83s/it][A
+ 23%|██▎       | 91/400 [12:00<48:19,  9.38s/it][A
+ 23%|██▎       | 92/400 [12:07<44:42,  8.71s/it][A
+ 23%|██▎       | 93/400 [12:13<40:03,  7.83s/it][A
+ 24%|██▎       | 94/400 [12:18<36:26,  7.15s/it][A
+ 24%|██▍       | 95/400 [12:24<34:33,  6.80s/it][A
+                                                [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '7.65e-06', 'num_tokens': '1.43e+05', 'completions/mean_length': '71.3', 'completions/min_length': '68.6', 'completions/max_length': '73.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '71.3', 'completions/min_terminated_length': '68.6', 'completions/max_terminated_length': '73.4', 'rewards/reward_fn/mean': '0.755', 'rewards/reward_fn/std': '0', 'reward': '0.755', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.08649', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.477', 'epoch': '0.95'}
+ 24%|██▍       | 95/400 [12:24<34:33,  6.80s/it][A
+ 24%|██▍       | 96/400 [12:44<54:59, 10.85s/it][A
+ 24%|██▍       | 97/400 [13:05<1:09:32, 13.77s/it][A
+ 24%|██▍       | 98/400 [13:11<57:47, 11.48s/it]  [A
+ 25%|██▍       | 99/400 [13:17<49:26,  9.86s/it][A
+ 25%|██▌       | 100/400 [13:32<56:44, 11.35s/it][A
+                                                 [A
+{'loss': '0.1135', 'grad_norm': '0.6237', 'learning_rate': '7.525e-06', 'num_tokens': '1.525e+05', 'completions/mean_length': '136.8', 'completions/min_length': '108.8', 'completions/max_length': '165.4', 'completions/clipped_ratio': '0.15', 'completions/mean_terminated_length': '119.1', 'completions/min_terminated_length': '108.8', 'completions/max_terminated_length': '141.8', 'rewards/reward_fn/mean': '0.4762', 'rewards/reward_fn/std': '0.1495', 'reward': '0.4762', 'reward_std': '0.1495', 'frac_reward_zero_std': '0.4', 'entropy': '0.1219', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '13.47', 'epoch': '1'}
+ 25%|██▌       | 100/400 [13:32<56:44, 11.35s/it][A
+ 25%|██▌       | 101/400 [13:38<48:58,  9.83s/it][A
+ 26%|██▌       | 102/400 [13:49<49:28,  9.96s/it][A
+ 26%|██▌       | 103/400 [14:00<51:04, 10.32s/it][A
+ 26%|██▌       | 104/400 [14:06<44:14,  8.97s/it][A
+ 26%|██▋       | 105/400 [14:12<40:19,  8.20s/it][A
+                                                 [A
+{'loss': '0.01724', 'grad_norm': '0', 'learning_rate': '7.4e-06', 'num_tokens': '1.599e+05', 'completions/mean_length': '83.9', 'completions/min_length': '77.2', 'completions/max_length': '91.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '83.9', 'completions/min_terminated_length': '77.2', 'completions/max_terminated_length': '91.6', 'rewards/reward_fn/mean': '0.6062', 'rewards/reward_fn/std': '0.0575', 'reward': '0.6062', 'reward_std': '0.0575', 'frac_reward_zero_std': '0.6', 'entropy': '0.239', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.787', 'epoch': '1.05'}
+ 26%|██▋       | 105/400 [14:12<40:19,  8.20s/it][A
+ 26%|██▋       | 106/400 [14:23<43:49,  8.94s/it][A
+ 27%|██▋       | 107/400 [14:33<46:11,  9.46s/it][A
+ 27%|██▋       | 108/400 [14:44<47:21,  9.73s/it][A
+ 27%|██▋       | 109/400 [14:56<51:02, 10.52s/it][A
+ 28%|██▊       | 110/400 [15:02<44:18,  9.17s/it][A
+                                                 [A
+{'loss': '-0.05002', 'grad_norm': '0', 'learning_rate': '7.275e-06', 'num_tokens': '1.685e+05', 'completions/mean_length': '103.1', 'completions/min_length': '90', 'completions/max_length': '117', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '103.1', 'completions/min_terminated_length': '90', 'completions/max_terminated_length': '117', 'rewards/reward_fn/mean': '0.9104', 'rewards/reward_fn/std': '0.06207', 'reward': '0.9104', 'reward_std': '0.06207', 'frac_reward_zero_std': '0.8', 'entropy': '0.1341', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.912', 'epoch': '1.1'}
+ 28%|██▊       | 110/400 [15:02<44:18,  9.17s/it][A
+ 28%|██▊       | 111/400 [15:09<41:16,  8.57s/it][A
+ 28%|██▊       | 112/400 [15:15<37:07,  7.73s/it][A
+ 28%|██▊       | 113/400 [15:21<34:25,  7.20s/it][A
+ 28%|██▊       | 114/400 [15:42<53:28, 11.22s/it][A
+ 29%|██▉       | 115/400 [15:48<46:08,  9.72s/it][A
+                                                 [A
+{'loss': '0.02534', 'grad_norm': '0', 'learning_rate': '7.15e-06', 'num_tokens': '1.761e+05', 'completions/mean_length': '92', 'completions/min_length': '79.2', 'completions/max_length': '106.6', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '88.32', 'completions/min_terminated_length': '79.2', 'completions/max_terminated_length': '98.6', 'rewards/reward_fn/mean': '0.435', 'rewards/reward_fn/std': '0.03294', 'reward': '0.435', 'reward_std': '0.03294', 'frac_reward_zero_std': '0.8', 'entropy': '0.0962', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.062', 'epoch': '1.15'}
+ 29%|██▉       | 115/400 [15:48<46:08,  9.72s/it][A
+ 29%|██▉       | 116/400 [15:54<41:18,  8.73s/it][A
+ 29%|██▉       | 117/400 [16:15<57:45, 12.25s/it][A
+ 30%|██▉       | 118/400 [16:28<58:29, 12.44s/it][A
+ 30%|██▉       | 119/400 [16:38<55:58, 11.95s/it][A
+{'loss': '0.0164', 'grad_norm': '0', 'learning_rate': '7.025e-06', 'num_tokens': '1.845e+05', 'completions/mean_length': '115.2', 'completions/min_length': '91.6', 'completions/max_length': '136.4', 'completions/clipped_ratio': '0.1', 'completions/mean_terminated_length': '105.7', 'completions/min_terminated_length': '91.6', 'completions/max_terminated_length': '122.2', 'rewards/reward_fn/mean': '0.4147', 'rewards/reward_fn/std': '0.09087', 'reward': '0.4147', 'reward_std': '0.09087', 'frac_reward_zero_std': '0.6', 'entropy': '0.1269', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.25', 'epoch': '1.2'}
+ 30%|███       | 120/400 [16:45<47:39, 10.21s/it][A
+                                                 [A
+ 30%|███       | 120/400 [16:45<47:39, 10.21s/it][A
+ 30%|███       | 121/400 [16:51<41:35,  8.94s/it][A
+ 30%|███       | 122/400 [16:59<40:43,  8.79s/it][A
+ 31%|███       | 123/400 [17:05<36:49,  7.98s/it][A
+ 31%|███       | 124/400 [17:13<37:09,  8.08s/it][A
+{'loss': '0.06228', 'grad_norm': '1.297', 'learning_rate': '6.9e-06', 'num_tokens': '1.92e+05', 'completions/mean_length': '70.25', 'completions/min_length': '61.4', 'completions/max_length': '80.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '70.25', 'completions/min_terminated_length': '61.4', 'completions/max_terminated_length': '80.2', 'rewards/reward_fn/mean': '0.752', 'rewards/reward_fn/std': '0.1155', 'reward': '0.752', 'reward_std': '0.1155', 'frac_reward_zero_std': '0.8', 'entropy': '0.1534', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.033', 'epoch': '1.25'}
+ 31%|███▏      | 125/400 [17:20<35:16,  7.70s/it][A
+                                                 [A
+ 31%|███▏      | 125/400 [17:20<35:16,  7.70s/it][A
+ 32%|███▏      | 126/400 [17:28<35:49,  7.85s/it][A
+ 32%|███▏      | 127/400 [17:35<33:46,  7.42s/it][A
+ 32%|███▏      | 128/400 [17:42<33:50,  7.46s/it][A
+ 32%|███▏      | 129/400 [18:03<51:37, 11.43s/it][A
+{'loss': '0.004303', 'grad_norm': '1.044', 'learning_rate': '6.775e-06', 'num_tokens': '2.01e+05', 'completions/mean_length': '130', 'completions/min_length': '117.8', 'completions/max_length': '145.4', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '128.4', 'completions/min_terminated_length': '117.8', 'completions/max_terminated_length': '141.6', 'rewards/reward_fn/mean': '0.4938', 'rewards/reward_fn/std': '0.1604', 'reward': '0.4938', 'reward_std': '0.1604', 'frac_reward_zero_std': '0.6', 'entropy': '0.2346', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '12.06', 'epoch': '1.3'}
+ 32%|███▎      | 130/400 [18:21<1:00:11, 13.38s/it][A
+                                                   [A
+ 32%|███▎      | 130/400 [18:21<1:00:11, 13.38s/it][A
+ 33%|███▎      | 131/400 [18:29<53:27, 11.92s/it]  [A
+ 33%|███▎      | 132/400 [18:38<48:18, 10.82s/it][A
+ 33%|███▎      | 133/400 [18:44<41:45,  9.38s/it][A
+ 34%|███▎      | 134/400 [19:00<50:12, 11.33s/it][A
+ 34%|███▍      | 135/400 [19:09<47:38, 10.79s/it][A
+{'loss': '-0.01417', 'grad_norm': '0', 'learning_rate': '6.65e-06', 'num_tokens': '2.086e+05', 'completions/mean_length': '90.25', 'completions/min_length': '70.8', 'completions/max_length': '114.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '90.25', 'completions/min_terminated_length': '70.8', 'completions/max_terminated_length': '114.8', 'rewards/reward_fn/mean': '0.721', 'rewards/reward_fn/std': '0.1', 'reward': '0.721', 'reward_std': '0.1', 'frac_reward_zero_std': '0.8', 'entropy': '0.4438', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.546', 'epoch': '1.35'}
+                                                 [A
+ 34%|███▍      | 135/400 [19:09<47:38, 10.79s/it][A
+ 34%|███▍      | 136/400 [19:17<43:05,  9.79s/it][A
+ 34%|███▍      | 137/400 [19:24<39:13,  8.95s/it][A
+ 34%|███▍      | 138/400 [19:30<36:24,  8.34s/it][A
+ 35%|███▍      | 139/400 [19:39<36:03,  8.29s/it][A
+ 35%|███▌      | 140/400 [19:46<34:16,  7.91s/it][A
+{'loss': '-0.0486', 'grad_norm': '0', 'learning_rate': '6.525e-06', 'num_tokens': '2.16e+05', 'completions/mean_length': '73.7', 'completions/min_length': '62.2', 'completions/max_length': '82.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '73.7', 'completions/min_terminated_length': '62.2', 'completions/max_terminated_length': '82.2', 'rewards/reward_fn/mean': '0.2798', 'rewards/reward_fn/std': '0.085', 'reward': '0.2798', 'reward_std': '0.085', 'frac_reward_zero_std': '0.8', 'entropy': '0.1401', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.224', 'epoch': '1.4'}
+                                                 [A
+ 35%|███▌      | 140/400 [19:46<34:16,  7.91s/it][A
+ 35%|███▌      | 141/400 [19:52<31:46,  7.36s/it][A
+ 36%|███▌      | 142/400 [19:58<29:53,  6.95s/it][A
+ 36%|███▌      | 143/400 [20:04<28:50,  6.73s/it][A
+ 36%|███▌      | 144/400 [20:11<29:27,  6.90s/it][A
+ 36%|███▋      | 145/400 [20:25<37:23,  8.80s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '6.4e-06', 'num_tokens': '2.237e+05', 'completions/mean_length': '82', 'completions/min_length': '76.6', 'completions/max_length': '88.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '82', 'completions/min_terminated_length': '76.6', 'completions/max_terminated_length': '88.2', 'rewards/reward_fn/mean': '0.4412', 'rewards/reward_fn/std': '0', 'reward': '0.4412', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.0847', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.675', 'epoch': '1.45'}
+ 36%|███▋      | 145/400 [20:25<37:23,  8.80s/it][A
+ 36%|███▋      | 146/400 [20:30<33:38,  7.95s/it][A
+ 37%|███▋      | 147/400 [20:36<30:30,  7.23s/it][A
+ 37%|███▋      | 148/400 [20:42<28:47,  6.85s/it][A
+ 37%|███▋      | 149/400 [20:57<39:20,  9.41s/it][A
+{'loss': '-0.0004125', 'grad_norm': '0', 'learning_rate': '6.275e-06', 'num_tokens': '2.312e+05', 'completions/mean_length': '87.6', 'completions/min_length': '85.6', 'completions/max_length': '90.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '87.6', 'completions/min_terminated_length': '85.6', 'completions/max_terminated_length': '90.2', 'rewards/reward_fn/mean': '0.577', 'rewards/reward_fn/std': '0.04567', 'reward': '0.577', 'reward_std': '0.04567', 'frac_reward_zero_std': '0.8', 'entropy': '0.1103', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.774', 'epoch': '1.5'}
+ 38%|███▊      | 150/400 [21:04<35:26,  8.51s/it][A
+                                                 [A
+ 38%|███▊      | 150/400 [21:04<35:26,  8.51s/it][A
+ 38%|███▊      | 151/400 [21:10<31:56,  7.70s/it][A
+ 38%|███▊      | 152/400 [21:16<29:45,  7.20s/it][A
+ 38%|███▊      | 153/400 [21:22<28:42,  6.97s/it][A
+ 38%|███▊      | 154/400 [21:28<27:48,  6.78s/it][A
+{'loss': '0.01256', 'grad_norm': '1.132', 'learning_rate': '6.15e-06', 'num_tokens': '2.388e+05', 'completions/mean_length': '65.7', 'completions/min_length': '61', 'completions/max_length': '70.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '65.7', 'completions/min_terminated_length': '61', 'completions/max_terminated_length': '70.4', 'rewards/reward_fn/mean': '0.555', 'rewards/reward_fn/std': '0.1155', 'reward': '0.555', 'reward_std': '0.1155', 'frac_reward_zero_std': '0.8', 'entropy': '0.1308', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.306', 'epoch': '1.55'}
+ 39%|███▉      | 155/400 [21:36<28:22,  6.95s/it][A
+                                                 [A
+ 39%|███▉      | 155/400 [21:36<28:22,  6.95s/it][A
+ 39%|███▉      | 156/400 [21:42<26:57,  6.63s/it][A
+ 39%|███▉      | 157/400 [21:49<27:40,  6.83s/it][A
+ 40%|███▉      | 158/400 [21:56<28:04,  6.96s/it][A
+ 40%|███▉      | 159/400 [22:14<41:33, 10.35s/it][A
+{'loss': '0.002047', 'grad_norm': '0.8727', 'learning_rate': '6.025e-06', 'num_tokens': '2.467e+05', 'completions/mean_length': '89.55', 'completions/min_length': '75.8', 'completions/max_length': '106.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '89.55', 'completions/min_terminated_length': '75.8', 'completions/max_terminated_length': '106.4', 'rewards/reward_fn/mean': '0.5816', 'rewards/reward_fn/std': '0.1177', 'reward': '0.5816', 'reward_std': '0.1177', 'frac_reward_zero_std': '0.6', 'entropy': '0.118', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.002', 'epoch': '1.6'}
+ 40%|████      | 160/400 [22:21<37:06,  9.28s/it][A
+                                                 [A
+ 40%|████      | 160/400 [22:21<37:06,  9.28s/it][A
+ 40%|████      | 161/400 [22:29<34:55,  8.77s/it][A
+ 40%|████      | 162/400 [22:35<32:16,  8.14s/it][A
+ 41%|████      | 163/400 [22:43<31:27,  7.96s/it][A
+ 41%|████      | 164/400 [22:49<28:55,  7.35s/it][A
+{'loss': '-0.05229', 'grad_norm': '0', 'learning_rate': '5.9e-06', 'num_tokens': '2.544e+05', 'completions/mean_length': '66.8', 'completions/min_length': '54.4', 'completions/max_length': '75.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '66.8', 'completions/min_terminated_length': '54.4', 'completions/max_terminated_length': '75.6', 'rewards/reward_fn/mean': '0.72', 'rewards/reward_fn/std': '0.2768', 'reward': '0.72', 'reward_std': '0.2768', 'frac_reward_zero_std': '0.4', 'entropy': '0.1231', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.862', 'epoch': '1.65'}
+ 41%|████▏     | 165/400 [22:56<28:26,  7.26s/it][A
+                                                 [A
+ 41%|████▏     | 165/400 [22:56<28:26,  7.26s/it][A
+ 42%|████▏     | 166/400 [23:02<26:57,  6.91s/it][A
+ 42%|████▏     | 167/400 [23:08<25:27,  6.56s/it][A
+ 42%|████▏     | 168/400 [23:14<24:26,  6.32s/it][A
+ 42%|████▏     | 169/400 [23:19<23:44,  6.17s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '5.775e-06', 'num_tokens': '2.613e+05', 'completions/mean_length': '60.25', 'completions/min_length': '57', 'completions/max_length': '64', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '60.25', 'completions/min_terminated_length': '57', 'completions/max_terminated_length': '64', 'rewards/reward_fn/mean': '0.516', 'rewards/reward_fn/std': '0', 'reward': '0.516', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.1094', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '5.809', 'epoch': '1.7'}
+ 42%|████▎     | 170/400 [23:25<23:29,  6.13s/it][A
+                                                 [A
+ 42%|████▎     | 170/400 [23:25<23:29,  6.13s/it][A
+ 43%|████▎     | 171/400 [23:46<40:18, 10.56s/it][A
+ 43%|████▎     | 172/400 [23:52<34:32,  9.09s/it][A
+ 43%|████▎     | 173/400 [24:06<39:52, 10.54s/it][A
+ 44%|████▎     | 174/400 [24:12<34:36,  9.19s/it][A
+{'loss': '0.01172', 'grad_norm': '0', 'learning_rate': '5.65e-06', 'num_tokens': '2.699e+05', 'completions/mean_length': '114.7', 'completions/min_length': '102.4', 'completions/max_length': '130.2', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '111.5', 'completions/min_terminated_length': '102.4', 'completions/max_terminated_length': '125.8', 'rewards/reward_fn/mean': '0.2312', 'rewards/reward_fn/std': '0.02', 'reward': '0.2312', 'reward_std': '0.02', 'frac_reward_zero_std': '0.8', 'entropy': '0.1398', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.94', 'epoch': '1.75'}
+ 44%|████▍     | 175/400 [24:21<33:53,  9.04s/it][A
+                                                 [A
+ 44%|████▍     | 175/400 [24:21<33:53,  9.04s/it][A
+ 44%|████▍     | 176/400 [24:27<30:24,  8.15s/it][A
+ 44%|████▍     | 177/400 [24:33<28:43,  7.73s/it][A
+ 44%|████▍     | 178/400 [24:40<27:14,  7.36s/it][A
+ 45%|████▍     | 179/400 [24:56<36:31,  9.91s/it][A
+{'loss': '-0.01064', 'grad_norm': '0', 'learning_rate': '5.525e-06', 'num_tokens': '2.775e+05', 'completions/mean_length': '83.85', 'completions/min_length': '78.4', 'completions/max_length': '94', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '83.85', 'completions/min_terminated_length': '78.4', 'completions/max_terminated_length': '94', 'rewards/reward_fn/mean': '0.609', 'rewards/reward_fn/std': '0.1097', 'reward': '0.609', 'reward_std': '0.1097', 'frac_reward_zero_std': '0.8', 'entropy': '0.1296', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.086', 'epoch': '1.8'}
+ 45%|████▌     | 180/400 [25:02<31:42,  8.65s/it][A
+                                                 [A
+ 45%|████▌     | 180/400 [25:02<31:42,  8.65s/it][A
+ 45%|████▌     | 181/400 [25:11<32:00,  8.77s/it][A
+ 46%|████▌     | 182/400 [25:21<33:45,  9.29s/it][A
+ 46%|████▌     | 183/400 [25:28<30:31,  8.44s/it][A
+ 46%|████▌     | 184/400 [25:36<29:51,  8.29s/it][A
+ 46%|████▋     | 185/400 [25:42<28:14,  7.88s/it][A
+                                                 [A
+{'loss': '-0.005783', 'grad_norm': '0', 'learning_rate': '5.4e-06', 'num_tokens': '2.85e+05', 'completions/mean_length': '85.6', 'completions/min_length': '76.2', 'completions/max_length': '93.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '85.6', 'completions/min_terminated_length': '76.2', 'completions/max_terminated_length': '93.2', 'rewards/reward_fn/mean': '0.8258', 'rewards/reward_fn/std': '0.0025', 'reward': '0.8258', 'reward_std': '0.0025', 'frac_reward_zero_std': '0.8', 'entropy': '0.2329', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.089', 'epoch': '1.85'}
+ 46%|████▋     | 185/400 [25:42<28:14,  7.88s/it][A
+ 46%|████▋     | 186/400 [25:48<25:47,  7.23s/it][A
+ 47%|████▋     | 187/400 [25:55<24:55,  7.02s/it][A
+ 47%|████▋     | 188/400 [26:12<35:46, 10.13s/it][A
+ 47%|████▋     | 189/400 [26:18<31:05,  8.84s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '5.275e-06', 'num_tokens': '2.927e+05', 'completions/mean_length': '88.2', 'completions/min_length': '83.6', 'completions/max_length': '95.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '88.2', 'completions/min_terminated_length': '83.6', 'completions/max_terminated_length': '95.4', 'rewards/reward_fn/mean': '0.7212', 'rewards/reward_fn/std': '0', 'reward': '0.7212', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.09522', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.221', 'epoch': '1.9'}
+ 48%|████▊     | 190/400 [26:24<28:03,  8.02s/it][A
+                                                 [A
+ 48%|████▊     | 190/400 [26:24<28:03,  8.02s/it][A
+ 48%|████▊     | 191/400 [26:37<32:47,  9.41s/it][A
+ 48%|████▊     | 192/400 [26:43<29:51,  8.62s/it][A
+ 48%|████▊     | 193/400 [26:49<26:49,  7.78s/it][A
+ 48%|████▊     | 194/400 [26:58<27:44,  8.08s/it][A
+{'loss': '-0.006258', 'grad_norm': '0', 'learning_rate': '5.15e-06', 'num_tokens': '3.004e+05', 'completions/mean_length': '83.95', 'completions/min_length': '77.2', 'completions/max_length': '92.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '83.95', 'completions/min_terminated_length': '77.2', 'completions/max_terminated_length': '92.2', 'rewards/reward_fn/mean': '0.5659', 'rewards/reward_fn/std': '0.1003', 'reward': '0.5659', 'reward_std': '0.1003', 'frac_reward_zero_std': '0.6', 'entropy': '0.2052', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.975', 'epoch': '1.95'}
+ 49%|████▉     | 195/400 [27:04<25:46,  7.55s/it][A
+                                                 [A
+ 49%|████▉     | 195/400 [27:04<25:46,  7.55s/it][A
+ 49%|████▉     | 196/400 [27:11<24:35,  7.23s/it][A
+ 49%|████▉     | 197/400 [27:18<24:14,  7.16s/it][A
+ 50%|████▉     | 198/400 [27:24<23:32,  6.99s/it][A
+ 50%|████▉     | 199/400 [27:31<22:34,  6.74s/it][A
+{'loss': '0.006363', 'grad_norm': '0', 'learning_rate': '5.025e-06', 'num_tokens': '3.075e+05', 'completions/mean_length': '68', 'completions/min_length': '65.2', 'completions/max_length': '73', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '68', 'completions/min_terminated_length': '65.2', 'completions/max_terminated_length': '73', 'rewards/reward_fn/mean': '0.4731', 'rewards/reward_fn/std': '0.00375', 'reward': '0.4731', 'reward_std': '0.00375', 'frac_reward_zero_std': '0.8', 'entropy': '0.101', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.453', 'epoch': '2'}
+ 50%|█████     | 200/400 [27:37<22:09,  6.65s/it][A
+                                                 [A
+ 50%|█████     | 200/400 [27:37<22:09,  6.65s/it][A
+ 50%|█████     | 201/400 [27:44<21:58,  6.62s/it][A
+ 50%|█████     | 202/400 [27:52<23:10,  7.02s/it][A
+ 51%|█████     | 203/400 [27:58<22:15,  6.78s/it][A
+ 51%|█████     | 204/400 [28:04<21:13,  6.50s/it][A
+ 51%|█████▏    | 205/400 [28:09<20:28,  6.30s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.9e-06', 'num_tokens': '3.149e+05', 'completions/mean_length': '68.2', 'completions/min_length': '66', 'completions/max_length': '70', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '68.2', 'completions/min_terminated_length': '66', 'completions/max_terminated_length': '70', 'rewards/reward_fn/mean': '0.4095', 'rewards/reward_fn/std': '0', 'reward': '0.4095', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.09954', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.283', 'epoch': '2.05'}
+ 51%|█████▏    | 205/400 [28:09<20:28,  6.30s/it][A
+ 52%|█████▏    | 206/400 [28:15<19:39,  6.08s/it][A
+ 52%|█████▏    | 207/400 [28:21<19:26,  6.04s/it][A
+ 52%|█████▏    | 208/400 [28:27<19:38,  6.14s/it][A
+ 52%|█████▏    | 209/400 [28:34<19:42,  6.19s/it][A
+ 52%|█████▎    | 210/400 [28:40<20:14,  6.39s/it][A
+                                                 [A
+{'loss': '-0.05172', 'grad_norm': '1.107', 'learning_rate': '4.775e-06', 'num_tokens': '3.216e+05', 'completions/mean_length': '62.55', 'completions/min_length': '56', 'completions/max_length': '69.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '62.55', 'completions/min_terminated_length': '56', 'completions/max_terminated_length': '69.2', 'rewards/reward_fn/mean': '0.4795', 'rewards/reward_fn/std': '0.04907', 'reward': '0.4795', 'reward_std': '0.04907', 'frac_reward_zero_std': '0.8', 'entropy': '0.1156', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.14', 'epoch': '2.1'}
+ 52%|█████▎    | 210/400 [28:40<20:14,  6.39s/it][A
+ 53%|█████▎    | 211/400 [28:47<20:30,  6.51s/it][A
+ 53%|█████▎    | 212/400 [28:53<19:44,  6.30s/it][A
+ 53%|█████▎    | 213/400 [29:00<20:19,  6.52s/it][A
+ 54%|█████▎    | 214/400 [29:07<20:15,  6.53s/it][A
+ 54%|█████▍    | 215/400 [29:15<21:44,  7.05s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.65e-06', 'num_tokens': '3.288e+05', 'completions/mean_length': '70.4', 'completions/min_length': '64.8', 'completions/max_length': '77', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '70.4', 'completions/min_terminated_length': '64.8', 'completions/max_terminated_length': '77', 'rewards/reward_fn/mean': '0.5748', 'rewards/reward_fn/std': '0', 'reward': '0.5748', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2073', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.807', 'epoch': '2.15'}
+ 54%|█████▍    | 215/400 [29:15<21:44,  7.05s/it][A
+ 54%|█████▍    | 216/400 [29:21<21:03,  6.86s/it][A
+ 54%|█████▍    | 217/400 [29:40<32:05, 10.52s/it][A
+ 55%|█████▍    | 218/400 [29:48<28:58,  9.55s/it][A
+ 55%|█████▍    | 219/400 [29:55<26:59,  8.95s/it][A
+{'loss': '-0.009522', 'grad_norm': '0', 'learning_rate': '4.525e-06', 'num_tokens': '3.377e+05', 'completions/mean_length': '120.2', 'completions/min_length': '102', 'completions/max_length': '141', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '120.2', 'completions/min_terminated_length': '102', 'completions/max_terminated_length': '141', 'rewards/reward_fn/mean': '0.3569', 'rewards/reward_fn/std': '0.09312', 'reward': '0.3569', 'reward_std': '0.09312', 'frac_reward_zero_std': '0.8', 'entropy': '0.167', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.65', 'epoch': '2.2'}
+ 55%|█████▌    | 220/400 [30:14<35:24, 11.80s/it][A
+                                                 [A
+ 55%|█████▌    | 220/400 [30:14<35:24, 11.80s/it][A
+ 55%|█████▌    | 221/400 [30:20<29:52, 10.01s/it][A
+ 56%|█████▌    | 222/400 [30:26<26:06,  8.80s/it][A
+ 56%|█████▌    | 223/400 [30:33<24:26,  8.29s/it][A
+ 56%|█████▌    | 224/400 [30:38<21:59,  7.49s/it][A
+ 56%|█████▋    | 225/400 [30:44<20:36,  7.07s/it][A
+                                                 [A
+{'loss': '-0.02288', 'grad_norm': '0', 'learning_rate': '4.4e-06', 'num_tokens': '3.45e+05', 'completions/mean_length': '64.65', 'completions/min_length': '61', 'completions/max_length': '67', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '64.65', 'completions/min_terminated_length': '61', 'completions/max_terminated_length': '67', 'rewards/reward_fn/mean': '0.63', 'rewards/reward_fn/std': '0.08679', 'reward': '0.63', 'reward_std': '0.08679', 'frac_reward_zero_std': '0.8', 'entropy': '0.08042', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.039', 'epoch': '2.25'}
+ 56%|█████▋    | 225/400 [30:44<20:36,  7.07s/it][A
+ 56%|█████▋    | 226/400 [30:51<20:35,  7.10s/it][A
+ 57%|█████▋    | 227/400 [30:57<19:30,  6.77s/it][A
+ 57%|█████▋    | 228/400 [31:06<20:43,  7.23s/it][A
+ 57%|█████▋    | 229/400 [31:12<19:18,  6.78s/it][A
+ 57%|█████▊    | 230/400 [31:22<22:04,  7.79s/it][A
+                                                 [A
+{'loss': '0.008162', 'grad_norm': '0.8004', 'learning_rate': '4.275e-06', 'num_tokens': '3.523e+05', 'completions/mean_length': '79.45', 'completions/min_length': '74', 'completions/max_length': '85.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '79.45', 'completions/min_terminated_length': '74', 'completions/max_terminated_length': '85.2', 'rewards/reward_fn/mean': '0.665', 'rewards/reward_fn/std': '0.015', 'reward': '0.665', 'reward_std': '0.015', 'frac_reward_zero_std': '0.4', 'entropy': '0.1686', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.381', 'epoch': '2.3'}
+ 57%|█████▊    | 230/400 [31:22<22:04,  7.79s/it][A
+ 58%|█████▊    | 231/400 [31:27<20:10,  7.16s/it][A
+ 58%|█████▊    | 232/400 [31:34<19:15,  6.88s/it][A
+ 58%|█████▊    | 233/400 [31:40<18:37,  6.69s/it][A
+ 58%|█████▊    | 234/400 [31:46<17:56,  6.48s/it][A
+ 59%|█████▉    | 235/400 [32:06<29:07, 10.59s/it][A
+                                                 [A
+{'loss': '-0.005739', 'grad_norm': '0.5098', 'learning_rate': '4.15e-06', 'num_tokens': '3.601e+05', 'completions/mean_length': '96.85', 'completions/min_length': '92.2', 'completions/max_length': '103.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '96.85', 'completions/min_terminated_length': '92.2', 'completions/max_terminated_length': '103.6', 'rewards/reward_fn/mean': '0.5173', 'rewards/reward_fn/std': '0.04716', 'reward': '0.5173', 'reward_std': '0.04716', 'frac_reward_zero_std': '0.8', 'entropy': '0.1008', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.777', 'epoch': '2.35'}
+ 59%|█████▉    | 235/400 [32:06<29:07, 10.59s/it][A
+ 59%|█████▉    | 236/400 [32:13<25:42,  9.41s/it][A
+ 59%|█████▉    | 237/400 [32:18<22:37,  8.33s/it][A
+ 60%|█████▉    | 238/400 [32:29<24:24,  9.04s/it][A
+ 60%|█████▉    | 239/400 [32:50<33:32, 12.50s/it][A
+ 60%|██████    | 240/400 [32:56<28:22, 10.64s/it][A
+{'loss': '0.06833', 'grad_norm': '0', 'learning_rate': '4.025e-06', 'num_tokens': '3.683e+05', 'completions/mean_length': '90', 'completions/min_length': '77.2', 'completions/max_length': '116.8', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '82.97', 'completions/min_terminated_length': '77.2', 'completions/max_terminated_length': '89.4', 'rewards/reward_fn/mean': '0.835', 'rewards/reward_fn/std': '0.0238', 'reward': '0.835', 'reward_std': '0.0238', 'frac_reward_zero_std': '0.8', 'entropy': '0.2626', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.908', 'epoch': '2.4'}
+                                                 [A
+ 60%|██████    | 240/400 [32:56<28:22, 10.64s/it][A
+ 60%|██████    | 241/400 [33:02<24:45,  9.34s/it][A
+ 60%|██████    | 242/400 [33:11<23:53,  9.07s/it][A
+ 61%|██████    | 243/400 [33:17<21:22,  8.17s/it][A
+ 61%|██████    | 244/400 [33:24<20:35,  7.92s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '3.9e-06', 'num_tokens': '3.758e+05', 'completions/mean_length': '82.7', 'completions/min_length': '77.8', 'completions/max_length': '86.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '82.7', 'completions/min_terminated_length': '77.8', 'completions/max_terminated_length': '86.2', 'rewards/reward_fn/mean': '0.676', 'rewards/reward_fn/std': '0', 'reward': '0.676', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.1453', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.488', 'epoch': '2.45'}
+ 61%|██████▏   | 245/400 [33:34<21:51,  8.46s/it][A
+                                                 [A
+ 61%|██████▏   | 245/400 [33:34<21:51,  8.46s/it][A
+ 62%|██████▏   | 246/400 [33:41<21:00,  8.18s/it][A
+ 62%|██████▏   | 247/400 [33:54<23:56,  9.39s/it][A
+ 62%|██████▏   | 248/400 [34:00<21:34,  8.51s/it][A
+ 62%|██████▏   | 249/400 [34:06<19:24,  7.71s/it][A
+{'loss': '-0.01875', 'grad_norm': '0', 'learning_rate': '3.775e-06', 'num_tokens': '3.834e+05', 'completions/mean_length': '83.15', 'completions/min_length': '70.4', 'completions/max_length': '91.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '83.15', 'completions/min_terminated_length': '70.4', 'completions/max_terminated_length': '91.6', 'rewards/reward_fn/mean': '0.6388', 'rewards/reward_fn/std': '0.06237', 'reward': '0.6388', 'reward_std': '0.06237', 'frac_reward_zero_std': '0.8', 'entropy': '0.2229', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.951', 'epoch': '2.5'}
+ 62%|██████▎   | 250/400 [34:14<19:36,  7.84s/it][A
+                                                 [A
+ 62%|██████▎   | 250/400 [34:14<19:36,  7.84s/it][A
+ 63%|██████▎   | 251/400 [34:20<18:23,  7.41s/it][A
+ 63%|██████▎   | 252/400 [34:27<17:23,  7.05s/it][A
+ 63%|██████▎   | 253/400 [34:36<19:02,  7.77s/it][A
+ 64%|██████▎   | 254/400 [34:43<18:09,  7.47s/it][A
+ 64%|██████▍   | 255/400 [34:54<20:37,  8.53s/it][A
+                                                 [A
+{'loss': '-0.02319', 'grad_norm': '0.6964', 'learning_rate': '3.65e-06', 'num_tokens': '3.908e+05', 'completions/mean_length': '82.25', 'completions/min_length': '72.4', 'completions/max_length': '91.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '82.25', 'completions/min_terminated_length': '72.4', 'completions/max_terminated_length': '91.6', 'rewards/reward_fn/mean': '0.7552', 'rewards/reward_fn/std': '0.03415', 'reward': '0.7552', 'reward_std': '0.03415', 'frac_reward_zero_std': '0.8', 'entropy': '0.1022', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.88', 'epoch': '2.55'}
+ 64%|██████▍   | 255/400 [34:54<20:37,  8.53s/it][A
+ 64%|██████▍   | 256/400 [35:00<19:02,  7.93s/it][A
+ 64%|██████▍   | 257/400 [35:07<18:05,  7.59s/it][A
+ 64%|██████▍   | 258/400 [35:14<17:33,  7.42s/it][A
+ 65%|██████▍   | 259/400 [35:34<25:54, 11.02s/it][A
+ 65%|██████▌   | 260/400 [35:40<22:10,  9.50s/it][A
+                                                 [A
+{'loss': '0.02049', 'grad_norm': '0', 'learning_rate': '3.525e-06', 'num_tokens': '3.987e+05', 'completions/mean_length': '94.2', 'completions/min_length': '81.6', 'completions/max_length': '105.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '94.2', 'completions/min_terminated_length': '81.6', 'completions/max_terminated_length': '105.6', 'rewards/reward_fn/mean': '0.4448', 'rewards/reward_fn/std': '0.1493', 'reward': '0.4448', 'reward_std': '0.1493', 'frac_reward_zero_std': '0.6', 'entropy': '0.1575', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.051', 'epoch': '2.6'}
+ 65%|██████▌   | 260/400 [35:40<22:10,  9.50s/it][A
+ 65%|██████▌   | 261/400 [35:47<20:16,  8.75s/it][A
+ 66%|██████▌   | 262/400 [35:54<18:52,  8.20s/it][A
+ 66%|██████▌   | 263/400 [35:59<16:57,  7.43s/it][A
+ 66%|██████▌   | 264/400 [36:17<23:51, 10.53s/it][A
+ 66%|██████▋   | 265/400 [36:24<21:21,  9.49s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '3.4e-06', 'num_tokens': '4.062e+05', 'completions/mean_length': '81.3', 'completions/min_length': '70.2', 'completions/max_length': '104.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '81.3', 'completions/min_terminated_length': '70.2', 'completions/max_terminated_length': '104.4', 'rewards/reward_fn/mean': '0.316', 'rewards/reward_fn/std': '0', 'reward': '0.316', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.1833', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.787', 'epoch': '2.65'}
+ 66%|██████▋   | 265/400 [36:24<21:21,  9.49s/it][A
+ 66%|██████▋   | 266/400 [36:38<23:52, 10.69s/it][A
+ 67%|██████▋   | 267/400 [36:48<23:36, 10.65s/it][A
+ 67%|██████▋   | 268/400 [36:56<21:43,  9.87s/it][A
+ 67%|██████▋   | 269/400 [37:16<28:00, 12.83s/it][A
+ 68%|██████▊   | 270/400 [37:22<23:20, 10.77s/it][A
+{'loss': '-0.03381', 'grad_norm': '0', 'learning_rate': '3.275e-06', 'num_tokens': '4.152e+05', 'completions/mean_length': '128.2', 'completions/min_length': '115', 'completions/max_length': '139', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '128.2', 'completions/min_terminated_length': '115', 'completions/max_terminated_length': '139', 'rewards/reward_fn/mean': '0.6702', 'rewards/reward_fn/std': '0.095', 'reward': '0.6702', 'reward_std': '0.095', 'frac_reward_zero_std': '0.6', 'entropy': '0.1374', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.46', 'epoch': '2.7'}
+                                                 [A
+ 68%|██████▊   | 270/400 [37:22<23:20, 10.77s/it][A
+ 68%|██████▊   | 271/400 [37:33<23:28, 10.92s/it][A
+ 68%|██████▊   | 272/400 [37:51<27:48, 13.04s/it][A
+ 68%|██████▊   | 273/400 [37:59<24:09, 11.41s/it][A
+ 68%|██████▊   | 274/400 [38:04<20:22,  9.70s/it][A
+ 69%|██████▉   | 275/400 [38:15<21:03, 10.11s/it][A
+                                                 [A
+{'loss': '0.01755', 'grad_norm': '0', 'learning_rate': '3.15e-06', 'num_tokens': '4.236e+05', 'completions/mean_length': '114.5', 'completions/min_length': '105.2', 'completions/max_length': '127.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '114.5', 'completions/min_terminated_length': '105.2', 'completions/max_terminated_length': '127.4', 'rewards/reward_fn/mean': '0.7822', 'rewards/reward_fn/std': '0.09312', 'reward': '0.7822', 'reward_std': '0.09312', 'frac_reward_zero_std': '0.8', 'entropy': '0.2052', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.63', 'epoch': '2.75'}
+ 69%|██████▉   | 275/400 [38:15<21:03, 10.11s/it][A
+ 69%|██████▉   | 276/400 [38:25<20:31,  9.93s/it][A
+ 69%|██████▉   | 277/400 [38:31<17:53,  8.73s/it][A
+ 70%|██████▉   | 278/400 [38:38<16:26,  8.09s/it][A
+ 70%|██████▉   | 279/400 [38:55<21:54, 10.86s/it][A
+ 70%|███████   | 280/400 [39:03<19:52,  9.93s/it][A
+                                                 [A
+{'loss': '0.01179', 'grad_norm': '0.9924', 'learning_rate': '3.025e-06', 'num_tokens': '4.313e+05', 'completions/mean_length': '97.9', 'completions/min_length': '88.8', 'completions/max_length': '110.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '97.9', 'completions/min_terminated_length': '88.8', 'completions/max_terminated_length': '110.4', 'rewards/reward_fn/mean': '0.8045', 'rewards/reward_fn/std': '0.005773', 'reward': '0.8045', 'reward_std': '0.005773', 'frac_reward_zero_std': '0.8', 'entropy': '0.2309', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.338', 'epoch': '2.8'}
+ 70%|███████   | 280/400 [39:03<19:52,  9.93s/it][A
+ 70%|███████   | 281/400 [39:11<18:58,  9.57s/it][A
+ 70%|███████   | 282/400 [39:23<20:05, 10.21s/it][A
+ 71%|███████   | 283/400 [39:44<26:03, 13.36s/it][A
+ 71%|███████   | 284/400 [39:57<26:00, 13.45s/it][A
+ 71%|███████▏  | 285/400 [40:04<21:54, 11.43s/it][A
+                                                 [A
+{'loss': '0.02661', 'grad_norm': '0', 'learning_rate': '2.9e-06', 'num_tokens': '4.4e+05', 'completions/mean_length': '129.1', 'completions/min_length': '109.4', 'completions/max_length': '148', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '125.6', 'completions/min_terminated_length': '109.4', 'completions/max_terminated_length': '142.2', 'rewards/reward_fn/mean': '0.412', 'rewards/reward_fn/std': '0.03472', 'reward': '0.412', 'reward_std': '0.03472', 'frac_reward_zero_std': '0.8', 'entropy': '0.1586', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '12.2', 'epoch': '2.85'}
+ 71%|███████▏  | 285/400 [40:04<21:54, 11.43s/it][A
+ 72%|███████▏  | 286/400 [40:10<18:44,  9.86s/it][A
+ 72%|███████▏  | 287/400 [40:16<16:20,  8.68s/it][A
+ 72%|███████▏  | 288/400 [40:23<14:59,  8.03s/it][A
+ 72%|███████▏  | 289/400 [40:29<14:07,  7.63s/it][A
+ 72%|███████▎  | 290/400 [40:37<13:49,  7.54s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '2.775e-06', 'num_tokens': '4.479e+05', 'completions/mean_length': '65.85', 'completions/min_length': '63.4', 'completions/max_length': '69.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '65.85', 'completions/min_terminated_length': '63.4', 'completions/max_terminated_length': '69.8', 'rewards/reward_fn/mean': '0.5312', 'rewards/reward_fn/std': '0', 'reward': '0.5312', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.09552', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.446', 'epoch': '2.9'}
+ 72%|███████▎  | 290/400 [40:37<13:49,  7.54s/it][A
+ 73%|███████▎  | 291/400 [40:57<20:34, 11.33s/it][A
+ 73%|███████▎  | 292/400 [41:06<19:05, 10.60s/it][A
+ 73%|███████▎  | 293/400 [41:14<17:19,  9.71s/it][A
+ 74%|███████▎  | 294/400 [41:21<15:44,  8.91s/it][A
+ 74%|███████▍  | 295/400 [41:28<14:44,  8.43s/it][A
+                                                 [A
+{'loss': '0.03564', 'grad_norm': '0', 'learning_rate': '2.65e-06', 'num_tokens': '4.557e+05', 'completions/mean_length': '96.9', 'completions/min_length': '81', 'completions/max_length': '120.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '96.9', 'completions/min_terminated_length': '81', 'completions/max_terminated_length': '120.2', 'rewards/reward_fn/mean': '0.66', 'rewards/reward_fn/std': '0.035', 'reward': '0.66', 'reward_std': '0.035', 'frac_reward_zero_std': '0.8', 'entropy': '0.2404', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.11', 'epoch': '2.95'}
+ 74%|███████▍  | 295/400 [41:28<14:44,  8.43s/it][A
+ 74%|███████▍  | 296/400 [41:34<13:17,  7.67s/it][A
+ 74%|███████▍  | 297/400 [41:41<12:49,  7.47s/it][A
+ 74%|███████▍  | 298/400 [41:47<12:07,  7.13s/it][A
+ 75%|███████▍  | 299/400 [41:54<11:59,  7.12s/it][A
+ 75%|███████▌  | 300/400 [42:01<11:40,  7.00s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '2.525e-06', 'num_tokens': '4.633e+05', 'completions/mean_length': '66.35', 'completions/min_length': '60.8', 'completions/max_length': '71.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '66.35', 'completions/min_terminated_length': '60.8', 'completions/max_terminated_length': '71.6', 'rewards/reward_fn/mean': '0.5077', 'rewards/reward_fn/std': '0', 'reward': '0.5077', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.1289', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.481', 'epoch': '3'}
+                                                 [A
+ 75%|███████▌  | 300/400 [42:01<11:40,  7.00s/it][A
+ 75%|███████▌  | 301/400 [42:22<18:27, 11.19s/it][A
+ 76%|███████▌  | 302/400 [42:32<17:51, 10.94s/it][A
+ 76%|███████▌  | 303/400 [42:38<15:15,  9.44s/it][A
+ 76%|███████▌  | 304/400 [42:45<13:41,  8.56s/it][A
+{'loss': '0.01304', 'grad_norm': '0', 'learning_rate': '2.4e-06', 'num_tokens': '4.715e+05', 'completions/mean_length': '103.8', 'completions/min_length': '85.8', 'completions/max_length': '116.2', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '100.7', 'completions/min_terminated_length': '85.8', 'completions/max_terminated_length': '114.2', 'rewards/reward_fn/mean': '0.446', 'rewards/reward_fn/std': '0.0836', 'reward': '0.446', 'reward_std': '0.0836', 'frac_reward_zero_std': '0.6', 'entropy': '0.149', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.686', 'epoch': '3.05'}
+ 76%|███████▋  | 305/400 [42:50<12:12,  7.71s/it][A
+                                                 [A
+ 76%|███████▋  | 305/400 [42:50<12:12,  7.71s/it][A
+ 76%|███████▋  | 306/400 [42:57<11:40,  7.45s/it][A
+ 77%|███████▋  | 307/400 [43:05<11:53,  7.67s/it][A
+ 77%|███████▋  | 308/400 [43:14<11:59,  7.82s/it][A
+ 77%|███████▋  | 309/400 [43:20<11:02,  7.28s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '2.275e-06', 'num_tokens': '4.79e+05', 'completions/mean_length': '66.05', 'completions/min_length': '58.6', 'completions/max_length': '78.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '66.05', 'completions/min_terminated_length': '58.6', 'completions/max_terminated_length': '78.6', 'rewards/reward_fn/mean': '0.5', 'rewards/reward_fn/std': '0', 'reward': '0.5', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2268', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.899', 'epoch': '3.1'}
+ 78%|███████▊  | 310/400 [43:25<10:12,  6.81s/it][A
+                                                 [A
+ 78%|███████▊  | 310/400 [43:25<10:12,  6.81s/it][A
+ 78%|███████▊  | 311/400 [43:33<10:34,  7.12s/it][A
+ 78%|███████▊  | 312/400 [43:40<10:29,  7.16s/it][A
+ 78%|███████▊  | 313/400 [43:47<09:57,  6.87s/it][A
+ 78%|███████▊  | 314/400 [43:56<10:46,  7.52s/it][A
+ 79%|███████▉  | 315/400 [44:02<10:02,  7.09s/it][A
+                                                 [A
+{'loss': '-0.03049', 'grad_norm': '0', 'learning_rate': '2.15e-06', 'num_tokens': '4.864e+05', 'completions/mean_length': '73.4', 'completions/min_length': '66', 'completions/max_length': '81.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '73.4', 'completions/min_terminated_length': '66', 'completions/max_terminated_length': '81.6', 'rewards/reward_fn/mean': '0.3318', 'rewards/reward_fn/std': '0.002417', 'reward': '0.3318', 'reward_std': '0.002417', 'frac_reward_zero_std': '0.8', 'entropy': '0.1102', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.195', 'epoch': '3.15'}
+ 79%|███████▉  | 315/400 [44:02<10:02,  7.09s/it][A
+ 79%|███████▉  | 316/400 [44:08<09:45,  6.97s/it][A
+ 79%|███████▉  | 317/400 [44:16<09:42,  7.02s/it][A
+ 80%|███████▉  | 318/400 [44:21<09:07,  6.68s/it][A
+ 80%|███████▉  | 319/400 [44:31<10:15,  7.60s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '2.025e-06', 'num_tokens': '4.943e+05', 'completions/mean_length': '75.05', 'completions/min_length': '69', 'completions/max_length': '79.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '75.05', 'completions/min_terminated_length': '69', 'completions/max_terminated_length': '79.4', 'rewards/reward_fn/mean': '0.985', 'rewards/reward_fn/std': '0', 'reward': '0.985', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.1333', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.003', 'epoch': '3.2'}
+ 80%|████████  | 320/400 [44:37<09:30,  7.13s/it][A
+                                                 [A
+ 80%|████████  | 320/400 [44:37<09:30,  7.13s/it][A
+ 80%|████████  | 321/400 [44:45<09:48,  7.45s/it][A
+ 80%|████████  | 322/400 [44:55<10:34,  8.13s/it][A
+ 81%|████████  | 323/400 [45:05<11:11,  8.73s/it][A
+ 81%|████████  | 324/400 [45:13<10:36,  8.38s/it][A
+ 81%|████████▏ | 325/400 [45:20<09:49,  7.86s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '1.9e-06', 'num_tokens': '5.021e+05', 'completions/mean_length': '82.25', 'completions/min_length': '70', 'completions/max_length': '97.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '82.25', 'completions/min_terminated_length': '70', 'completions/max_terminated_length': '97.2', 'rewards/reward_fn/mean': '0.77', 'rewards/reward_fn/std': '0', 'reward': '0.77', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.444', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.358', 'epoch': '3.25'}
+ 81%|████████▏ | 325/400 [45:20<09:49,  7.86s/it][A
+ 82%|████████▏ | 326/400 [45:26<09:14,  7.50s/it][A
+ 82%|████████▏ | 327/400 [45:33<08:49,  7.25s/it][A
+ 82%|████████▏ | 328/400 [45:41<09:11,  7.66s/it][A
+ 82%|████████▏ | 329/400 [45:51<09:39,  8.17s/it][A
+ 82%|████████▎ | 330/400 [46:06<12:06, 10.38s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '1.775e-06', 'num_tokens': '5.101e+05', 'completions/mean_length': '99.2', 'completions/min_length': '88.4', 'completions/max_length': '109.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '99.2', 'completions/min_terminated_length': '88.4', 'completions/max_terminated_length': '109.4', 'rewards/reward_fn/mean': '0.5522', 'rewards/reward_fn/std': '0', 'reward': '0.5522', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.268', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.274', 'epoch': '3.3'}
+ 82%|████████▎ | 330/400 [46:06<12:06, 10.38s/it][A
+ 83%|████████▎ | 331/400 [46:22<13:47, 12.00s/it][A
+ 83%|████████▎ | 332/400 [46:38<15:05, 13.31s/it][A
+ 83%|████████▎ | 333/400 [46:45<12:29, 11.19s/it][A
+ 84%|████████▎ | 334/400 [46:51<10:48,  9.83s/it][A
+{'loss': '-0.03268', 'grad_norm': '0', 'learning_rate': '1.65e-06', 'num_tokens': '5.193e+05', 'completions/mean_length': '128.4', 'completions/min_length': '112', 'completions/max_length': '141', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '128.4', 'completions/min_terminated_length': '112', 'completions/max_terminated_length': '141', 'rewards/reward_fn/mean': '0.672', 'rewards/reward_fn/std': '0.03833', 'reward': '0.672', 'reward_std': '0.03833', 'frac_reward_zero_std': '0.8', 'entropy': '0.15', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.84', 'epoch': '3.35'}
+ 84%|████████▍ | 335/400 [47:06<12:14, 11.29s/it][A
+                                                 [A
+ 84%|████████▍ | 335/400 [47:06<12:14, 11.29s/it][A
+ 84%|████████▍ | 336/400 [47:12<10:16,  9.63s/it][A
+ 84%|████████▍ | 337/400 [47:18<08:59,  8.57s/it][A
+ 84%|████████▍ | 338/400 [47:29<09:44,  9.43s/it][A
+ 85%|████████▍ | 339/400 [47:39<09:35,  9.43s/it][A
+ 85%|████████▌ | 340/400 [47:46<08:40,  8.67s/it][A
+                                                 [A
+{'loss': '-0.02119', 'grad_norm': '0', 'learning_rate': '1.525e-06', 'num_tokens': '5.269e+05', 'completions/mean_length': '81.55', 'completions/min_length': '73.4', 'completions/max_length': '90.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '81.55', 'completions/min_terminated_length': '73.4', 'completions/max_terminated_length': '90.8', 'rewards/reward_fn/mean': '0.5682', 'rewards/reward_fn/std': '0.03415', 'reward': '0.5682', 'reward_std': '0.03415', 'frac_reward_zero_std': '0.8', 'entropy': '0.1383', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.833', 'epoch': '3.4'}
+ 85%|████████▌ | 340/400 [47:46<08:40,  8.67s/it][A
+ 85%|████████▌ | 341/400 [47:57<09:14,  9.40s/it][A
+ 86%|████████▌ | 342/400 [48:04<08:27,  8.75s/it][A
+ 86%|████████▌ | 343/400 [48:18<09:52, 10.39s/it][A
+ 86%|████████▌ | 344/400 [48:25<08:35,  9.21s/it][A
+ 86%|████████▋ | 345/400 [48:30<07:28,  8.15s/it][A
+{'loss': '-0.01759', 'grad_norm': '0', 'learning_rate': '1.4e-06', 'num_tokens': '5.344e+05', 'completions/mean_length': '88.15', 'completions/min_length': '78', 'completions/max_length': '104.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '88.15', 'completions/min_terminated_length': '78', 'completions/max_terminated_length': '104.8', 'rewards/reward_fn/mean': '0.5003', 'rewards/reward_fn/std': '0.1097', 'reward': '0.5003', 'reward_std': '0.1097', 'frac_reward_zero_std': '0.6', 'entropy': '0.1933', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.843', 'epoch': '3.45'}
+                                                 [A
+ 86%|████████▋ | 345/400 [48:30<07:28,  8.15s/it][A
+ 86%|████████▋ | 346/400 [48:38<07:08,  7.94s/it][A
+ 87%|████████▋ | 347/400 [48:46<06:58,  7.89s/it][A
+ 87%|████████▋ | 348/400 [48:57<07:38,  8.82s/it][A
+ 87%|████████▋ | 349/400 [49:03<06:47,  7.98s/it][A
+{'loss': '0.03474', 'grad_norm': '0', 'learning_rate': '1.275e-06', 'num_tokens': '5.418e+05', 'completions/mean_length': '87.85', 'completions/min_length': '74.2', 'completions/max_length': '98', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '87.85', 'completions/min_terminated_length': '74.2', 'completions/max_terminated_length': '98', 'rewards/reward_fn/mean': '0.6675', 'rewards/reward_fn/std': '0.105', 'reward': '0.6675', 'reward_std': '0.105', 'frac_reward_zero_std': '0.6', 'entropy': '0.2087', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.304', 'epoch': '3.5'}
+ 88%|████████▊ | 350/400 [49:12<07:05,  8.50s/it][A
+                                                 [A
+ 88%|████████▊ | 350/400 [49:12<07:05,  8.50s/it][A
+ 88%|████████▊ | 351/400 [49:20<06:41,  8.19s/it][A
+ 88%|████████▊ | 352/400 [49:27<06:11,  7.75s/it][A
+ 88%|████████▊ | 353/400 [49:33<05:42,  7.29s/it][A
+ 88%|████████▊ | 354/400 [49:43<06:12,  8.09s/it][A
+{'loss': '-0.005328', 'grad_norm': '0.9494', 'learning_rate': '1.15e-06', 'num_tokens': '5.493e+05', 'completions/mean_length': '89.9', 'completions/min_length': '81.6', 'completions/max_length': '106.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '89.9', 'completions/min_terminated_length': '81.6', 'completions/max_terminated_length': '106.2', 'rewards/reward_fn/mean': '0.5675', 'rewards/reward_fn/std': '0.095', 'reward': '0.5675', 'reward_std': '0.095', 'frac_reward_zero_std': '0.8', 'entropy': '0.1637', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.967', 'epoch': '3.55'}
+ 89%|████████▉ | 355/400 [49:58<07:36, 10.14s/it][A
+                                                 [A
+ 89%|████████▉ | 355/400 [49:58<07:36, 10.14s/it][A
+ 89%|████████▉ | 356/400 [50:18<09:41, 13.22s/it][A
+ 89%|████████▉ | 357/400 [50:25<08:03, 11.25s/it][A
+ 90%|████████▉ | 358/400 [50:32<07:00, 10.02s/it][A
+ 90%|████████▉ | 359/400 [50:38<06:07,  8.96s/it][A
+{'loss': '0.05365', 'grad_norm': '0', 'learning_rate': '1.025e-06', 'num_tokens': '5.573e+05', 'completions/mean_length': '92.35', 'completions/min_length': '73.2', 'completions/max_length': '111.4', 'completions/clipped_ratio': '0.1', 'completions/mean_terminated_length': '78.5', 'completions/min_terminated_length': '73.2', 'completions/max_terminated_length': '85.4', 'rewards/reward_fn/mean': '0.357', 'rewards/reward_fn/std': '0.025', 'reward': '0.357', 'reward_std': '0.025', 'frac_reward_zero_std': '0.6', 'entropy': '0.1433', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.422', 'epoch': '3.6'}
+ 90%|█████████ | 360/400 [50:45<05:33,  8.34s/it][A
+                                                 [A
+ 90%|█████████ | 360/400 [50:45<05:33,  8.34s/it][A
+ 90%|█████████ | 361/400 [50:52<05:01,  7.74s/it][A
+ 90%|█████████ | 362/400 [51:02<05:25,  8.57s/it][A
+ 91%|█████████ | 363/400 [51:09<05:03,  8.20s/it][A
+ 91%|█████████ | 364/400 [51:16<04:34,  7.62s/it][A
+ 91%|█████████▏| 365/400 [51:22<04:09,  7.14s/it][A
+                                                 [A
+{'loss': '0.01351', 'grad_norm': '0', 'learning_rate': '9e-07', 'num_tokens': '5.643e+05', 'completions/mean_length': '76.7', 'completions/min_length': '71', 'completions/max_length': '82', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '76.7', 'completions/min_terminated_length': '71', 'completions/max_terminated_length': '82', 'rewards/reward_fn/mean': '0.9425', 'rewards/reward_fn/std': '0.1', 'reward': '0.9425', 'reward_std': '0.1', 'frac_reward_zero_std': '0.8', 'entropy': '0.1494', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.206', 'epoch': '3.65'}
+ 91%|█████████▏| 365/400 [51:22<04:09,  7.14s/it][A
+ 92%|█████████▏| 366/400 [51:34<04:58,  8.78s/it][A
+ 92%|█████████▏| 367/400 [51:41<04:26,  8.08s/it][A
+ 92%|█████████▏| 368/400 [51:50<04:32,  8.53s/it][A
+ 92%|█████████▏| 369/400 [51:56<04:00,  7.76s/it][A
+ 92%|█████████▎| 370/400 [52:02<03:37,  7.26s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '7.75e-07', 'num_tokens': '5.723e+05', 'completions/mean_length': '88.25', 'completions/min_length': '85.6', 'completions/max_length': '92.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '88.25', 'completions/min_terminated_length': '85.6', 'completions/max_terminated_length': '92.2', 'rewards/reward_fn/mean': '0.4602', 'rewards/reward_fn/std': '0', 'reward': '0.4602', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.09767', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.045', 'epoch': '3.7'}
+ 92%|█████████▎| 370/400 [52:02<03:37,  7.26s/it][A
+ 93%|█████████▎| 371/400 [52:09<03:25,  7.08s/it][A
+ 93%|█████████▎| 372/400 [52:16<03:18,  7.08s/it][A
+ 93%|█████████▎| 373/400 [52:29<03:56,  8.78s/it][A
+ 94%|█████████▎| 374/400 [52:37<03:42,  8.56s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '6.5e-07', 'num_tokens': '5.797e+05', 'completions/mean_length': '84.25', 'completions/min_length': '77.8', 'completions/max_length': '95', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '84.25', 'completions/min_terminated_length': '77.8', 'completions/max_terminated_length': '95', 'rewards/reward_fn/mean': '0.651', 'rewards/reward_fn/std': '0', 'reward': '0.651', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.1207', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.211', 'epoch': '3.75'}
+ 94%|█████████▍| 375/400 [52:44<03:21,  8.08s/it][A
+                                                 [A
+ 94%|█████████▍| 375/400 [52:44<03:21,  8.08s/it][A
+ 94%|█████████▍| 376/400 [53:00<04:09, 10.40s/it][A
+ 94%|█████████▍| 377/400 [53:06<03:27,  9.03s/it][A
+ 94%|█████████▍| 378/400 [53:12<03:03,  8.34s/it][A
+ 95%|█████████▍| 379/400 [53:30<03:57, 11.32s/it][A
+{'loss': '0.01007', 'grad_norm': '0', 'learning_rate': '5.25e-07', 'num_tokens': '5.884e+05', 'completions/mean_length': '116.2', 'completions/min_length': '107', 'completions/max_length': '126.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '116.2', 'completions/min_terminated_length': '107', 'completions/max_terminated_length': '126.4', 'rewards/reward_fn/mean': '0.2393', 'rewards/reward_fn/std': '0.07222', 'reward': '0.2393', 'reward_std': '0.07222', 'frac_reward_zero_std': '0.6', 'entropy': '0.1168', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.54', 'epoch': '3.8'}
+ 95%|█████████▌| 380/400 [53:37<03:17,  9.89s/it][A
+                                                 [A
+ 95%|█████████▌| 380/400 [53:37<03:17,  9.89s/it][A
+ 95%|█████████▌| 381/400 [53:43<02:46,  8.78s/it][A
+ 96%|█████████▌| 382/400 [53:50<02:26,  8.15s/it][A
+ 96%|█████████▌| 383/400 [53:57<02:12,  7.78s/it][A
+ 96%|█████████▌| 384/400 [54:04<02:00,  7.56s/it][A
+ 96%|█████████▋| 385/400 [54:17<02:16,  9.08s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4e-07', 'num_tokens': '5.958e+05', 'completions/mean_length': '82.9', 'completions/min_length': '73.8', 'completions/max_length': '89.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '82.9', 'completions/min_terminated_length': '73.8', 'completions/max_terminated_length': '89.6', 'rewards/reward_fn/mean': '0.6568', 'rewards/reward_fn/std': '0', 'reward': '0.6568', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.1991', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '7.808', 'epoch': '3.85'}
+ 96%|█████████▋| 385/400 [54:17<02:16,  9.08s/it][A
+ 96%|█████████▋| 386/400 [54:23<01:57,  8.39s/it][A
+ 97%|█████████▋| 387/400 [54:31<01:45,  8.15s/it][A
+ 97%|█████████▋| 388/400 [54:38<01:33,  7.80s/it][A
+ 97%|█████████▋| 389/400 [54:51<01:41,  9.26s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '2.75e-07', 'num_tokens': '6.036e+05', 'completions/mean_length': '85.8', 'completions/min_length': '80.2', 'completions/max_length': '95.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '85.8', 'completions/min_terminated_length': '80.2', 'completions/max_terminated_length': '95.2', 'rewards/reward_fn/mean': '0.82', 'rewards/reward_fn/std': '0', 'reward': '0.82', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.1328', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.138', 'epoch': '3.9'}
+ 98%|█████████▊| 390/400 [54:58<01:26,  8.69s/it][A
+                                                 [A
+ 98%|█████████▊| 390/400 [54:58<01:26,  8.69s/it][A
+ 98%|█████████▊| 391/400 [55:05<01:13,  8.18s/it][A
+ 98%|█████████▊| 392/400 [55:11<01:00,  7.56s/it][A
+ 98%|█████████▊| 393/400 [55:18<00:50,  7.27s/it][A
+ 98%|█████████▊| 394/400 [55:38<01:07, 11.25s/it][A
+{'loss': '0.006491', 'grad_norm': '0', 'learning_rate': '1.5e-07', 'num_tokens': '6.117e+05', 'completions/mean_length': '103.5', 'completions/min_length': '98.2', 'completions/max_length': '108', 'completions/clipped_ratio': '0.1', 'completions/mean_terminated_length': '101.7', 'completions/min_terminated_length': '98.2', 'completions/max_terminated_length': '106.2', 'rewards/reward_fn/mean': '0.609', 'rewards/reward_fn/std': '0.08314', 'reward': '0.609', 'reward_std': '0.08314', 'frac_reward_zero_std': '0.8', 'entropy': '0.1081', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.155', 'epoch': '3.95'}
+ 99%|█████████▉| 395/400 [55:44<00:48,  9.67s/it][A
+                                                 [A
+ 99%|█████████▉| 395/400 [55:44<00:48,  9.67s/it][A
+ 99%|█████████▉| 396/400 [55:51<00:34,  8.69s/it][A
+ 99%|█████████▉| 397/400 [55:58<00:25,  8.36s/it][A
+100%|█████████▉| 398/400 [56:04<00:15,  7.67s/it][A
+100%|█████████▉| 399/400 [56:11<00:07,  7.42s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '2.5e-08', 'num_tokens': '6.192e+05', 'completions/mean_length': '67.95', 'completions/min_length': '64.6', 'completions/max_length': '74.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '67.95', 'completions/min_terminated_length': '64.6', 'completions/max_terminated_length': '74.4', 'rewards/reward_fn/mean': '0.4744', 'rewards/reward_fn/std': '0', 'reward': '0.4744', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.1031', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '6.717', 'epoch': '4'}
+100%|██████████| 400/400 [56:18<00:00,  7.34s/it][A
+                                                 [A
+100%|██████████| 400/400 [56:18<00:00,  7.34s/it][A
+                                                 [A
+{'train_runtime': '3379', 'train_samples_per_second': '0.118', 'train_steps_per_second': '0.118', 'train_loss': '-0.001725', 'epoch': '4'}
+* Run finished. Uploading logs to Trackio (please wait...)
+Round 1 complete. Loss: -0.0017
+100%|██████████| 400/400 [56:19<00:00,  7.34s/it][A100%|██████████| 400/400 [56:19<00:00,  8.45s/it]
+
+======================================================================
+ROUND 1 EVALUATION
+======================================================================
+
+----------------------------------------------------------------------
+ROUND 1 (40 scenarios)
+----------------------------------------------------------------------
+  Scenario   1 | ['get_weather']                          | reward=1.00
+  Scenario   2 | ['search_flights']                       | reward=0.95
+  Scenario   3 | ['send_slack_message']                   | reward=1.00
+  Scenario   4 | ['calculator']                           | reward=0.85
+  Scenario   5 | []                                       | reward=1.00
+  Scenario   6 | ['translate_text', 'send_email']         | reward=0.98
+  Scenario   7 | ['get_account_balance', 'calculator']    | reward=0.95
+  Scenario   8 | ['web_search']                           | reward=0.00
+  Scenario   9 | ['create_calendar_event', 'set_reminder'] | reward=0.15
+  Scenario  10 | ['get_stock_price', 'get_stock_price']   | reward=0.70
+  Scenario  11 | ['web_search', 'generate_summary']       | reward=0.93
+  Scenario  12 | []                                       | reward=1.00
+  Scenario  13 | ['get_weather', 'search_flights']        | reward=1.00
+  Scenario  14 | []                                       | reward=1.00
+  Scenario  15 | ['set_reminder']                         | reward=0.93
+  Scenario  16 | []                                       | reward=1.00
+  Scenario  17 | ['get_stock_price', 'calculator']        | reward=0.95
+  Scenario  18 | ['get_weather', 'send_slack_message']    | reward=0.96
+  Scenario  19 | ['web_search']                           | reward=0.00
+  Scenario  20 | ['file_read', 'generate_summary', 'send_email'] | reward=0.93
+  Scenario  21 | ['get_weather', 'translate_text', 'send_slack_message'] | reward=0.95
+  Scenario  22 | []                                       | reward=1.00
+  Scenario  23 | ['web_search']                           | reward=1.00
+  Scenario  24 | ['get_stock_price', 'get_stock_price', 'calculator'] | reward=0.64
+  Scenario  25 | ['get_weather']                          | reward=1.00
+  Scenario  26 | ['web_search', 'generate_summary', 'translate_text', 'send_email'] | reward=0.93
+  Scenario  27 | ['get_stock_price', 'get_stock_price', 'get_stock_price', 'calculator'] | reward=0.61
+  Scenario  28 | ['database_query']                       | reward=0.00
+  Scenario  29 | ['get_weather', 'get_weather', 'web_search'] | reward=0.36
+  Scenario  30 | []                                       | reward=1.00
+  Scenario  31 | ['file_read', 'calculator', 'send_email', 'send_slack_message'] | reward=0.93
+  Scenario  32 | ['search_flights', 'web_search']         | reward=0.90
+  Scenario  33 | ['get_account_balance', 'calculator', 'set_reminder'] | reward=0.93
+  Scenario  34 | ['translate_text', 'send_slack_message'] | reward=0.22
+  Scenario  35 | ['database_query']                       | reward=0.00
+  Scenario  36 | ['get_weather']                          | reward=1.00
+  Scenario  37 | ['get_weather', 'get_weather', 'search_flights', 'calculator', 'send_email'] | reward=0.72
+  Scenario  38 | []                                       | reward=0.00
+  Scenario  39 | ['web_search', 'generate_summary', 'translate_text', 'file_write'] | reward=0.89
+  Scenario  40 | []                                       | reward=0.00
+
+ROUND 1: avg_reward=0.734, accuracy=70.0%
+Improvement over baseline: +0.169
+
+======================================================================
+BUILDING MEMORY FROM ROUND 1 EXPERIENCES
+======================================================================
+
+modules.json:   0%|          | 0.00/349 [00:00<?, ?B/s][Amodules.json: 100%|██████████| 349/349 [00:00<00:00, 2.83MB/s]
+
+config_sentence_transformers.json:   0%|          | 0.00/116 [00:00<?, ?B/s][Aconfig_sentence_transformers.json: 100%|██████████| 116/116 [00:00<00:00, 857kB/s]
+
+README.md:   0%|          | 0.00/10.5k [00:00<?, ?B/s][AREADME.md: 100%|██████████| 10.5k/10.5k [00:00<00:00, 45.3MB/s]
+
+sentence_bert_config.json:   0%|          | 0.00/53.0 [00:00<?, ?B/s][Asentence_bert_config.json: 100%|██████████| 53.0/53.0 [00:00<00:00, 162kB/s]
+
+config.json:   0%|          | 0.00/612 [00:00<?, ?B/s][Aconfig.json: 100%|██████████| 612/612 [00:00<00:00, 5.31MB/s]
+
+model.safetensors:   0%|          | 0.00/90.9M [00:00<?, ?B/s][A
+model.safetensors:  74%|███████▎  | 67.0M/90.9M [00:01<00:00, 66.2MB/s][Amodel.safetensors: 100%|██████████| 90.9M/90.9M [00:01<00:00, 64.4MB/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 103/103 [00:00<00:00, 3584.19it/s]
+
+tokenizer_config.json:   0%|          | 0.00/350 [00:00<?, ?B/s][Atokenizer_config.json: 100%|██████████| 350/350 [00:00<00:00, 2.16MB/s]
+
+vocab.txt:   0%|          | 0.00/232k [00:00<?, ?B/s][Avocab.txt: 100%|██████████| 232k/232k [00:00<00:00, 38.2MB/s]
+
+tokenizer.json:   0%|          | 0.00/466k [00:00<?, ?B/s][Atokenizer.json: 100%|██████████| 466k/466k [00:00<00:00, 33.7MB/s]
+
+special_tokens_map.json:   0%|          | 0.00/112 [00:00<?, ?B/s][Aspecial_tokens_map.json: 100%|██████████| 112/112 [00:00<00:00, 1.03MB/s]
+
+config.json:   0%|          | 0.00/190 [00:00<?, ?B/s][Aconfig.json: 100%|██████████| 190/190 [00:00<00:00, 1.52MB/s]
+Stored 40 experiences in ChromaDB memory
+
+======================================================================
+ROUND 2: GRPO TRAINING (with memory lessons)
+======================================================================
+Round 2 dataset: 100 examples (with memory lessons)
+Training Round 2 on 100 scenarios...
+* Created new run: brave-forest-1
+
+  0%|          | 0/400 [00:00<?, ?it/s][A
+  0%|          | 1/400 [00:08<56:25,  8.48s/it][A
+  0%|          | 2/400 [00:16<54:40,  8.24s/it][A
+  1%|          | 3/400 [00:24<52:45,  7.97s/it][A
+  1%|          | 4/400 [00:33<56:52,  8.62s/it][A
+{'loss': '-0.004965', 'grad_norm': '0.6974', 'learning_rate': '4.95e-06', 'num_tokens': '9834', 'completions/mean_length': '80.5', 'completions/min_length': '70.2', 'completions/max_length': '95.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '80.5', 'completions/min_terminated_length': '70.2', 'completions/max_terminated_length': '95.2', 'rewards/reward_fn/mean': '0.5109', 'rewards/reward_fn/std': '0.005', 'reward': '0.5109', 'reward_std': '0.005', 'frac_reward_zero_std': '0.8', 'entropy': '0.2533', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.485', 'epoch': '0.05'}
+  1%|▏         | 5/400 [00:43<58:08,  8.83s/it][A
+                                               [A
+  1%|▏         | 5/400 [00:43<58:08,  8.83s/it][A
+  2%|▏         | 6/400 [00:50<55:49,  8.50s/it][A
+  2%|▏         | 7/400 [00:59<55:03,  8.41s/it][A
+  2%|▏         | 8/400 [01:07<54:11,  8.29s/it][A
+  2%|▏         | 9/400 [01:16<55:20,  8.49s/it][A
+  2%|▎         | 10/400 [01:28<1:03:32,  9.78s/it][A
+                                                  [A
+{'loss': '-0.007771', 'grad_norm': '0.8875', 'learning_rate': '4.888e-06', 'num_tokens': '1.994e+04', 'completions/mean_length': '90.3', 'completions/min_length': '79.6', 'completions/max_length': '102.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '90.3', 'completions/min_terminated_length': '79.6', 'completions/max_terminated_length': '102.8', 'rewards/reward_fn/mean': '0.8562', 'rewards/reward_fn/std': '0.0025', 'reward': '0.8562', 'reward_std': '0.0025', 'frac_reward_zero_std': '0.8', 'entropy': '0.2521', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.025', 'epoch': '0.1'}
+  2%|▎         | 10/400 [01:28<1:03:32,  9.78s/it][A
+  3%|▎         | 11/400 [01:38<1:02:47,  9.68s/it][A
+  3%|▎         | 12/400 [01:46<1:00:45,  9.40s/it][A
+  3%|▎         | 13/400 [01:55<59:23,  9.21s/it]  [A
+  4%|▎         | 14/400 [02:03<56:16,  8.75s/it][A
+  4%|▍         | 15/400 [02:12<56:04,  8.74s/it][A
+                                                [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.825e-06', 'num_tokens': '2.979e+04', 'completions/mean_length': '86.05', 'completions/min_length': '70.8', 'completions/max_length': '95.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '86.05', 'completions/min_terminated_length': '70.8', 'completions/max_terminated_length': '95.4', 'rewards/reward_fn/mean': '0.6312', 'rewards/reward_fn/std': '0', 'reward': '0.6312', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.444', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.566', 'epoch': '0.15'}
+  4%|▍         | 15/400 [02:12<56:04,  8.74s/it][A
+  4%|▍         | 16/400 [02:24<1:02:16,  9.73s/it][A
+  4%|▍         | 17/400 [02:32<59:55,  9.39s/it]  [A
+  4%|▍         | 18/400 [02:49<1:13:33, 11.55s/it][A
+  5%|▍         | 19/400 [03:00<1:12:59, 11.49s/it][A
+  5%|▌         | 20/400 [03:12<1:12:47, 11.49s/it][A
+                                                  [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.763e-06', 'num_tokens': '4.097e+04', 'completions/mean_length': '120.3', 'completions/min_length': '105.8', 'completions/max_length': '139.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '120.3', 'completions/min_terminated_length': '105.8', 'completions/max_terminated_length': '139.4', 'rewards/reward_fn/mean': '0.6529', 'rewards/reward_fn/std': '0', 'reward': '0.6529', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2991', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.89', 'epoch': '0.2'}
+  5%|▌         | 20/400 [03:12<1:12:47, 11.49s/it][A
+  5%|▌         | 21/400 [03:21<1:08:10, 10.79s/it][A
+  6%|▌         | 22/400 [03:30<1:04:31, 10.24s/it][A
+  6%|▌         | 23/400 [03:39<1:02:11,  9.90s/it][A
+  6%|▌         | 24/400 [03:47<57:48,  9.22s/it]  [A
+  6%|▋         | 25/400 [04:02<1:08:29, 10.96s/it][A
+                                                  [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.7e-06', 'num_tokens': '5.13e+04', 'completions/mean_length': '99.65', 'completions/min_length': '87.6', 'completions/max_length': '112.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '99.65', 'completions/min_terminated_length': '87.6', 'completions/max_terminated_length': '112.6', 'rewards/reward_fn/mean': '0.499', 'rewards/reward_fn/std': '0', 'reward': '0.499', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.3209', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.855', 'epoch': '0.25'}
+  6%|▋         | 25/400 [04:02<1:08:29, 10.96s/it][A
+  6%|▋         | 26/400 [04:21<1:24:03, 13.49s/it][A
+  7%|▋         | 27/400 [04:33<1:21:02, 13.04s/it][A
+  7%|▋         | 28/400 [04:42<1:13:21, 11.83s/it][A
+  7%|▋         | 29/400 [04:50<1:05:54, 10.66s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.638e-06', 'num_tokens': '6.214e+04', 'completions/mean_length': '113.7', 'completions/min_length': '102.4', 'completions/max_length': '131', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '113.7', 'completions/min_terminated_length': '102.4', 'completions/max_terminated_length': '131', 'rewards/reward_fn/mean': '0.576', 'rewards/reward_fn/std': '0', 'reward': '0.576', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2612', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.29', 'epoch': '0.3'}
+  8%|▊         | 30/400 [04:59<1:02:12, 10.09s/it][A
+                                                  [A
+  8%|▊         | 30/400 [04:59<1:02:12, 10.09s/it][A
+  8%|▊         | 31/400 [05:17<1:17:45, 12.64s/it][A
+  8%|▊         | 32/400 [05:25<1:08:49, 11.22s/it][A
+  8%|▊         | 33/400 [05:33<1:03:17, 10.35s/it][A
+  8%|▊         | 34/400 [05:44<1:03:18, 10.38s/it][A
+  9%|▉         | 35/400 [05:53<1:00:57, 10.02s/it][A
+                                                  [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.575e-06', 'num_tokens': '7.318e+04', 'completions/mean_length': '106.8', 'completions/min_length': '90.8', 'completions/max_length': '123.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '106.8', 'completions/min_terminated_length': '90.8', 'completions/max_terminated_length': '123.2', 'rewards/reward_fn/mean': '0.672', 'rewards/reward_fn/std': '0', 'reward': '0.672', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.278', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.76', 'epoch': '0.35'}
+  9%|▉         | 35/400 [05:53<1:00:57, 10.02s/it][A
+  9%|▉         | 36/400 [06:01<57:09,  9.42s/it]  [A
+  9%|▉         | 37/400 [06:10<55:47,  9.22s/it][A
+ 10%|▉         | 38/400 [06:20<57:42,  9.57s/it][A
+ 10%|▉         | 39/400 [06:29<55:22,  9.20s/it][A
+ 10%|█         | 40/400 [06:36<52:47,  8.80s/it][A
+                                                [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.513e-06', 'num_tokens': '8.298e+04', 'completions/mean_length': '87.45', 'completions/min_length': '77.4', 'completions/max_length': '96', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '87.45', 'completions/min_terminated_length': '77.4', 'completions/max_terminated_length': '96', 'rewards/reward_fn/mean': '0.597', 'rewards/reward_fn/std': '0', 'reward': '0.597', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2665', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.558', 'epoch': '0.4'}
+ 10%|█         | 40/400 [06:36<52:47,  8.80s/it][A
+ 10%|█         | 41/400 [06:44<50:07,  8.38s/it][A
+ 10%|█         | 42/400 [06:52<49:51,  8.36s/it][A
+ 11%|█         | 43/400 [07:01<50:54,  8.56s/it][A
+ 11%|█         | 44/400 [07:10<50:52,  8.57s/it][A
+ 11%|█▏        | 45/400 [07:21<55:14,  9.34s/it][A
+                                                [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.45e-06', 'num_tokens': '9.293e+04', 'completions/mean_length': '86.65', 'completions/min_length': '78.4', 'completions/max_length': '98.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '86.65', 'completions/min_terminated_length': '78.4', 'completions/max_terminated_length': '98.4', 'rewards/reward_fn/mean': '0.62', 'rewards/reward_fn/std': '0', 'reward': '0.62', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2831', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.778', 'epoch': '0.45'}
+ 11%|█▏        | 45/400 [07:21<55:14,  9.34s/it][A
+ 12%|█▏        | 46/400 [07:33<1:00:30, 10.25s/it][A
+ 12%|█▏        | 47/400 [07:46<1:03:51, 10.85s/it][A
+ 12%|█▏        | 48/400 [08:00<1:10:05, 11.95s/it][A
+ 12%|█▏        | 49/400 [08:09<1:05:01, 11.12s/it][A
+{'loss': '0.02678', 'grad_norm': '0', 'learning_rate': '4.387e-06', 'num_tokens': '1.031e+05', 'completions/mean_length': '101.5', 'completions/min_length': '86', 'completions/max_length': '130.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '101.5', 'completions/min_terminated_length': '86', 'completions/max_terminated_length': '130.2', 'rewards/reward_fn/mean': '0.567', 'rewards/reward_fn/std': '0.09', 'reward': '0.567', 'reward_std': '0.09', 'frac_reward_zero_std': '0.8', 'entropy': '0.3683', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.15', 'epoch': '0.5'}
+ 12%|█▎        | 50/400 [08:17<59:24, 10.19s/it]  [A
+                                                [A
+ 12%|█▎        | 50/400 [08:17<59:24, 10.19s/it][A
+ 13%|█▎        | 51/400 [08:32<1:06:39, 11.46s/it][A
+ 13%|█▎        | 52/400 [08:39<59:48, 10.31s/it]  [A
+ 13%|█▎        | 53/400 [08:47<54:34,  9.44s/it][A
+ 14%|█▎        | 54/400 [09:03<1:05:40, 11.39s/it][A
+ 14%|█▍        | 55/400 [09:16<1:08:06, 11.85s/it][A
+                                                  [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.325e-06', 'num_tokens': '1.14e+05', 'completions/mean_length': '127.8', 'completions/min_length': '121.8', 'completions/max_length': '135', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '127.8', 'completions/min_terminated_length': '121.8', 'completions/max_terminated_length': '135', 'rewards/reward_fn/mean': '0.817', 'rewards/reward_fn/std': '0', 'reward': '0.817', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.3161', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.54', 'epoch': '0.55'}
+ 14%|█▍        | 55/400 [09:16<1:08:06, 11.85s/it][A
+ 14%|█▍        | 56/400 [09:24<1:02:15, 10.86s/it][A
+ 14%|█▍        | 57/400 [09:33<59:16, 10.37s/it]  [A
+ 14%|█▍        | 58/400 [09:42<56:04,  9.84s/it][A
+ 15%|█▍        | 59/400 [09:52<56:32,  9.95s/it][A
+{'loss': '0.04343', 'grad_norm': '0.5003', 'learning_rate': '4.263e-06', 'num_tokens': '1.253e+05', 'completions/mean_length': '114.4', 'completions/min_length': '90.2', 'completions/max_length': '131.6', 'completions/clipped_ratio': '0.15', 'completions/mean_terminated_length': '97.45', 'completions/min_terminated_length': '90.2', 'completions/max_terminated_length': '109', 'rewards/reward_fn/mean': '0.4137', 'rewards/reward_fn/std': '0.09242', 'reward': '0.4137', 'reward_std': '0.09242', 'frac_reward_zero_std': '0.6', 'entropy': '0.3057', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.33', 'epoch': '0.6'}
+ 15%|█▌        | 60/400 [10:13<1:14:39, 13.18s/it][A
+                                                  [A
+ 15%|█▌        | 60/400 [10:13<1:14:39, 13.18s/it][A
+ 15%|█▌        | 61/400 [10:22<1:07:24, 11.93s/it][A
+ 16%|█▌        | 62/400 [10:31<1:02:26, 11.09s/it][A
+ 16%|█▌        | 63/400 [10:44<1:05:43, 11.70s/it][A
+ 16%|█▌        | 64/400 [10:53<1:00:57, 10.89s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.2e-06', 'num_tokens': '1.355e+05', 'completions/mean_length': '99.55', 'completions/min_length': '82.2', 'completions/max_length': '119', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '99.55', 'completions/min_terminated_length': '82.2', 'completions/max_terminated_length': '119', 'rewards/reward_fn/mean': '0.682', 'rewards/reward_fn/std': '0', 'reward': '0.682', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.4192', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.27', 'epoch': '0.65'}
+ 16%|█▋        | 65/400 [11:05<1:02:06, 11.12s/it][A
+                                                  [A
+ 16%|█▋        | 65/400 [11:05<1:02:06, 11.12s/it][A
+ 16%|█▋        | 66/400 [11:19<1:07:00, 12.04s/it][A
+ 17%|█▋        | 67/400 [11:27<1:00:29, 10.90s/it][A
+ 17%|█▋        | 68/400 [11:38<59:31, 10.76s/it]  [A
+ 17%|█▋        | 69/400 [11:51<1:03:16, 11.47s/it][A
+{'loss': '0.0406', 'grad_norm': '0', 'learning_rate': '4.138e-06', 'num_tokens': '1.459e+05', 'completions/mean_length': '102.2', 'completions/min_length': '80.6', 'completions/max_length': '123.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '102.2', 'completions/min_terminated_length': '80.6', 'completions/max_terminated_length': '123.4', 'rewards/reward_fn/mean': '0.286', 'rewards/reward_fn/std': '0.1', 'reward': '0.286', 'reward_std': '0.1', 'frac_reward_zero_std': '0.8', 'entropy': '0.3802', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.67', 'epoch': '0.7'}
+ 18%|█▊        | 70/400 [11:59<57:20, 10.43s/it]  [A
+                                                [A
+ 18%|█▊        | 70/400 [11:59<57:20, 10.43s/it][A
+ 18%|█▊        | 71/400 [12:08<55:44, 10.17s/it][A
+ 18%|█▊        | 72/400 [12:16<50:46,  9.29s/it][A
+ 18%|█▊        | 73/400 [12:25<50:25,  9.25s/it][A
+ 18%|█▊        | 74/400 [12:35<52:18,  9.63s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.075e-06', 'num_tokens': '1.561e+05', 'completions/mean_length': '88.55', 'completions/min_length': '74.6', 'completions/max_length': '100.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '88.55', 'completions/min_terminated_length': '74.6', 'completions/max_terminated_length': '100.2', 'rewards/reward_fn/mean': '0.59', 'rewards/reward_fn/std': '0', 'reward': '0.59', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.3474', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.894', 'epoch': '0.75'}
+ 19%|█▉        | 75/400 [12:44<50:25,  9.31s/it][A
+                                                [A
+ 19%|█▉        | 75/400 [12:44<50:25,  9.31s/it][A
+ 19%|█▉        | 76/400 [12:52<47:53,  8.87s/it][A
+ 19%|█▉        | 77/400 [13:12<1:07:06, 12.47s/it][A
+ 20%|█▉        | 78/400 [13:25<1:07:16, 12.54s/it][A
+ 20%|█▉        | 79/400 [13:37<1:05:54, 12.32s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.013e-06', 'num_tokens': '1.675e+05', 'completions/mean_length': '131.8', 'completions/min_length': '120.2', 'completions/max_length': '144.6', 'completions/clipped_ratio': '0.2', 'completions/mean_terminated_length': '80.65', 'completions/min_terminated_length': '69', 'completions/max_terminated_length': '93.4', 'rewards/reward_fn/mean': '0.6235', 'rewards/reward_fn/std': '0', 'reward': '0.6235', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.3808', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '12.25', 'epoch': '0.8'}
+ 20%|██        | 80/400 [13:46<1:00:15, 11.30s/it][A
+                                                  [A
+ 20%|██        | 80/400 [13:46<1:00:15, 11.30s/it][A
+ 20%|██        | 81/400 [13:55<57:01, 10.72s/it]  [A
+ 20%|██        | 82/400 [14:05<54:35, 10.30s/it][A
+ 21%|██        | 83/400 [14:24<1:08:43, 13.01s/it][A
+ 21%|██        | 84/400 [14:35<1:05:02, 12.35s/it][A
+{'loss': '-0.03096', 'grad_norm': '0.5488', 'learning_rate': '3.95e-06', 'num_tokens': '1.79e+05', 'completions/mean_length': '129.9', 'completions/min_length': '107.6', 'completions/max_length': '153.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '129.9', 'completions/min_terminated_length': '107.6', 'completions/max_terminated_length': '153.6', 'rewards/reward_fn/mean': '0.4371', 'rewards/reward_fn/std': '0.0887', 'reward': '0.4371', 'reward_std': '0.0887', 'frac_reward_zero_std': '0.6', 'entropy': '0.2889', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '12.97', 'epoch': '0.85'}
+ 21%|██▏       | 85/400 [14:51<1:11:37, 13.64s/it][A
+                                                  [A
+ 21%|██▏       | 85/400 [14:51<1:11:37, 13.64s/it][A
+ 22%|██▏       | 86/400 [15:03<1:08:56, 13.17s/it][A
+ 22%|██▏       | 87/400 [15:22<1:16:43, 14.71s/it][A
+ 22%|██▏       | 88/400 [15:36<1:15:26, 14.51s/it][A
+ 22%|██▏       | 89/400 [15:47<1:10:22, 13.58s/it][A
+{'loss': '-0.06428', 'grad_norm': '0', 'learning_rate': '3.888e-06', 'num_tokens': '1.898e+05', 'completions/mean_length': '121.7', 'completions/min_length': '99', 'completions/max_length': '150.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '121.7', 'completions/min_terminated_length': '99', 'completions/max_terminated_length': '150.8', 'rewards/reward_fn/mean': '0.5353', 'rewards/reward_fn/std': '0.09101', 'reward': '0.5353', 'reward_std': '0.09101', 'frac_reward_zero_std': '0.6', 'entropy': '0.2286', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '12.63', 'epoch': '0.9'}
+ 22%|██▎       | 90/400 [15:55<1:01:26, 11.89s/it][A
+                                                  [A
+ 22%|██▎       | 90/400 [15:55<1:01:26, 11.89s/it][A
+ 23%|██▎       | 91/400 [16:08<1:01:57, 12.03s/it][A
+ 23%|██▎       | 92/400 [16:18<58:56, 11.48s/it]  [A
+ 23%|██▎       | 93/400 [16:25<51:56, 10.15s/it][A
+ 24%|██▎       | 94/400 [16:33<49:16,  9.66s/it][A
+ 24%|██▍       | 95/400 [16:42<47:08,  9.27s/it][A
+                                                [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '3.825e-06', 'num_tokens': '1.998e+05', 'completions/mean_length': '89.75', 'completions/min_length': '77.4', 'completions/max_length': '103.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '89.75', 'completions/min_terminated_length': '77.4', 'completions/max_terminated_length': '103.4', 'rewards/reward_fn/mean': '0.755', 'rewards/reward_fn/std': '0', 'reward': '0.755', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2836', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.184', 'epoch': '0.95'}
+ 24%|██▍       | 95/400 [16:42<47:08,  9.27s/it][A
+ 24%|██▍       | 96/400 [17:03<1:05:03, 12.84s/it][A
+ 24%|██▍       | 97/400 [17:23<1:15:39, 14.98s/it][A
+ 24%|██▍       | 98/400 [17:30<1:04:12, 12.76s/it][A
+ 25%|██▍       | 99/400 [17:38<56:53, 11.34s/it]  [A
+{'loss': '0.0309', 'grad_norm': '0.3584', 'learning_rate': '3.762e-06', 'num_tokens': '2.121e+05', 'completions/mean_length': '155.3', 'completions/min_length': '135.2', 'completions/max_length': '183', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '149.9', 'completions/min_terminated_length': '135.2', 'completions/max_terminated_length': '162.8', 'rewards/reward_fn/mean': '0.5797', 'rewards/reward_fn/std': '0.09245', 'reward': '0.5797', 'reward_std': '0.09245', 'frac_reward_zero_std': '0.6', 'entropy': '0.2659', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '15.28', 'epoch': '1'}
+ 25%|██▌       | 100/400 [17:59<1:10:15, 14.05s/it][A
+                                                   [A
+ 25%|██▌       | 100/400 [17:59<1:10:15, 14.05s/it][A
+ 25%|██▌       | 101/400 [18:08<1:02:39, 12.57s/it][A
+ 26%|██▌       | 102/400 [18:18<58:07, 11.70s/it]  [A
+ 26%|██▌       | 103/400 [18:33<1:03:03, 12.74s/it][A
+ 26%|██▌       | 104/400 [18:44<1:01:03, 12.38s/it][A
+ 26%|██▋       | 105/400 [18:53<54:49, 11.15s/it]  [A
+                                                 [A
+{'loss': '0.005376', 'grad_norm': '0', 'learning_rate': '3.7e-06', 'num_tokens': '2.223e+05', 'completions/mean_length': '106.1', 'completions/min_length': '95.6', 'completions/max_length': '121.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '106.1', 'completions/min_terminated_length': '95.6', 'completions/max_terminated_length': '121.4', 'rewards/reward_fn/mean': '0.6425', 'rewards/reward_fn/std': '0.00866', 'reward': '0.6425', 'reward_std': '0.00866', 'frac_reward_zero_std': '0.8', 'entropy': '0.3999', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.5', 'epoch': '1.05'}
+ 26%|██▋       | 105/400 [18:53<54:49, 11.15s/it][A
+ 26%|██▋       | 106/400 [19:08<1:01:39, 12.58s/it][A
+ 27%|██▋       | 107/400 [19:23<1:03:44, 13.05s/it][A
+ 27%|██▋       | 108/400 [19:34<1:01:29, 12.63s/it][A
+ 27%|██▋       | 109/400 [19:53<1:10:33, 14.55s/it][A
+ 28%|██▊       | 110/400 [20:01<1:00:48, 12.58s/it][A
+                                                   [A
+{'loss': '0.01958', 'grad_norm': '0', 'learning_rate': '3.638e-06', 'num_tokens': '2.344e+05', 'completions/mean_length': '143.9', 'completions/min_length': '130.4', 'completions/max_length': '160.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '143.9', 'completions/min_terminated_length': '130.4', 'completions/max_terminated_length': '160.6', 'rewards/reward_fn/mean': '0.9175', 'rewards/reward_fn/std': '0.09333', 'reward': '0.9175', 'reward_std': '0.09333', 'frac_reward_zero_std': '0.8', 'entropy': '0.2972', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '13.61', 'epoch': '1.1'}
+ 28%|██▊       | 110/400 [20:01<1:00:48, 12.58s/it][A
+ 28%|██▊       | 111/400 [20:10<55:17, 11.48s/it]  [A
+ 28%|██▊       | 112/400 [20:20<52:40, 10.98s/it][A
+ 28%|██▊       | 113/400 [20:27<47:25,  9.92s/it][A
+ 28%|██▊       | 114/400 [20:48<1:03:01, 13.22s/it][A
+ 29%|██▉       | 115/400 [20:56<55:23, 11.66s/it]  [A
+                                                 [A
+{'loss': '0.01863', 'grad_norm': '0', 'learning_rate': '3.575e-06', 'num_tokens': '2.449e+05', 'completions/mean_length': '112.8', 'completions/min_length': '96', 'completions/max_length': '126.4', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '110.4', 'completions/min_terminated_length': '96', 'completions/max_terminated_length': '121.2', 'rewards/reward_fn/mean': '0.4715', 'rewards/reward_fn/std': '0.07387', 'reward': '0.4715', 'reward_std': '0.07387', 'frac_reward_zero_std': '0.8', 'entropy': '0.2838', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.9', 'epoch': '1.15'}
+ 29%|██▉       | 115/400 [20:56<55:23, 11.66s/it][A
+ 29%|██▉       | 116/400 [21:04<49:45, 10.51s/it][A
+ 29%|██▉       | 117/400 [21:25<1:04:32, 13.68s/it][A
+ 30%|██▉       | 118/400 [21:41<1:07:33, 14.38s/it][A
+ 30%|██▉       | 119/400 [21:57<1:09:27, 14.83s/it][A
+ 30%|███       | 120/400 [22:06<1:01:18, 13.14s/it][A
+                                                   [A
+{'loss': '0.01495', 'grad_norm': '0', 'learning_rate': '3.513e-06', 'num_tokens': '2.564e+05', 'completions/mean_length': '135.3', 'completions/min_length': '106.6', 'completions/max_length': '165.4', 'completions/clipped_ratio': '0.1', 'completions/mean_terminated_length': '125.2', 'completions/min_terminated_length': '106.6', 'completions/max_terminated_length': '149.8', 'rewards/reward_fn/mean': '0.3932', 'rewards/reward_fn/std': '0.0815', 'reward': '0.3932', 'reward_std': '0.0815', 'frac_reward_zero_std': '0.6', 'entropy': '0.2781', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '13.86', 'epoch': '1.2'}
+ 30%|███       | 120/400 [22:06<1:01:18, 13.14s/it][A
+ 30%|███       | 121/400 [22:17<57:31, 12.37s/it]  [A
+ 30%|███       | 122/400 [22:28<54:57, 11.86s/it][A
+ 31%|███       | 123/400 [22:35<48:14, 10.45s/it][A
+ 31%|███       | 124/400 [22:43<44:41,  9.72s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '3.45e-06', 'num_tokens': '2.666e+05', 'completions/mean_length': '86.4', 'completions/min_length': '73.4', 'completions/max_length': '104', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '86.4', 'completions/min_terminated_length': '73.4', 'completions/max_terminated_length': '104', 'rewards/reward_fn/mean': '0.652', 'rewards/reward_fn/std': '0', 'reward': '0.652', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.3036', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.215', 'epoch': '1.25'}
+ 31%|███▏      | 125/400 [22:53<45:15,  9.87s/it][A
+                                                 [A
+ 31%|███▏      | 125/400 [22:53<45:15,  9.87s/it][A
+ 32%|███▏      | 126/400 [23:04<45:56, 10.06s/it][A
+ 32%|███▏      | 127/400 [23:12<43:44,  9.61s/it][A
+ 32%|███▏      | 128/400 [23:20<41:54,  9.24s/it][A
+ 32%|███▏      | 129/400 [23:42<57:47, 12.80s/it][A
+{'loss': '0.006888', 'grad_norm': '0.463', 'learning_rate': '3.388e-06', 'num_tokens': '2.786e+05', 'completions/mean_length': '154.1', 'completions/min_length': '138.6', 'completions/max_length': '163', 'completions/clipped_ratio': '0.25', 'completions/mean_terminated_length': '101.8', 'completions/min_terminated_length': '87.4', 'completions/max_terminated_length': '110', 'rewards/reward_fn/mean': '0.3863', 'rewards/reward_fn/std': '0.08875', 'reward': '0.3863', 'reward_std': '0.08875', 'frac_reward_zero_std': '0.8', 'entropy': '0.347', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '13.83', 'epoch': '1.3'}
+ 32%|███▎      | 130/400 [24:03<1:09:02, 15.34s/it][A
+                                                   [A
+ 32%|███▎      | 130/400 [24:03<1:09:02, 15.34s/it][A
+ 33%|███▎      | 131/400 [24:13<1:01:55, 13.81s/it][A
+ 33%|███▎      | 132/400 [24:23<56:52, 12.73s/it]  [A
+ 33%|███▎      | 133/400 [24:31<49:25, 11.11s/it][A
+ 34%|███▎      | 134/400 [24:42<49:14, 11.11s/it][A
+ 34%|███▍      | 135/400 [24:52<48:16, 10.93s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '3.325e-06', 'num_tokens': '2.887e+05', 'completions/mean_length': '95.55', 'completions/min_length': '82', 'completions/max_length': '112', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '95.55', 'completions/min_terminated_length': '82', 'completions/max_terminated_length': '112', 'rewards/reward_fn/mean': '0.771', 'rewards/reward_fn/std': '0', 'reward': '0.771', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.5098', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.765', 'epoch': '1.35'}
+ 34%|███▍      | 135/400 [24:52<48:16, 10.93s/it][A
+ 34%|███▍      | 136/400 [25:02<47:03, 10.70s/it][A
+ 34%|███▍      | 137/400 [25:13<46:22, 10.58s/it][A
+ 34%|███▍      | 138/400 [25:24<46:37, 10.68s/it][A
+ 35%|███▍      | 139/400 [25:33<44:45, 10.29s/it][A
+ 35%|███▌      | 140/400 [25:42<42:56,  9.91s/it][A
+                                                 [A
+{'loss': '0.01705', 'grad_norm': '0', 'learning_rate': '3.263e-06', 'num_tokens': '2.991e+05', 'completions/mean_length': '97.6', 'completions/min_length': '86.2', 'completions/max_length': '112.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '97.6', 'completions/min_terminated_length': '86.2', 'completions/max_terminated_length': '112.2', 'rewards/reward_fn/mean': '0.3286', 'rewards/reward_fn/std': '0.007417', 'reward': '0.3286', 'reward_std': '0.007417', 'frac_reward_zero_std': '0.6', 'entropy': '0.2752', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.835', 'epoch': '1.4'}
+ 35%|███▌      | 140/400 [25:42<42:56,  9.91s/it][A
+ 35%|███▌      | 141/400 [25:51<42:03,  9.74s/it][A
+ 36%|███▌      | 142/400 [25:59<39:36,  9.21s/it][A
+ 36%|███▌      | 143/400 [26:09<39:45,  9.28s/it][A
+ 36%|███▌      | 144/400 [26:17<38:45,  9.08s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '3.2e-06', 'num_tokens': '3.097e+05', 'completions/mean_length': '108.8', 'completions/min_length': '96.4', 'completions/max_length': '122.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '108.8', 'completions/min_terminated_length': '96.4', 'completions/max_terminated_length': '122.4', 'rewards/reward_fn/mean': '0.4412', 'rewards/reward_fn/std': '0', 'reward': '0.4412', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2584', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.6', 'epoch': '1.45'}
+ 36%|███▋      | 145/400 [26:36<50:15, 11.82s/it][A
+                                                 [A
+ 36%|███▋      | 145/400 [26:36<50:15, 11.82s/it][A
+ 36%|███▋      | 146/400 [26:43<44:11, 10.44s/it][A
+ 37%|███▋      | 147/400 [26:51<41:15,  9.79s/it][A
+ 37%|███▋      | 148/400 [27:00<40:10,  9.56s/it][A
+ 37%|███▋      | 149/400 [27:19<51:52, 12.40s/it][A
+ 38%|███▊      | 150/400 [27:29<47:52, 11.49s/it][A
+                                                 [A
+{'loss': '0.005677', 'grad_norm': '0', 'learning_rate': '3.138e-06', 'num_tokens': '3.202e+05', 'completions/mean_length': '106.7', 'completions/min_length': '94.4', 'completions/max_length': '119.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '106.7', 'completions/min_terminated_length': '94.4', 'completions/max_terminated_length': '119.8', 'rewards/reward_fn/mean': '0.553', 'rewards/reward_fn/std': '0.03126', 'reward': '0.553', 'reward_std': '0.03126', 'frac_reward_zero_std': '0.8', 'entropy': '0.2304', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.46', 'epoch': '1.5'}
+ 38%|███▊      | 150/400 [27:29<47:52, 11.49s/it][A
+ 38%|███▊      | 151/400 [27:37<43:48, 10.56s/it][A
+ 38%|███▊      | 152/400 [27:45<41:01,  9.92s/it][A
+ 38%|███▊      | 153/400 [27:57<42:35, 10.35s/it][A
+ 38%|███▊      | 154/400 [28:05<40:13,  9.81s/it][A
+ 39%|███▉      | 155/400 [28:15<39:40,  9.72s/it][A
+                                                 [A
+{'loss': '-0.03677', 'grad_norm': '0', 'learning_rate': '3.075e-06', 'num_tokens': '3.306e+05', 'completions/mean_length': '86.3', 'completions/min_length': '74.8', 'completions/max_length': '103.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '86.3', 'completions/min_terminated_length': '74.8', 'completions/max_terminated_length': '103.2', 'rewards/reward_fn/mean': '0.48', 'rewards/reward_fn/std': '0.05', 'reward': '0.48', 'reward_std': '0.05', 'frac_reward_zero_std': '0.8', 'entropy': '0.3043', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.126', 'epoch': '1.55'}
+ 39%|███▉      | 155/400 [28:15<39:40,  9.72s/it][A
+ 39%|███▉      | 156/400 [28:24<39:25,  9.70s/it][A
+ 39%|███▉      | 157/400 [28:34<39:12,  9.68s/it][A
+ 40%|███▉      | 158/400 [28:42<36:47,  9.12s/it][A
+ 40%|███▉      | 159/400 [29:03<50:56, 12.68s/it][A
+ 40%|████      | 160/400 [29:11<45:22, 11.34s/it][A
+                                                 [A
+{'loss': '-0.03485', 'grad_norm': '1.263', 'learning_rate': '3.013e-06', 'num_tokens': '3.416e+05', 'completions/mean_length': '111.8', 'completions/min_length': '94', 'completions/max_length': '129.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '111.8', 'completions/min_terminated_length': '94', 'completions/max_terminated_length': '129.4', 'rewards/reward_fn/mean': '0.6612', 'rewards/reward_fn/std': '0.06228', 'reward': '0.6612', 'reward_std': '0.06228', 'frac_reward_zero_std': '0.6', 'entropy': '0.2299', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.14', 'epoch': '1.6'}
+ 40%|████      | 160/400 [29:11<45:22, 11.34s/it][A
+ 40%|████      | 161/400 [29:21<43:17, 10.87s/it][A
+ 40%|████      | 162/400 [29:30<41:18, 10.41s/it][A
+ 41%|████      | 163/400 [29:39<39:35, 10.02s/it][A
+ 41%|████      | 164/400 [29:47<37:16,  9.48s/it][A
+ 41%|████▏     | 165/400 [29:58<38:23,  9.80s/it][A
+                                                 [A
+{'loss': '-0.006291', 'grad_norm': '0', 'learning_rate': '2.95e-06', 'num_tokens': '3.519e+05', 'completions/mean_length': '86.6', 'completions/min_length': '70.2', 'completions/max_length': '103.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '86.6', 'completions/min_terminated_length': '70.2', 'completions/max_terminated_length': '103.4', 'rewards/reward_fn/mean': '0.8625', 'rewards/reward_fn/std': '0.005', 'reward': '0.8625', 'reward_std': '0.005', 'frac_reward_zero_std': '0.8', 'entropy': '0.288', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.279', 'epoch': '1.65'}
+ 41%|████▏     | 165/400 [29:58<38:23,  9.80s/it][A
+ 42%|████▏     | 166/400 [30:06<36:03,  9.25s/it][A
+ 42%|████▏     | 167/400 [30:14<34:51,  8.98s/it][A
+ 42%|████▏     | 168/400 [30:24<34:56,  9.04s/it][A
+ 42%|████▏     | 169/400 [30:33<35:32,  9.23s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '2.888e-06', 'num_tokens': '3.615e+05', 'completions/mean_length': '78.75', 'completions/min_length': '67.4', 'completions/max_length': '94.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '78.75', 'completions/min_terminated_length': '67.4', 'completions/max_terminated_length': '94.2', 'rewards/reward_fn/mean': '0.516', 'rewards/reward_fn/std': '0', 'reward': '0.516', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.3009', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.416', 'epoch': '1.7'}
+ 42%|████▎     | 170/400 [30:41<33:22,  8.71s/it][A
+                                                 [A
+ 42%|████▎     | 170/400 [30:41<33:22,  8.71s/it][A
+ 43%|████▎     | 171/400 [31:01<47:02, 12.33s/it][A
+ 43%|████▎     | 172/400 [31:11<44:07, 11.61s/it][A
+ 43%|████▎     | 173/400 [31:29<50:45, 13.42s/it][A
+ 44%|████▎     | 174/400 [31:38<44:58, 11.94s/it][A
+ 44%|████▍     | 175/400 [31:49<44:46, 11.94s/it][A
+                                                 [A
+{'loss': '0.04879', 'grad_norm': '3.803', 'learning_rate': '2.825e-06', 'num_tokens': '3.73e+05', 'completions/mean_length': '137.6', 'completions/min_length': '109', 'completions/max_length': '161.6', 'completions/clipped_ratio': '0.15', 'completions/mean_terminated_length': '124.3', 'completions/min_terminated_length': '109', 'completions/max_terminated_length': '144', 'rewards/reward_fn/mean': '0.3349', 'rewards/reward_fn/std': '0.1819', 'reward': '0.3349', 'reward_std': '0.1819', 'frac_reward_zero_std': '0.4', 'entropy': '0.3304', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '13.63', 'epoch': '1.75'}
+ 44%|████▍     | 175/400 [31:49<44:46, 11.94s/it][A
+ 44%|████▍     | 176/400 [31:58<41:01, 10.99s/it][A
+ 44%|████▍     | 177/400 [32:07<37:54, 10.20s/it][A
+ 44%|████▍     | 178/400 [32:15<36:17,  9.81s/it][A
+ 45%|████▍     | 179/400 [32:36<48:12, 13.09s/it][A
+ 45%|████▌     | 180/400 [32:45<43:00, 11.73s/it][A
+                                                 [A
+{'loss': '-0.0009522', 'grad_norm': '0', 'learning_rate': '2.763e-06', 'num_tokens': '3.836e+05', 'completions/mean_length': '110.7', 'completions/min_length': '97', 'completions/max_length': '127', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '110.7', 'completions/min_terminated_length': '97', 'completions/max_terminated_length': '127', 'rewards/reward_fn/mean': '0.6565', 'rewards/reward_fn/std': '0.095', 'reward': '0.6565', 'reward_std': '0.095', 'frac_reward_zero_std': '0.8', 'entropy': '0.2816', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.94', 'epoch': '1.8'}
+ 45%|████▌     | 180/400 [32:45<43:00, 11.73s/it][A
+ 45%|████▌     | 181/400 [32:56<41:59, 11.51s/it][A
+ 46%|████▌     | 182/400 [33:08<43:07, 11.87s/it][A
+ 46%|████▌     | 183/400 [33:17<39:20, 10.88s/it][A
+ 46%|████▌     | 184/400 [33:25<35:44,  9.93s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '2.7e-06', 'num_tokens': '3.938e+05', 'completions/mean_length': '102.6', 'completions/min_length': '92', 'completions/max_length': '113.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '102.6', 'completions/min_terminated_length': '92', 'completions/max_terminated_length': '113.2', 'rewards/reward_fn/mean': '0.827', 'rewards/reward_fn/std': '0', 'reward': '0.827', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.3197', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.934', 'epoch': '1.85'}
+ 46%|████▋     | 185/400 [33:35<35:56, 10.03s/it][A
+                                                 [A
+ 46%|████▋     | 185/400 [33:35<35:56, 10.03s/it][A
+ 46%|████▋     | 186/400 [33:43<34:00,  9.53s/it][A
+ 47%|████▋     | 187/400 [33:51<31:56,  9.00s/it][A
+ 47%|████▋     | 188/400 [34:12<44:46, 12.67s/it][A
+ 47%|████▋     | 189/400 [34:21<40:24, 11.49s/it][A
+{'loss': '0.01219', 'grad_norm': '0', 'learning_rate': '2.638e-06', 'num_tokens': '4.044e+05', 'completions/mean_length': '109.1', 'completions/min_length': '96.2', 'completions/max_length': '125.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '109.1', 'completions/min_terminated_length': '96.2', 'completions/max_terminated_length': '125.4', 'rewards/reward_fn/mean': '0.6712', 'rewards/reward_fn/std': '0.1', 'reward': '0.6712', 'reward_std': '0.1', 'frac_reward_zero_std': '0.8', 'entropy': '0.2614', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.97', 'epoch': '1.9'}
+ 48%|████▊     | 190/400 [34:30<37:58, 10.85s/it][A
+                                                 [A
+ 48%|████▊     | 190/400 [34:30<37:58, 10.85s/it][A
+ 48%|████▊     | 191/400 [34:46<42:20, 12.16s/it][A
+ 48%|████▊     | 192/400 [34:54<38:30, 11.11s/it][A
+ 48%|████▊     | 193/400 [35:03<35:17, 10.23s/it][A
+ 48%|████▊     | 194/400 [35:13<35:33, 10.36s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '2.575e-06', 'num_tokens': '4.148e+05', 'completions/mean_length': '99.7', 'completions/min_length': '84.8', 'completions/max_length': '117.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '99.7', 'completions/min_terminated_length': '84.8', 'completions/max_terminated_length': '117.8', 'rewards/reward_fn/mean': '0.617', 'rewards/reward_fn/std': '0', 'reward': '0.617', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.3205', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.31', 'epoch': '1.95'}
+ 49%|████▉     | 195/400 [35:23<34:25, 10.08s/it][A
+                                                 [A
+ 49%|████▉     | 195/400 [35:23<34:25, 10.08s/it][A
+ 49%|████▉     | 196/400 [35:33<34:04, 10.02s/it][A
+ 49%|████▉     | 197/400 [35:42<33:34,  9.92s/it][A
+ 50%|████▉     | 198/400 [35:50<31:17,  9.30s/it][A
+ 50%|████▉     | 199/400 [35:57<28:36,  8.54s/it][A
+ 50%|█████     | 200/400 [36:05<27:57,  8.39s/it][A
+                                                 [A
+{'loss': '0.01823', 'grad_norm': '0', 'learning_rate': '2.513e-06', 'num_tokens': '4.247e+05', 'completions/mean_length': '83.15', 'completions/min_length': '71.8', 'completions/max_length': '92.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '83.15', 'completions/min_terminated_length': '71.8', 'completions/max_terminated_length': '92.2', 'rewards/reward_fn/mean': '0.4556', 'rewards/reward_fn/std': '0.03875', 'reward': '0.4556', 'reward_std': '0.03875', 'frac_reward_zero_std': '0.6', 'entropy': '0.2038', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.331', 'epoch': '2'}
+ 50%|█████     | 200/400 [36:05<27:57,  8.39s/it][A
+ 50%|█████     | 201/400 [36:14<29:01,  8.75s/it][A
+ 50%|█████     | 202/400 [36:24<29:36,  8.97s/it][A
+ 51%|█████     | 203/400 [36:32<28:34,  8.70s/it][A
+ 51%|█████     | 204/400 [36:41<28:25,  8.70s/it][A
+ 51%|█████▏    | 205/400 [36:48<27:05,  8.33s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '2.45e-06', 'num_tokens': '4.348e+05', 'completions/mean_length': '85.5', 'completions/min_length': '78.6', 'completions/max_length': '93.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '85.5', 'completions/min_terminated_length': '78.6', 'completions/max_terminated_length': '93.2', 'rewards/reward_fn/mean': '0.4095', 'rewards/reward_fn/std': '0', 'reward': '0.4095', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2605', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.435', 'epoch': '2.05'}
+ 51%|█████▏    | 205/400 [36:48<27:05,  8.33s/it][A
+ 52%|█████▏    | 206/400 [36:55<25:26,  7.87s/it][A
+ 52%|█████▏    | 207/400 [37:04<26:03,  8.10s/it][A
+ 52%|█████▏    | 208/400 [37:12<26:08,  8.17s/it][A
+ 52%|█████▏    | 209/400 [37:21<26:52,  8.44s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '2.388e-06', 'num_tokens': '4.445e+05', 'completions/mean_length': '82.95', 'completions/min_length': '74.4', 'completions/max_length': '89.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '82.95', 'completions/min_terminated_length': '74.4', 'completions/max_terminated_length': '89.8', 'rewards/reward_fn/mean': '0.522', 'rewards/reward_fn/std': '0', 'reward': '0.522', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.24', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.145', 'epoch': '2.1'}
+ 52%|█████▎    | 210/400 [37:29<26:44,  8.44s/it][A
+                                                 [A
+ 52%|█████▎    | 210/400 [37:29<26:44,  8.44s/it][A
+ 53%|█████▎    | 211/400 [37:37<25:45,  8.18s/it][A
+ 53%|█████▎    | 212/400 [37:45<25:38,  8.18s/it][A
+ 53%|█████▎    | 213/400 [37:54<26:31,  8.51s/it][A
+ 54%|█████▎    | 214/400 [38:04<27:10,  8.76s/it][A
+ 54%|█████▍    | 215/400 [38:15<29:28,  9.56s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '2.325e-06', 'num_tokens': '4.543e+05', 'completions/mean_length': '86.25', 'completions/min_length': '75.2', 'completions/max_length': '102.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '86.25', 'completions/min_terminated_length': '75.2', 'completions/max_terminated_length': '102.2', 'rewards/reward_fn/mean': '0.5748', 'rewards/reward_fn/std': '0', 'reward': '0.5748', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.3058', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.046', 'epoch': '2.15'}
+ 54%|█████▍    | 215/400 [38:15<29:28,  9.56s/it][A
+ 54%|█████▍    | 216/400 [38:24<28:42,  9.36s/it][A
+ 54%|█████▍    | 217/400 [38:45<39:26, 12.93s/it][A
+ 55%|█████▍    | 218/400 [38:56<36:50, 12.15s/it][A
+ 55%|█████▍    | 219/400 [39:04<33:03, 10.96s/it][A
+ 55%|█████▌    | 220/400 [39:21<38:18, 12.77s/it][A
+                                                 [A
+{'loss': '0.007387', 'grad_norm': '0', 'learning_rate': '2.263e-06', 'num_tokens': '4.661e+05', 'completions/mean_length': '136.8', 'completions/min_length': '113.8', 'completions/max_length': '152', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '134.7', 'completions/min_terminated_length': '113.8', 'completions/max_terminated_length': '151.4', 'rewards/reward_fn/mean': '0.2622', 'rewards/reward_fn/std': '0.05511', 'reward': '0.2622', 'reward_std': '0.05511', 'frac_reward_zero_std': '0.8', 'entropy': '0.2595', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '13', 'epoch': '2.2'}
+ 55%|█████▌    | 220/400 [39:21<38:18, 12.77s/it][A
+ 55%|█████▌    | 221/400 [39:30<34:32, 11.58s/it][A
+ 56%|█████▌    | 222/400 [39:37<30:46, 10.37s/it][A
+ 56%|█████▌    | 223/400 [39:47<29:59, 10.17s/it][A
+ 56%|█████▌    | 224/400 [39:54<27:29,  9.37s/it][A
+ 56%|█████▋    | 225/400 [40:02<25:36,  8.78s/it][A
+                                                 [A
+{'loss': '0.006769', 'grad_norm': '0', 'learning_rate': '2.2e-06', 'num_tokens': '4.76e+05', 'completions/mean_length': '80.9', 'completions/min_length': '71', 'completions/max_length': '89.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '80.9', 'completions/min_terminated_length': '71', 'completions/max_terminated_length': '89.2', 'rewards/reward_fn/mean': '0.6775', 'rewards/reward_fn/std': '0.005', 'reward': '0.6775', 'reward_std': '0.005', 'frac_reward_zero_std': '0.8', 'entropy': '0.2202', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.078', 'epoch': '2.25'}
+ 56%|█████▋    | 225/400 [40:02<25:36,  8.78s/it][A
+ 56%|█████▋    | 226/400 [40:11<25:40,  8.85s/it][A
+ 57%|█████▋    | 227/400 [40:19<25:09,  8.73s/it][A
+ 57%|█████▋    | 228/400 [40:30<27:06,  9.46s/it][A
+ 57%|█████▋    | 229/400 [40:38<25:10,  8.83s/it][A
+ 57%|█████▊    | 230/400 [40:49<27:14,  9.62s/it][A
+                                                 [A
+{'loss': '-0.01069', 'grad_norm': '0', 'learning_rate': '2.138e-06', 'num_tokens': '4.861e+05', 'completions/mean_length': '93.5', 'completions/min_length': '82.8', 'completions/max_length': '106.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '93.5', 'completions/min_terminated_length': '82.8', 'completions/max_terminated_length': '106.6', 'rewards/reward_fn/mean': '0.6725', 'rewards/reward_fn/std': '0.005', 'reward': '0.6725', 'reward_std': '0.005', 'frac_reward_zero_std': '0.8', 'entropy': '0.2566', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.375', 'epoch': '2.3'}
+ 57%|█████▊    | 230/400 [40:49<27:14,  9.62s/it][A
+ 58%|█████▊    | 231/400 [40:57<25:04,  8.90s/it][A
+ 58%|█████▊    | 232/400 [41:07<26:28,  9.46s/it][A
+ 58%|█████▊    | 233/400 [41:15<24:55,  8.95s/it][A
+ 58%|█████▊    | 234/400 [41:24<24:47,  8.96s/it][A
+ 59%|█████▉    | 235/400 [41:45<34:38, 12.60s/it][A
+                                                 [A
+{'loss': '-0.01849', 'grad_norm': '0.5627', 'learning_rate': '2.075e-06', 'num_tokens': '4.966e+05', 'completions/mean_length': '109.2', 'completions/min_length': '93', 'completions/max_length': '128.4', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '106', 'completions/min_terminated_length': '93', 'completions/max_terminated_length': '122.2', 'rewards/reward_fn/mean': '0.5042', 'rewards/reward_fn/std': '0.07395', 'reward': '0.5042', 'reward_std': '0.07395', 'frac_reward_zero_std': '0.6', 'entropy': '0.2785', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.04', 'epoch': '2.35'}
+ 59%|█████▉    | 235/400 [41:45<34:38, 12.60s/it][A
+ 59%|█████▉    | 236/400 [41:53<30:46, 11.26s/it][A
+ 59%|█████▉    | 237/400 [42:00<27:14, 10.03s/it][A
+ 60%|█████▉    | 238/400 [42:10<26:50,  9.94s/it][A
+ 60%|█████▉    | 239/400 [42:31<35:37, 13.27s/it][A
+{'loss': '0.04556', 'grad_norm': '0', 'learning_rate': '2.013e-06', 'num_tokens': '5.075e+05', 'completions/mean_length': '101.7', 'completions/min_length': '81.6', 'completions/max_length': '129.4', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '95.98', 'completions/min_terminated_length': '81.6', 'completions/max_terminated_length': '109.6', 'rewards/reward_fn/mean': '0.832', 'rewards/reward_fn/std': '0.02197', 'reward': '0.832', 'reward_std': '0.02197', 'frac_reward_zero_std': '0.8', 'entropy': '0.3569', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.17', 'epoch': '2.4'}
+ 60%|██████    | 240/400 [42:42<33:05, 12.41s/it][A
+                                                 [A
+ 60%|██████    | 240/400 [42:42<33:05, 12.41s/it][A
+ 60%|██████    | 241/400 [42:50<29:51, 11.27s/it][A
+ 60%|██████    | 242/400 [43:01<29:21, 11.15s/it][A
+ 61%|██████    | 243/400 [43:09<26:19, 10.06s/it][A
+ 61%|██████    | 244/400 [43:18<25:15,  9.71s/it][A
+{'loss': '0.003875', 'grad_norm': '0.6758', 'learning_rate': '1.95e-06', 'num_tokens': '5.178e+05', 'completions/mean_length': '95.9', 'completions/min_length': '88.2', 'completions/max_length': '104.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '95.9', 'completions/min_terminated_length': '88.2', 'completions/max_terminated_length': '104.8', 'rewards/reward_fn/mean': '0.6722', 'rewards/reward_fn/std': '0.0025', 'reward': '0.6722', 'reward_std': '0.0025', 'frac_reward_zero_std': '0.8', 'entropy': '0.2231', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.383', 'epoch': '2.45'}
+ 61%|██████▏   | 245/400 [43:29<26:33, 10.28s/it][A
+                                                 [A
+ 61%|██████▏   | 245/400 [43:29<26:33, 10.28s/it][A
+ 62%|██████▏   | 246/400 [43:39<25:48, 10.05s/it][A
+ 62%|██████▏   | 247/400 [43:52<28:02, 10.99s/it][A
+ 62%|██████▏   | 248/400 [44:03<27:55, 11.02s/it][A
+ 62%|██████▏   | 249/400 [44:11<25:13, 10.02s/it][A
+ 62%|██████▎   | 250/400 [44:20<24:21,  9.74s/it][A
+                                                 [A
+{'loss': '0.004581', 'grad_norm': '0', 'learning_rate': '1.888e-06', 'num_tokens': '5.281e+05', 'completions/mean_length': '102.7', 'completions/min_length': '92.6', 'completions/max_length': '115', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '102.7', 'completions/min_terminated_length': '92.6', 'completions/max_terminated_length': '115', 'rewards/reward_fn/mean': '0.6888', 'rewards/reward_fn/std': '0.0075', 'reward': '0.6888', 'reward_std': '0.0075', 'frac_reward_zero_std': '0.8', 'entropy': '0.3595', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.997', 'epoch': '2.5'}
+ 62%|██████▎   | 250/400 [44:20<24:21,  9.74s/it][A
+ 63%|██████▎   | 251/400 [44:28<22:57,  9.24s/it][A
+ 63%|██████▎   | 252/400 [44:36<22:17,  9.04s/it][A
+ 63%|██████▎   | 253/400 [44:48<24:06,  9.84s/it][A
+ 64%|██████▎   | 254/400 [44:57<23:18,  9.58s/it][A
+ 64%|██████▍   | 255/400 [45:12<27:06, 11.22s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '1.825e-06', 'num_tokens': '5.386e+05', 'completions/mean_length': '108.8', 'completions/min_length': '97.2', 'completions/max_length': '118.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '108.8', 'completions/min_terminated_length': '97.2', 'completions/max_terminated_length': '118.8', 'rewards/reward_fn/mean': '0.7733', 'rewards/reward_fn/std': '0', 'reward': '0.7733', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2703', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.35', 'epoch': '2.55'}
+                                                 [A
+ 64%|██████▍   | 255/400 [45:12<27:06, 11.22s/it][A
+ 64%|██████▍   | 256/400 [45:22<25:40, 10.70s/it][A
+ 64%|██████▍   | 257/400 [45:30<23:43,  9.96s/it][A
+ 64%|██████▍   | 258/400 [45:42<24:53, 10.52s/it][A
+ 65%|██████▍   | 259/400 [46:00<30:26, 12.95s/it][A
+ 65%|██████▌   | 260/400 [46:08<26:37, 11.41s/it][A
+{'loss': '9.78e-05', 'grad_norm': '0', 'learning_rate': '1.763e-06', 'num_tokens': '5.492e+05', 'completions/mean_length': '109', 'completions/min_length': '98.4', 'completions/max_length': '128', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '109', 'completions/min_terminated_length': '98.4', 'completions/max_terminated_length': '128', 'rewards/reward_fn/mean': '0.2837', 'rewards/reward_fn/std': '0.03182', 'reward': '0.2837', 'reward_std': '0.03182', 'frac_reward_zero_std': '0.8', 'entropy': '0.2702', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.08', 'epoch': '2.6'}
+                                                 [A
+ 65%|██████▌   | 260/400 [46:08<26:37, 11.41s/it][A
+ 65%|██████▌   | 261/400 [46:16<23:54, 10.32s/it][A
+ 66%|██████▌   | 262/400 [46:24<22:11,  9.65s/it][A
+ 66%|██████▌   | 263/400 [46:32<20:46,  9.10s/it][A
+ 66%|██████▌   | 264/400 [46:40<20:23,  9.00s/it][A
+ 66%|██████▋   | 265/400 [46:49<19:59,  8.89s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '1.7e-06', 'num_tokens': '5.59e+05', 'completions/mean_length': '81.05', 'completions/min_length': '73.8', 'completions/max_length': '89.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '81.05', 'completions/min_terminated_length': '73.8', 'completions/max_terminated_length': '89.8', 'rewards/reward_fn/mean': '0.516', 'rewards/reward_fn/std': '0', 'reward': '0.516', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.3572', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.052', 'epoch': '2.65'}
+ 66%|██████▋   | 265/400 [46:49<19:59,  8.89s/it][A
+ 66%|██████▋   | 266/400 [47:05<24:30, 10.98s/it][A
+ 67%|██████▋   | 267/400 [47:16<24:19, 10.97s/it][A
+ 67%|██████▋   | 268/400 [47:25<23:08, 10.52s/it][A
+ 67%|██████▋   | 269/400 [47:46<29:45, 13.63s/it][A
+ 68%|██████▊   | 270/400 [47:55<26:05, 12.04s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '1.638e-06', 'num_tokens': '5.711e+05', 'completions/mean_length': '147.6', 'completions/min_length': '138', 'completions/max_length': '153.2', 'completions/clipped_ratio': '0.2', 'completions/mean_terminated_length': '96.35', 'completions/min_terminated_length': '86.8', 'completions/max_terminated_length': '102', 'rewards/reward_fn/mean': '0.5737', 'rewards/reward_fn/std': '0', 'reward': '0.5737', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2543', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '12.97', 'epoch': '2.7'}
+ 68%|██████▊   | 270/400 [47:55<26:05, 12.04s/it][A
+ 68%|██████▊   | 271/400 [48:07<26:00, 12.10s/it][A
+ 68%|██████▊   | 272/400 [48:25<29:56, 14.03s/it][A
+ 68%|██████▊   | 273/400 [48:34<26:28, 12.51s/it][A
+ 68%|██████▊   | 274/400 [48:42<23:22, 11.13s/it][A
+ 69%|██████▉   | 275/400 [48:55<24:22, 11.70s/it][A
+                                                 [A
+{'loss': '-0.02646', 'grad_norm': '0', 'learning_rate': '1.575e-06', 'num_tokens': '5.822e+05', 'completions/mean_length': '127.9', 'completions/min_length': '112.6', 'completions/max_length': '141', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '127.9', 'completions/min_terminated_length': '112.6', 'completions/max_terminated_length': '141', 'rewards/reward_fn/mean': '0.8', 'rewards/reward_fn/std': '0.0575', 'reward': '0.8', 'reward_std': '0.0575', 'frac_reward_zero_std': '0.8', 'entropy': '0.3012', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '12.01', 'epoch': '2.75'}
+ 69%|██████▉   | 275/400 [48:55<24:22, 11.70s/it][A
+ 69%|██████▉   | 276/400 [49:03<21:56, 10.61s/it][A
+ 69%|██████▉   | 277/400 [49:11<19:42,  9.62s/it][A
+ 70%|██████▉   | 278/400 [49:20<19:31,  9.60s/it][A
+ 70%|██████▉   | 279/400 [49:41<26:00, 12.90s/it][A
+ 70%|███████   | 280/400 [49:50<23:50, 11.92s/it][A
+                                                 [A
+{'loss': '-0.005152', 'grad_norm': '0.7749', 'learning_rate': '1.513e-06', 'num_tokens': '5.927e+05', 'completions/mean_length': '114.3', 'completions/min_length': '101', 'completions/max_length': '126.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '114.3', 'completions/min_terminated_length': '101', 'completions/max_terminated_length': '126.2', 'rewards/reward_fn/mean': '0.8045', 'rewards/reward_fn/std': '0.005773', 'reward': '0.8045', 'reward_std': '0.005773', 'frac_reward_zero_std': '0.8', 'entropy': '0.284', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.91', 'epoch': '2.8'}
+ 70%|███████   | 280/400 [49:50<23:50, 11.92s/it][A
+ 70%|███████   | 281/400 [50:01<22:36, 11.40s/it][A
+ 70%|███████   | 282/400 [50:15<24:22, 12.40s/it][A
+ 71%|███████   | 283/400 [50:33<27:29, 14.10s/it][A
+ 71%|███████   | 284/400 [50:51<29:11, 15.10s/it][A
+{'loss': '0.003793', 'grad_norm': '0', 'learning_rate': '1.45e-06', 'num_tokens': '6.043e+05', 'completions/mean_length': '143.8', 'completions/min_length': '131.2', 'completions/max_length': '159.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '143.8', 'completions/min_terminated_length': '131.2', 'completions/max_terminated_length': '159.8', 'rewards/reward_fn/mean': '0.6305', 'rewards/reward_fn/std': '0.05636', 'reward': '0.6305', 'reward_std': '0.05636', 'frac_reward_zero_std': '0.8', 'entropy': '0.3273', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '13.51', 'epoch': '2.85'}
+ 71%|███████▏  | 285/400 [50:59<24:43, 12.90s/it][A
+                                                 [A
+ 71%|███████▏  | 285/400 [50:59<24:43, 12.90s/it][A
+ 72%|███████▏  | 286/400 [51:06<21:27, 11.30s/it][A
+ 72%|███████▏  | 287/400 [51:15<19:37, 10.42s/it][A
+ 72%|███████▏  | 288/400 [51:23<18:12,  9.76s/it][A
+ 72%|███████▏  | 289/400 [51:33<18:35, 10.05s/it][A
+ 72%|███████▎  | 290/400 [51:42<17:35,  9.59s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '1.388e-06', 'num_tokens': '6.148e+05', 'completions/mean_length': '81.7', 'completions/min_length': '72.4', 'completions/max_length': '93.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '81.7', 'completions/min_terminated_length': '72.4', 'completions/max_terminated_length': '93.6', 'rewards/reward_fn/mean': '0.5312', 'rewards/reward_fn/std': '0', 'reward': '0.5312', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2684', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.562', 'epoch': '2.9'}
+ 72%|███████▎  | 290/400 [51:42<17:35,  9.59s/it][A
+ 73%|███████▎  | 291/400 [52:00<22:13, 12.24s/it][A
+ 73%|███████▎  | 292/400 [52:08<19:33, 10.87s/it][A
+ 73%|███████▎  | 293/400 [52:17<18:17, 10.26s/it][A
+ 74%|███████▎  | 294/400 [52:27<17:49, 10.09s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '1.325e-06', 'num_tokens': '6.254e+05', 'completions/mean_length': '109.3', 'completions/min_length': '95.4', 'completions/max_length': '121.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '109.3', 'completions/min_terminated_length': '95.4', 'completions/max_terminated_length': '121.8', 'rewards/reward_fn/mean': '0.6775', 'rewards/reward_fn/std': '0', 'reward': '0.6775', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.3565', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.54', 'epoch': '2.95'}
+ 74%|███████▍  | 295/400 [52:35<16:55,  9.67s/it][A
+                                                 [A
+ 74%|███████▍  | 295/400 [52:35<16:55,  9.67s/it][A
+ 74%|███████▍  | 296/400 [52:43<15:45,  9.10s/it][A
+ 74%|███████▍  | 297/400 [52:51<14:54,  8.69s/it][A
+ 74%|███████▍  | 298/400 [53:00<14:56,  8.79s/it][A
+ 75%|███████▍  | 299/400 [53:09<14:51,  8.83s/it][A
+ 75%|███████▌  | 300/400 [53:17<14:39,  8.80s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '1.263e-06', 'num_tokens': '6.358e+05', 'completions/mean_length': '81', 'completions/min_length': '74.8', 'completions/max_length': '90', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '81', 'completions/min_terminated_length': '74.8', 'completions/max_terminated_length': '90', 'rewards/reward_fn/mean': '0.5077', 'rewards/reward_fn/std': '0', 'reward': '0.5077', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2695', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.315', 'epoch': '3'}
+ 75%|███████▌  | 300/400 [53:17<14:39,  8.80s/it][A
+ 75%|███████▌  | 301/400 [53:39<20:59, 12.72s/it][A
+ 76%|███████▌  | 302/400 [53:52<20:52, 12.78s/it][A
+ 76%|███████▌  | 303/400 [53:59<17:38, 10.91s/it][A
+ 76%|███████▌  | 304/400 [54:06<15:39,  9.79s/it][A
+ 76%|███████▋  | 305/400 [54:15<14:56,  9.44s/it][A
+                                                 [A
+{'loss': '-0.002009', 'grad_norm': '0', 'learning_rate': '1.2e-06', 'num_tokens': '6.466e+05', 'completions/mean_length': '110.9', 'completions/min_length': '90.8', 'completions/max_length': '127.8', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '107.3', 'completions/min_terminated_length': '90.8', 'completions/max_terminated_length': '120', 'rewards/reward_fn/mean': '0.4623', 'rewards/reward_fn/std': '0.09476', 'reward': '0.4623', 'reward_std': '0.09476', 'frac_reward_zero_std': '0.6', 'entropy': '0.2234', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.18', 'epoch': '3.05'}
+ 76%|███████▋  | 305/400 [54:15<14:56,  9.44s/it][A
+ 76%|███████▋  | 306/400 [54:24<14:58,  9.56s/it][A
+ 77%|███████▋  | 307/400 [54:33<14:17,  9.22s/it][A
+ 77%|███████▋  | 308/400 [54:41<13:43,  8.95s/it][A
+ 77%|███████▋  | 309/400 [54:49<13:09,  8.67s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '1.138e-06', 'num_tokens': '6.567e+05', 'completions/mean_length': '83.35', 'completions/min_length': '65.8', 'completions/max_length': '101.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '83.35', 'completions/min_terminated_length': '65.8', 'completions/max_terminated_length': '101.8', 'rewards/reward_fn/mean': '0.5', 'rewards/reward_fn/std': '0', 'reward': '0.5', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.4041', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.135', 'epoch': '3.1'}
+ 78%|███████▊  | 310/400 [55:01<14:20,  9.57s/it][A
+                                                 [A
+ 78%|███████▊  | 310/400 [55:01<14:20,  9.57s/it][A
+ 78%|███████▊  | 311/400 [55:09<13:37,  9.18s/it][A
+ 78%|███████▊  | 312/400 [55:19<13:37,  9.29s/it][A
+ 78%|███████▊  | 313/400 [55:28<13:18,  9.18s/it][A
+ 78%|███████▊  | 314/400 [55:39<14:13,  9.93s/it][A
+ 79%|███████▉  | 315/400 [55:47<12:56,  9.14s/it][A
+                                                 [A
+{'loss': '0.01288', 'grad_norm': '0', 'learning_rate': '1.075e-06', 'num_tokens': '6.671e+05', 'completions/mean_length': '92.85', 'completions/min_length': '84.6', 'completions/max_length': '101', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '92.85', 'completions/min_terminated_length': '84.6', 'completions/max_terminated_length': '101', 'rewards/reward_fn/mean': '0.3299', 'rewards/reward_fn/std': '0.006167', 'reward': '0.3299', 'reward_std': '0.006167', 'frac_reward_zero_std': '0.6', 'entropy': '0.2333', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.028', 'epoch': '3.15'}
+ 79%|███████▉  | 315/400 [55:47<12:56,  9.14s/it][A
+ 79%|███████▉  | 316/400 [55:54<12:08,  8.68s/it][A
+ 79%|███████▉  | 317/400 [56:04<12:35,  9.10s/it][A
+ 80%|███████▉  | 318/400 [56:13<12:25,  9.09s/it][A
+ 80%|███████▉  | 319/400 [56:25<13:18,  9.86s/it][A
+ 80%|████████  | 320/400 [56:32<12:00,  9.01s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '1.013e-06', 'num_tokens': '6.777e+05', 'completions/mean_length': '88.5', 'completions/min_length': '81.6', 'completions/max_length': '99', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '88.5', 'completions/min_terminated_length': '81.6', 'completions/max_terminated_length': '99', 'rewards/reward_fn/mean': '0.985', 'rewards/reward_fn/std': '0', 'reward': '0.985', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2885', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '8.966', 'epoch': '3.2'}
+ 80%|████████  | 320/400 [56:32<12:00,  9.01s/it][A
+ 80%|████████  | 321/400 [56:42<12:23,  9.41s/it][A
+ 80%|████████  | 322/400 [56:53<12:32,  9.64s/it][A
+ 81%|████████  | 323/400 [57:02<12:08,  9.46s/it][A
+ 81%|████████  | 324/400 [57:10<11:40,  9.21s/it][A
+ 81%|████████▏ | 325/400 [57:20<11:39,  9.32s/it][A
+                                                 [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '9.5e-07', 'num_tokens': '6.879e+05', 'completions/mean_length': '88.1', 'completions/min_length': '75.8', 'completions/max_length': '105.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '88.1', 'completions/min_terminated_length': '75.8', 'completions/max_terminated_length': '105.6', 'rewards/reward_fn/mean': '0.77', 'rewards/reward_fn/std': '0', 'reward': '0.77', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.4938', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.436', 'epoch': '3.25'}
+ 81%|████████▏ | 325/400 [57:20<11:39,  9.32s/it][A
+ 82%|████████▏ | 326/400 [57:28<10:56,  8.87s/it][A
+ 82%|████████▏ | 327/400 [57:35<10:19,  8.49s/it][A
+ 82%|████████▏ | 328/400 [57:44<10:07,  8.44s/it][A
+ 82%|████████▏ | 329/400 [57:54<10:41,  9.04s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '8.875e-07', 'num_tokens': '6.986e+05', 'completions/mean_length': '110', 'completions/min_length': '102', 'completions/max_length': '118.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '110', 'completions/min_terminated_length': '102', 'completions/max_terminated_length': '118.6', 'rewards/reward_fn/mean': '0.5522', 'rewards/reward_fn/std': '0', 'reward': '0.5522', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.3105', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.42', 'epoch': '3.3'}
+ 82%|████████▎ | 330/400 [58:13<13:52, 11.89s/it][A
+                                                 [A
+ 82%|████████▎ | 330/400 [58:13<13:52, 11.89s/it][A
+ 83%|████████▎ | 331/400 [58:29<15:21, 13.36s/it][A
+ 83%|████████▎ | 332/400 [58:50<17:46, 15.69s/it][A
+ 83%|████████▎ | 333/400 [58:59<15:14, 13.65s/it][A
+ 84%|████████▎ | 334/400 [59:09<13:49, 12.56s/it][A
+ 84%|████████▍ | 335/400 [59:26<14:56, 13.79s/it][A
+                                                 [A
+{'loss': '0.008559', 'grad_norm': '0', 'learning_rate': '8.25e-07', 'num_tokens': '7.109e+05', 'completions/mean_length': '160.6', 'completions/min_length': '145.2', 'completions/max_length': '171', 'completions/clipped_ratio': '0.1', 'completions/mean_terminated_length': '157.8', 'completions/min_terminated_length': '145.2', 'completions/max_terminated_length': '168', 'rewards/reward_fn/mean': '0.6032', 'rewards/reward_fn/std': '0.1041', 'reward': '0.6032', 'reward_std': '0.1041', 'frac_reward_zero_std': '0.6', 'entropy': '0.2603', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '14.56', 'epoch': '3.35'}
+ 84%|████████▍ | 335/400 [59:26<14:56, 13.79s/it][A
+ 84%|████████▍ | 336/400 [59:35<13:01, 12.21s/it][A
+ 84%|████████▍ | 337/400 [59:42<11:11, 10.66s/it][A
+ 84%|████████▍ | 338/400 [59:56<12:05, 11.71s/it][A
+ 85%|████████▍ | 339/400 [1:00:07<11:39, 11.47s/it][A
+ 85%|████████▌ | 340/400 [1:00:15<10:37, 10.63s/it][A
+                                                   [A
+{'loss': '-0.002286', 'grad_norm': '0', 'learning_rate': '7.625e-07', 'num_tokens': '7.214e+05', 'completions/mean_length': '98.55', 'completions/min_length': '86.2', 'completions/max_length': '110', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '98.55', 'completions/min_terminated_length': '86.2', 'completions/max_terminated_length': '110', 'rewards/reward_fn/mean': '0.5698', 'rewards/reward_fn/std': '0.03526', 'reward': '0.5698', 'reward_std': '0.03526', 'frac_reward_zero_std': '0.8', 'entropy': '0.2696', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.741', 'epoch': '3.4'}
+ 85%|████████▌ | 340/400 [1:00:15<10:37, 10.63s/it][A
+ 85%|████████▌ | 341/400 [1:00:26<10:34, 10.76s/it][A
+ 86%|████████▌ | 342/400 [1:00:35<09:43, 10.05s/it][A
+ 86%|████████▌ | 343/400 [1:00:56<12:41, 13.37s/it][A
+ 86%|████████▌ | 344/400 [1:01:07<11:48, 12.65s/it][A
+{'loss': '0.01036', 'grad_norm': '0', 'learning_rate': '7e-07', 'num_tokens': '7.317e+05', 'completions/mean_length': '112.8', 'completions/min_length': '90.6', 'completions/max_length': '135.8', 'completions/clipped_ratio': '0.1', 'completions/mean_terminated_length': '105.8', 'completions/min_terminated_length': '90.6', 'completions/max_terminated_length': '125.6', 'rewards/reward_fn/mean': '0.6117', 'rewards/reward_fn/std': '0.02041', 'reward': '0.6117', 'reward_std': '0.02041', 'frac_reward_zero_std': '0.8', 'entropy': '0.3702', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.67', 'epoch': '3.45'}
+ 86%|████████▋ | 345/400 [1:01:14<10:09, 11.07s/it][A
+                                                   [A
+ 86%|████████▋ | 345/400 [1:01:14<10:09, 11.07s/it][A
+ 86%|████████▋ | 346/400 [1:01:23<09:25, 10.48s/it][A
+ 87%|████████▋ | 347/400 [1:01:33<08:55, 10.10s/it][A
+ 87%|████████▋ | 348/400 [1:01:42<08:34,  9.89s/it][A
+ 87%|████████▋ | 349/400 [1:01:50<07:53,  9.29s/it][A
+{'loss': '0.002012', 'grad_norm': '0', 'learning_rate': '6.375e-07', 'num_tokens': '7.417e+05', 'completions/mean_length': '96.7', 'completions/min_length': '83.8', 'completions/max_length': '107.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '96.7', 'completions/min_terminated_length': '83.8', 'completions/max_terminated_length': '107.2', 'rewards/reward_fn/mean': '0.8325', 'rewards/reward_fn/std': '0.005', 'reward': '0.8325', 'reward_std': '0.005', 'frac_reward_zero_std': '0.8', 'entropy': '0.3189', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.451', 'epoch': '3.5'}
+ 88%|████████▊ | 350/400 [1:02:02<08:28, 10.17s/it][A
+                                                   [A
+ 88%|████████▊ | 350/400 [1:02:02<08:28, 10.17s/it][A
+ 88%|████████▊ | 351/400 [1:02:11<07:54,  9.68s/it][A
+ 88%|████████▊ | 352/400 [1:02:24<08:44, 10.94s/it][A
+ 88%|████████▊ | 353/400 [1:02:32<07:50, 10.00s/it][A
+ 88%|████████▊ | 354/400 [1:02:42<07:32,  9.84s/it][A
+ 89%|████████▉ | 355/400 [1:03:03<09:53, 13.20s/it][A
+                                                   [A
+{'loss': '-0.04939', 'grad_norm': '0.4823', 'learning_rate': '5.75e-07', 'num_tokens': '7.523e+05', 'completions/mean_length': '116', 'completions/min_length': '99.2', 'completions/max_length': '139.4', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '116', 'completions/min_terminated_length': '99.2', 'completions/max_terminated_length': '139.4', 'rewards/reward_fn/mean': '0.5475', 'rewards/reward_fn/std': '0.1583', 'reward': '0.5475', 'reward_std': '0.1583', 'frac_reward_zero_std': '0.6', 'entropy': '0.2832', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '12.02', 'epoch': '3.55'}
+ 89%|████████▉ | 355/400 [1:03:03<09:53, 13.20s/it][A
+ 89%|████████▉ | 356/400 [1:03:24<11:28, 15.65s/it][A
+ 89%|████████▉ | 357/400 [1:03:31<09:17, 12.97s/it][A
+ 90%|████████▉ | 358/400 [1:03:40<08:11, 11.71s/it][A
+ 90%|████████▉ | 359/400 [1:03:51<07:57, 11.65s/it][A
+{'loss': '0.002492', 'grad_norm': '0', 'learning_rate': '5.125e-07', 'num_tokens': '7.633e+05', 'completions/mean_length': '112.3', 'completions/min_length': '92.2', 'completions/max_length': '131', 'completions/clipped_ratio': '0.1', 'completions/mean_terminated_length': '103.8', 'completions/min_terminated_length': '92.2', 'completions/max_terminated_length': '116.6', 'rewards/reward_fn/mean': '0.384', 'rewards/reward_fn/std': '0.0483', 'reward': '0.384', 'reward_std': '0.0483', 'frac_reward_zero_std': '0.6', 'entropy': '0.2603', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '11.37', 'epoch': '3.6'}
+ 90%|█████████ | 360/400 [1:04:00<07:15, 10.89s/it][A
+                                                   [A
+ 90%|█████████ | 360/400 [1:04:00<07:15, 10.89s/it][A
+ 90%|█████████ | 361/400 [1:04:08<06:24,  9.85s/it][A
+ 90%|█████████ | 362/400 [1:04:20<06:42, 10.60s/it][A
+ 91%|█████████ | 363/400 [1:04:31<06:40, 10.84s/it][A
+ 91%|█████████ | 364/400 [1:04:39<05:56,  9.90s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '4.5e-07', 'num_tokens': '7.73e+05', 'completions/mean_length': '95.95', 'completions/min_length': '88.4', 'completions/max_length': '105.2', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '95.95', 'completions/min_terminated_length': '88.4', 'completions/max_terminated_length': '105.2', 'rewards/reward_fn/mean': '0.7925', 'rewards/reward_fn/std': '0', 'reward': '0.7925', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2726', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.236', 'epoch': '3.65'}
+ 91%|█████████▏| 365/400 [1:04:47<05:25,  9.29s/it][A
+                                                   [A
+ 91%|█████████▏| 365/400 [1:04:47<05:25,  9.29s/it][A
+ 92%|█████████▏| 366/400 [1:05:03<06:27, 11.40s/it][A
+ 92%|█████████▏| 367/400 [1:05:11<05:36, 10.20s/it][A
+ 92%|█████████▏| 368/400 [1:05:23<05:45, 10.79s/it][A
+ 92%|█████████▏| 369/400 [1:05:32<05:18, 10.28s/it][A
+ 92%|█████████▎| 370/400 [1:05:41<05:00, 10.01s/it][A
+                                                   [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '3.875e-07', 'num_tokens': '7.839e+05', 'completions/mean_length': '108.1', 'completions/min_length': '95.6', 'completions/max_length': '122', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '108.1', 'completions/min_terminated_length': '95.6', 'completions/max_terminated_length': '122', 'rewards/reward_fn/mean': '0.4602', 'rewards/reward_fn/std': '0', 'reward': '0.4602', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2555', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.75', 'epoch': '3.7'}
+ 92%|█████████▎| 370/400 [1:05:41<05:00, 10.01s/it][A
+ 93%|█████████▎| 371/400 [1:05:49<04:30,  9.32s/it][A
+ 93%|█████████▎| 372/400 [1:05:58<04:14,  9.09s/it][A
+ 93%|█████████▎| 373/400 [1:06:14<05:00, 11.12s/it][A
+ 94%|█████████▎| 374/400 [1:06:23<04:35, 10.61s/it][A
+{'loss': '0.01258', 'grad_norm': '0', 'learning_rate': '3.25e-07', 'num_tokens': '7.941e+05', 'completions/mean_length': '99.6', 'completions/min_length': '89.8', 'completions/max_length': '111', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '99.6', 'completions/min_terminated_length': '89.8', 'completions/max_terminated_length': '111', 'rewards/reward_fn/mean': '0.6548', 'rewards/reward_fn/std': '0.0075', 'reward': '0.6548', 'reward_std': '0.0075', 'frac_reward_zero_std': '0.8', 'entropy': '0.2401', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.743', 'epoch': '3.75'}
+ 94%|█████████▍| 375/400 [1:06:31<04:03,  9.75s/it][A
+                                                   [A
+ 94%|█████████▍| 375/400 [1:06:31<04:03,  9.75s/it][A
+ 94%|█████████▍| 376/400 [1:06:49<04:58, 12.45s/it][A
+ 94%|█████████▍| 377/400 [1:07:01<04:42, 12.26s/it][A
+ 94%|█████████▍| 378/400 [1:07:10<04:09, 11.33s/it][A
+ 95%|█████████▍| 379/400 [1:07:32<04:59, 14.26s/it][A
+{'loss': '0.03462', 'grad_norm': '0', 'learning_rate': '2.625e-07', 'num_tokens': '8.058e+05', 'completions/mean_length': '138.5', 'completions/min_length': '112.4', 'completions/max_length': '170.6', 'completions/clipped_ratio': '0.05', 'completions/mean_terminated_length': '136.1', 'completions/min_terminated_length': '112.4', 'completions/max_terminated_length': '162.6', 'rewards/reward_fn/mean': '0.2493', 'rewards/reward_fn/std': '0.0909', 'reward': '0.2493', 'reward_std': '0.0909', 'frac_reward_zero_std': '0.6', 'entropy': '0.2911', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '14.45', 'epoch': '3.8'}
+ 95%|█████████▌| 380/400 [1:07:44<04:32, 13.61s/it][A
+                                                   [A
+ 95%|█████████▌| 380/400 [1:07:44<04:32, 13.61s/it][A
+ 95%|█████████▌| 381/400 [1:07:51<03:43, 11.77s/it][A
+ 96%|█████████▌| 382/400 [1:07:59<03:13, 10.76s/it][A
+ 96%|█████████▌| 383/400 [1:08:08<02:50, 10.04s/it][A
+ 96%|█████████▌| 384/400 [1:08:16<02:32,  9.51s/it][A
+ 96%|█████████▋| 385/400 [1:08:31<02:47, 11.16s/it][A
+                                                   [A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '2e-07', 'num_tokens': '8.16e+05', 'completions/mean_length': '97.8', 'completions/min_length': '90.8', 'completions/max_length': '105.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '97.8', 'completions/min_terminated_length': '90.8', 'completions/max_terminated_length': '105.6', 'rewards/reward_fn/mean': '0.6568', 'rewards/reward_fn/std': '0', 'reward': '0.6568', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2702', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.389', 'epoch': '3.85'}
+ 96%|█████████▋| 385/400 [1:08:31<02:47, 11.16s/it][A
+ 96%|█████████▋| 386/400 [1:08:40<02:25, 10.39s/it][A
+ 97%|█████████▋| 387/400 [1:08:50<02:15, 10.44s/it][A
+ 97%|█████████▋| 388/400 [1:08:59<01:58,  9.89s/it][A
+ 97%|█████████▋| 389/400 [1:09:14<02:07, 11.55s/it][A
+ 98%|█████████▊| 390/400 [1:09:24<01:51, 11.12s/it][A
+                                                   [A
+{'loss': '-0.0002949', 'grad_norm': '0', 'learning_rate': '1.375e-07', 'num_tokens': '8.266e+05', 'completions/mean_length': '106.2', 'completions/min_length': '95.6', 'completions/max_length': '119.6', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '106.2', 'completions/min_terminated_length': '95.6', 'completions/max_terminated_length': '119.6', 'rewards/reward_fn/mean': '0.7713', 'rewards/reward_fn/std': '0.0975', 'reward': '0.7713', 'reward_std': '0.0975', 'frac_reward_zero_std': '0.8', 'entropy': '0.2865', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.54', 'epoch': '3.9'}
+ 98%|█████████▊| 390/400 [1:09:24<01:51, 11.12s/it][A
+ 98%|█████████▊| 391/400 [1:09:34<01:35, 10.66s/it][A
+ 98%|█████████▊| 392/400 [1:09:42<01:20, 10.00s/it][A
+ 98%|█████████▊| 393/400 [1:09:51<01:07,  9.66s/it][A
+ 98%|█████████▊| 394/400 [1:10:13<01:18, 13.13s/it][A
+ 99%|█████████▉| 395/400 [1:10:20<00:56, 11.35s/it][A
+                                                   [A
+{'loss': '0.005766', 'grad_norm': '0', 'learning_rate': '7.5e-08', 'num_tokens': '8.374e+05', 'completions/mean_length': '116', 'completions/min_length': '104.2', 'completions/max_length': '126', 'completions/clipped_ratio': '0.1', 'completions/mean_terminated_length': '114.3', 'completions/min_terminated_length': '104.2', 'completions/max_terminated_length': '126', 'rewards/reward_fn/mean': '0.609', 'rewards/reward_fn/std': '0.08314', 'reward': '0.609', 'reward_std': '0.08314', 'frac_reward_zero_std': '0.8', 'entropy': '0.2195', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '10.95', 'epoch': '3.95'}
+ 99%|█████████▉| 395/400 [1:10:20<00:56, 11.35s/it][A
+ 99%|█████████▉| 396/400 [1:10:29<00:42, 10.73s/it][A
+ 99%|█████████▉| 397/400 [1:10:39<00:31, 10.57s/it][A
+100%|█████████▉| 398/400 [1:10:49<00:20, 10.46s/it][A
+100%|█████████▉| 399/400 [1:10:59<00:10, 10.24s/it][A
+{'loss': '0', 'grad_norm': '0', 'learning_rate': '1.25e-08', 'num_tokens': '8.477e+05', 'completions/mean_length': '92.1', 'completions/min_length': '76.2', 'completions/max_length': '110.8', 'completions/clipped_ratio': '0', 'completions/mean_terminated_length': '92.1', 'completions/min_terminated_length': '76.2', 'completions/max_terminated_length': '110.8', 'rewards/reward_fn/mean': '0.4744', 'rewards/reward_fn/std': '0', 'reward': '0.4744', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0.2818', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '9.758', 'epoch': '4'}
+100%|██████████| 400/400 [1:11:09<00:00, 10.16s/it][A
+                                                   [A
+{'train_runtime': '4270', 'train_samples_per_second': '0.094', 'train_steps_per_second': '0.094', 'train_loss': '0.00211', 'epoch': '4'}
+100%|██████████| 400/400 [1:11:09<00:00, 10.16s/it][A
+                                                   [A
+* Run finished. Uploading logs to Trackio (please wait...)
+100%|██████████| 400/400 [1:11:10<00:00, 10.16s/it][A100%|██████████| 400/400 [1:11:10<00:00, 10.68s/it]
+Round 2 complete. Loss: 0.0021
+
+======================================================================
+ROUND 2 EVALUATION
+======================================================================
+
+----------------------------------------------------------------------
+ROUND 2 (40 scenarios)
+----------------------------------------------------------------------
+  Scenario   1 | ['get_weather']                          | reward=1.00
+  Scenario   2 | ['search_flights']                       | reward=0.95
+  Scenario   3 | ['send_slack_message']                   | reward=1.00
+  Scenario   4 | ['calculator']                           | reward=0.90
+  Scenario   5 | []                                       | reward=1.00
+  Scenario   6 | ['translate_text', 'send_email']         | reward=0.98
+  Scenario   7 | ['get_account_balance', 'calculator']    | reward=0.93
+  Scenario   8 | ['web_search']                           | reward=0.00
+  Scenario   9 | ['create_calendar_event', 'set_reminder'] | reward=0.15
+  Scenario  10 | ['get_stock_price', 'get_stock_price']   | reward=0.70
+  Scenario  11 | ['web_search', 'generate_summary']       | reward=0.93
+  Scenario  12 | []                                       | reward=1.00
+  Scenario  13 | ['get_weather', 'search_flights']        | reward=1.00
+  Scenario  14 | []                                       | reward=1.00
+  Scenario  15 | ['set_reminder']                         | reward=0.93
+  Scenario  16 | []                                       | reward=1.00
+  Scenario  17 | ['get_stock_price', 'calculator']        | reward=0.95
+  Scenario  18 | ['get_weather', 'send_slack_message']    | reward=0.96
+  Scenario  19 | ['web_search']                           | reward=0.00
+  Scenario  20 | ['file_read', 'generate_summary', 'send_email'] | reward=0.93
+  Scenario  21 | ['get_weather', 'translate_text', 'send_slack_message'] | reward=0.95
+  Scenario  22 | []                                       | reward=1.00
+  Scenario  23 | ['web_search']                           | reward=1.00
+  Scenario  24 | ['get_stock_price', 'get_stock_price', 'calculator'] | reward=0.66
+  Scenario  25 | ['get_weather']                          | reward=1.00
+  Scenario  26 | ['web_search', 'generate_summary', 'translate_text', 'send_email'] | reward=0.93
+  Scenario  27 | ['get_stock_price', 'get_stock_price', 'get_stock_price', 'calculator'] | reward=0.61
+  Scenario  28 | []                                       | reward=1.00
+  Scenario  29 | ['get_weather', 'get_weather', 'web_search', 'search_flights'] | reward=0.34
+  Scenario  30 | []                                       | reward=1.00
+  Scenario  31 | ['file_read', 'calculator', 'send_email', 'send_slack_message'] | reward=0.93
+  Scenario  32 | ['search_flights', 'web_search']         | reward=0.90
+  Scenario  33 | ['get_account_balance', 'calculator', 'set_reminder'] | reward=0.90
+  Scenario  34 | []                                       | reward=0.00
+  Scenario  35 | []                                       | reward=1.00
+  Scenario  36 | ['get_weather']                          | reward=1.00
+  Scenario  37 | []                                       | reward=0.00
+  Scenario  38 | []                                       | reward=0.00
+  Scenario  39 | ['web_search', 'generate_summary', 'translate_text', 'file_write'] | reward=0.89
+  Scenario  40 | ['create_calendar_event', 'create_calendar_event'] | reward=0.30
+
+ROUND 2: avg_reward=0.768, accuracy=72.5%
+Improvement over Round 1: +0.034
+Improvement over baseline: +0.203
+
+======================================================================
+GENERATING PLOTS
+======================================================================
+Plot saved to ./plots/training_results.png
+
+======================================================================
+FINAL SUMMARY
+======================================================================
+  Baseline:  avg_reward=0.565  accuracy=48%
+  Round 1:   avg_reward=0.734  accuracy=70%  (+0.169)
+  Round 2:   avg_reward=0.768  accuracy=72%  (+0.203)
+======================================================================
+
+======================================================================
+PUSHING ADAPTER TO HUB: Harshitawake/tool-call-grpo-a10g-v2
+======================================================================
+ERROR: Push to hub failed: (Request ID: Root=1-69ed6d70-55eb6e9054615df85ca4f845;3b8dee7e-286c-43a3-9585-0bec88ba4c82)
+
+403 Forbidden: You don't have the rights to create a model under the namespace "Harshitawake".
+Cannot access content at: https://huggingface.co/api/repos/create.
+Make sure your token has the correct permissions.
+Trained adapter is still saved locally in the job container.
+
+Done.
