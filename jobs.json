@@ -1,0 +1,272 @@
+﻿[
+  {
+    "id": "69ed3426d70108f37acdf05e",
+    "created_at": "2026-04-25T21:37:42.202000+00:00",
+    "docker_image": "ghcr.io/astral-sh/uv:python3.12-bookworm",
+    "command": [
+      "uv",
+      "run",
+      "https://raw.githubusercontent.com/Harshitawake/tool-call-rl-OpenEnv/main/training/grpo_hf_jobs.py",
+      "--mode",
+      "full",
+      "--rounds",
+      "2",
+      "--output-repo",
+      "Harshitawake/tool-call-grpo-full"
+    ],
+    "arguments": [],
+    "environment": {},
+    "secrets": [
+      "HF_TOKEN"
+    ],
+    "flavor": "a10g-small",
+    "labels": {},
+    "status": {
+      "stage": "RUNNING"
+    },
+    "owner": {
+      "id": "657c23a3cfe79b5bf69a7697",
+      "name": "GunsiGTX00",
+      "type": "user"
+    },
+    "endpoint": "https://huggingface.co",
+    "url": "https://huggingface.co/jobs/GunsiGTX00/69ed3426d70108f37acdf05e"
+  },
+  {
+    "id": "69ed3107d2c8bd8662bce774",
+    "created_at": "2026-04-25T21:24:23.778000+00:00",
+    "docker_image": "ghcr.io/astral-sh/uv:python3.12-bookworm",
+    "command": [
+      "uv",
+      "run",
+      "https://raw.githubusercontent.com/Harshitawake/tool-call-rl-OpenEnv/main/training/grpo_hf_jobs.py",
+      "--mode",
+      "full",
+      "--rounds",
+      "2",
+      "--output-repo",
+      "GunsiGTX00/tool-call-grpo"
+    ],
+    "arguments": [],
+    "environment": {},
+    "secrets": [
+      "HF_TOKEN"
+    ],
+    "flavor": "a10g-small",
+    "labels": {},
+    "status": {
+      "stage": "ERROR",
+      "message": "Job failed with exit code: 1. Reason: Error"
+    },
+    "owner": {
+      "id": "657c23a3cfe79b5bf69a7697",
+      "name": "GunsiGTX00",
+      "type": "user"
+    },
+    "endpoint": "https://huggingface.co",
+    "url": "https://huggingface.co/jobs/GunsiGTX00/69ed3107d2c8bd8662bce774"
+  },
+  {
+    "id": "69ed2c30d2c8bd8662bce6d6",
+    "created_at": "2026-04-25T21:03:44.469000+00:00",
+    "docker_image": "ghcr.io/astral-sh/uv:python3.12-bookworm",
+    "command": [
+      "uv",
+      "run",
+      "https://raw.githubusercontent.com/Harshitawake/tool-call-rl-OpenEnv/main/training/grpo_hf_jobs.py",
+      "--mode",
+      "fast",
+      "--rounds",
+      "1",
+      "--output-repo",
+      "GunsiGTX00/tool-call-grpo-smoketest"
+    ],
+    "arguments": [],
+    "environment": {},
+    "secrets": [
+      "HF_TOKEN"
+    ],
+    "flavor": "a10g-small",
+    "labels": {},
+    "status": {
+      "stage": "COMPLETED"
+    },
+    "owner": {
+      "id": "657c23a3cfe79b5bf69a7697",
+      "name": "GunsiGTX00",
+      "type": "user"
+    },
+    "endpoint": "https://huggingface.co",
+    "url": "https://huggingface.co/jobs/GunsiGTX00/69ed2c30d2c8bd8662bce6d6"
+  },
+  {
+    "id": "69ed2a4ed2c8bd8662bce69b",
+    "created_at": "2026-04-25T20:55:42.088000+00:00",
+    "docker_image": "ghcr.io/astral-sh/uv:python3.12-bookworm",
+    "command": [
+      "uv",
+      "run",
+      "https://raw.githubusercontent.com/Harshitawake/tool-call-rl-OpenEnv/main/training/grpo_hf_jobs.py",
+      "--mode",
+      "fast",
+      "--rounds",
+      "1",
+      "--output-repo",
+      "GunsiGTX00/tool-call-grpo-smoketest"
+    ],
+    "arguments": [],
+    "environment": {},
+    "secrets": [
+      "HF_TOKEN"
+    ],
+    "flavor": "a10g-small",
+    "labels": {},
+    "status": {
+      "stage": "ERROR",
+      "message": "Job failed with exit code: 1. Reason: Error"
+    },
+    "owner": {
+      "id": "657c23a3cfe79b5bf69a7697",
+      "name": "GunsiGTX00",
+      "type": "user"
+    },
+    "endpoint": "https://huggingface.co",
+    "url": "https://huggingface.co/jobs/GunsiGTX00/69ed2a4ed2c8bd8662bce69b"
+  },
+  {
+    "id": "69ed291ad70108f37acdef91",
+    "created_at": "2026-04-25T20:50:34.656000+00:00",
+    "docker_image": "ghcr.io/astral-sh/uv:python3.12-bookworm",
+    "command": [
+      "uv",
+      "run",
+      "https://raw.githubusercontent.com/Harshitawake/tool-call-rl-OpenEnv/main/training/grpo_hf_jobs.py",
+      "--mode",
+      "fast",
+      "--rounds",
+      "1",
+      "--output-repo",
+      "GunsiGTX00/tool-call-grpo-fast"
+    ],
+    "arguments": [],
+    "environment": {},
+    "secrets": [
+      "HF_TOKEN"
+    ],
+    "flavor": "a10g-small",
+    "labels": {},
+    "status": {
+      "stage": "ERROR",
+      "message": "Job failed with exit code: 1. Reason: Error"
+    },
+    "owner": {
+      "id": "657c23a3cfe79b5bf69a7697",
+      "name": "GunsiGTX00",
+      "type": "user"
+    },
+    "endpoint": "https://huggingface.co",
+    "url": "https://huggingface.co/jobs/GunsiGTX00/69ed291ad70108f37acdef91"
+  },
+  {
+    "id": "69ed269bd70108f37acdef6b",
+    "created_at": "2026-04-25T20:39:55.172000+00:00",
+    "docker_image": "ghcr.io/astral-sh/uv:python3.12-bookworm",
+    "command": [
+      "uv",
+      "run",
+      "https://raw.githubusercontent.com/Harshitawake/tool-call-rl-OpenEnv/main/training/grpo_hf_jobs.py",
+      "--mode",
+      "fast",
+      "--rounds",
+      "1",
+      "--output-repo",
+      "GunsiGTX00/tool-call-grpo-fast"
+    ],
+    "arguments": [],
+    "environment": {},
+    "secrets": [
+      "HF_TOKEN"
+    ],
+    "flavor": "a10g-small",
+    "labels": {},
+    "status": {
+      "stage": "ERROR",
+      "message": "Job failed with exit code: 1. Reason: Error"
+    },
+    "owner": {
+      "id": "657c23a3cfe79b5bf69a7697",
+      "name": "GunsiGTX00",
+      "type": "user"
+    },
+    "endpoint": "https://huggingface.co",
+    "url": "https://huggingface.co/jobs/GunsiGTX00/69ed269bd70108f37acdef6b"
+  },
+  {
+    "id": "69ed24dad2c8bd8662bce609",
+    "created_at": "2026-04-25T20:32:26.243000+00:00",
+    "docker_image": "ghcr.io/astral-sh/uv:python3.12-bookworm",
+    "command": [
+      "uv",
+      "run",
+      "https://raw.githubusercontent.com/Harshitawake/tool-call-rl-OpenEnv/main/training/grpo_hf_jobs.py",
+      "--mode",
+      "fast",
+      "--rounds",
+      "1",
+      "--output-repo",
+      "GunsiGTX00/tool-call-grpo-fast"
+    ],
+    "arguments": [],
+    "environment": {},
+    "secrets": [
+      "HF_TOKEN"
+    ],
+    "flavor": "a10g-small",
+    "labels": {},
+    "status": {
+      "stage": "ERROR",
+      "message": "Job failed with exit code: 1. Reason: Error"
+    },
+    "owner": {
+      "id": "657c23a3cfe79b5bf69a7697",
+      "name": "GunsiGTX00",
+      "type": "user"
+    },
+    "endpoint": "https://huggingface.co",
+    "url": "https://huggingface.co/jobs/GunsiGTX00/69ed24dad2c8bd8662bce609"
+  },
+  {
+    "id": "69ed22c9d70108f37acdef16",
+    "created_at": "2026-04-25T20:23:37.693000+00:00",
+    "docker_image": "ghcr.io/astral-sh/uv:python3.12-bookworm",
+    "command": [
+      "uv",
+      "run",
+      "https://raw.githubusercontent.com/Harshitawake/tool-call-rl-OpenEnv/main/training/grpo_hf_jobs.py",
+      "--mode",
+      "fast",
+      "--rounds",
+      "1",
+      "--output-repo",
+      "GunsiGTX00/tool-call-grpo-fast"
+    ],
+    "arguments": [],
+    "environment": {},
+    "secrets": [
+      "HF_TOKEN"
+    ],
+    "flavor": "a10g-small",
+    "labels": {},
+    "status": {
+      "stage": "ERROR",
+      "message": "Job failed with exit code: 1. Reason: Error"
+    },
+    "owner": {
+      "id": "657c23a3cfe79b5bf69a7697",
+      "name": "GunsiGTX00",
+      "type": "user"
+    },
+    "endpoint": "https://huggingface.co",
+    "url": "https://huggingface.co/jobs/GunsiGTX00/69ed22c9d70108f37acdef16"
+  }
+]

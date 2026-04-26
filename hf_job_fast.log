@@ -1,0 +1,261 @@
+﻿Downloading uvloop (4.2MiB)
+Downloading hf-xet (4.0MiB)
+Downloading tokenizers (3.1MiB)
+Downloading pydantic-core (2.0MiB)
+Downloading kubernetes (1.9MiB)
+Downloading aiohttp (1.7MiB)
+Downloading pygments (1.2MiB)
+Downloading pillow (6.8MiB)
+Downloading grpcio (6.5MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading onnxruntime (17.2MiB)
+Downloading numpy (15.9MiB)
+Downloading sympy (6.0MiB)
+Downloading networkx (2.0MiB)
+Downloading pandas (10.4MiB)
+Downloading triton (179.5MiB)
+Downloading nvidia-cusolver-cu12 (255.1MiB)
+Downloading nvidia-nvjitlink-cu12 (37.4MiB)
+Downloading nvidia-cusparselt-cu12 (273.9MiB)
+Downloading scipy (33.6MiB)
+Downloading nvidia-cuda-nvrtc-cu12 (84.0MiB)
+Downloading diffusers (4.8MiB)
+Downloading nvidia-cudnn-cu12 (674.0MiB)
+Downloading nvidia-nccl-cu12 (307.4MiB)
+Downloading nvidia-cusparse-cu12 (274.9MiB)
+Downloading chromadb (22.1MiB)
+Downloading nvidia-cufile-cu12 (1.1MiB)
+Downloading nvidia-cuda-cupti-cu12 (9.8MiB)
+Downloading pyarrow (46.6MiB)
+Downloading sentencepiece (1.3MiB)
+Downloading nvidia-nvshmem-cu12 (132.7MiB)
+Downloading nvidia-cublas-cu12 (566.8MiB)
+Downloading hf-transfer (3.4MiB)
+Downloading nvidia-cufft-cu12 (184.2MiB)
+Downloading fonttools (4.8MiB)
+Downloading unsloth (63.9MiB)
+Downloading matplotlib (8.4MiB)
+Downloading xformers (3.1MiB)
+Downloading bitsandbytes (57.8MiB)
+Downloading scikit-learn (8.5MiB)
+Downloading transformers (9.8MiB)
+Downloading nvidia-curand-cu12 (60.7MiB)
+Downloading torchvision (7.7MiB)
+Downloading torch (873.2MiB)
+Downloading cuda-bindings (11.6MiB)
+Downloading torchao (3.1MiB)
+Downloading trackio (1.6MiB)
+ Downloaded nvidia-cufile-cu12
+ Downloaded sentencepiece
+ Downloaded kiwisolver
+ Downloaded trackio
+ Downloaded aiohttp
+ Downloaded pydantic-core
+ Downloaded pygments
+ Downloaded networkx
+ Downloaded tokenizers
+ Downloaded hf-transfer
+ Downloaded xformers
+ Downloaded hf-xet
+ Downloaded uvloop
+ Downloaded torchao
+ Downloaded kubernetes
+ Downloaded diffusers
+ Downloaded fonttools
+ Downloaded grpcio
+ Downloaded pillow
+ Downloaded torchvision
+ Downloaded sympy
+ Downloaded scikit-learn
+ Downloaded matplotlib
+ Downloaded nvidia-cuda-cupti-cu12
+ Downloaded cuda-bindings
+ Downloaded numpy
+ Downloaded transformers
+ Downloaded pandas
+ Downloaded chromadb
+ Downloaded onnxruntime
+ Downloaded scipy
+ Downloaded nvidia-nvjitlink-cu12
+ Downloaded nvidia-curand-cu12
+ Downloaded bitsandbytes
+ Downloaded pyarrow
+ Downloaded nvidia-cuda-nvrtc-cu12
+ Downloaded unsloth
+ Downloaded nvidia-nvshmem-cu12
+ Downloaded nvidia-cufft-cu12
+ Downloaded triton
+ Downloaded nvidia-cusolver-cu12
+ Downloaded nvidia-cusparselt-cu12
+ Downloaded nvidia-cusparse-cu12
+ Downloaded nvidia-nccl-cu12
+ Downloaded nvidia-cudnn-cu12
+ Downloaded nvidia-cublas-cu12
+ Downloaded torch
+Installed 151 packages in 756ms
+======================================================================
+HF JOBS ΓÇö GRPO TRAINING FOR TOOL-CALL AGENT
+======================================================================
+Mode:           fast
+Model:          unsloth/Qwen2.5-3B-Instruct-bnb-4bit
+Output repo:    GunsiGTX00/tool-call-grpo-fast
+Train / Eval:   30 / 20 scenarios
+Epochs:         1
+Generations:    4
+Rounds:         1
+Trackio:        enabled
+======================================================================
+* Trackio project initialized: tool-call-grpo
+* Trackio metrics logged to: /root/.cache/huggingface/trackio
+* View dashboard by running in your terminal:
+[1m[38;5;208mtrackio show --project "tool-call-grpo"[0m
+* or by running in Python: trackio.show(project="tool-call-grpo")
+* Created new run: hfjobs-fast-1777148671
+Trackio initialized ΓÇö view live at: https://huggingface.co/trackio
+Fetching scenarios from: https://raw.githubusercontent.com/Harshitawake/tool-call-rl-OpenEnv/main/data/scenarios_expanded.json
+  Loaded 137 scenarios, 16 tools
+Total scenarios available: 137
+
+======================================================================
+LOADING MODEL
+======================================================================
+≡ƒªÑ Unsloth: Will patch your computer to enable 2x faster free finetuning.
+Unsloth: Your Flash Attention 2 installation seems to be broken. Using Xformers instead. No performance changes will be seen.
+≡ƒªÑ Unsloth Zoo will now patch everything to make training faster!
+==((====))==  Unsloth 2026.4.8: Fast Qwen2 patching. Transformers: 5.5.0.
+   \\   /|    NVIDIA A10G. Num GPUs = 1. Max memory: 22.301 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.10.0+cu128. CUDA: 8.6. CUDA Toolkit: 12.8. Triton: 3.6.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.35. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+
+
+model.safetensors:   0%|          | 0.00/2.05G [00:00<?, ?B/s][A
+
+model.safetensors:   0%|          | 0.00/2.05G [00:01<?, ?B/s][A
+
+model.safetensors:   0%|          | 0.00/2.05G [00:02<?, ?B/s][A
+
+model.safetensors:   0%|          | 0.00/2.05G [00:04<?, ?B/s][A
+
+model.safetensors:  67%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûï   | 1.37G/2.05G [00:05<00:00, 1.15GB/s][A
+
+model.safetensors:  91%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê | 1.87G/2.05G [00:07<00:00, 512MB/s] [A
+model.safetensors: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 2.05G/2.05G [00:08<00:00, 250MB/s]
+
+
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s][A
+Loading weights: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 434/434 [00:00<00:00, 676.82it/s]
+
+
+generation_config.json:   0%|          | 0.00/271 [00:00<?, ?B/s][A
+generation_config.json: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 271/271 [00:00<00:00, 1.66MB/s]
+
+
+tokenizer_config.json:   0%|          | 0.00/7.36k [00:00<?, ?B/s][A
+tokenizer_config.json: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 7.36k/7.36k [00:00<00:00, 33.2MB/s]
+
+
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s][A
+vocab.json: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 2.78M/2.78M [00:00<00:00, 23.7MB/s]
+
+
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s][A
+merges.txt: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1.67M/1.67M [00:00<00:00, 75.3MB/s]
+
+
+tokenizer.json:   0%|          | 0.00/11.4M [00:00<?, ?B/s][A
+tokenizer.json: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 11.4M/11.4M [00:00<00:00, 53.6MB/s]
+
+
+added_tokens.json:   0%|          | 0.00/605 [00:00<?, ?B/s][A
+added_tokens.json: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 605/605 [00:00<00:00, 3.42MB/s]
+
+
+special_tokens_map.json:   0%|          | 0.00/614 [00:00<?, ?B/s][A
+special_tokens_map.json: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 614/614 [00:00<00:00, 3.90MB/s]
+unsloth/Qwen2.5-3B-Instruct-bnb-4bit does not have a padding token! Will use pad_token = <|PAD_TOKEN|>.
+Unsloth 2026.4.8 patched 36 layers with 36 QKV layers, 36 O layers and 36 MLP layers.
+Model loaded: unsloth/Qwen2.5-3B-Instruct-bnb-4bit
+trainable params: 29,933,568 || all params: 3,115,872,256 || trainable%: 0.9607
+
+Round 1 dataset: 30 examples
+
+======================================================================
+BASELINE EVALUATION (before training)
+======================================================================
+
+----------------------------------------------------------------------
+BASELINE (20 scenarios)
+----------------------------------------------------------------------
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+/root/.cache/uv/environments-v2/42727db544b49469/lib/python3.12/site-packages/transformers/modeling_attn_mask_utils.py:71: FutureWarning: The attention mask API under `transformers.modeling_attn_mask_utils` (`AttentionMaskConverter`) is deprecated and will be removed in Transformers v5.10. Please use the new API in `transformers.masking_utils`.
+  warnings.warn(DEPRECATION_MESSAGE, FutureWarning)
+/root/.cache/uv/environments-v2/42727db544b49469/lib/python3.12/site-packages/transformers/modeling_attn_mask_utils.py:281: FutureWarning: The attention mask API under `transformers.modeling_attn_mask_utils` (`AttentionMaskConverter`) is deprecated and will be removed in Transformers v5.10. Please use the new API in `transformers.masking_utils`.
+  warnings.warn(DEPRECATION_MESSAGE, FutureWarning)
+/root/.cache/uv/environments-v2/42727db544b49469/lib/python3.12/site-packages/transformers/modeling_attn_mask_utils.py:71: FutureWarning: The attention mask API under `transformers.modeling_attn_mask_utils` (`AttentionMaskConverter`) is deprecated and will be removed in Transformers v5.10. Please use the new API in `transformers.masking_utils`.
+  warnings.warn(DEPRECATION_MESSAGE, FutureWarning)
+/root/.cache/uv/environments-v2/42727db544b49469/lib/python3.12/site-packages/transformers/modeling_attn_mask_utils.py:281: FutureWarning: The attention mask API under `transformers.modeling_attn_mask_utils` (`AttentionMaskConverter`) is deprecated and will be removed in Transformers v5.10. Please use the new API in `transformers.masking_utils`.
+  warnings.warn(DEPRECATION_MESSAGE, FutureWarning)
+  Scenario   1 | ['get_weather']                          | reward=1.00
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario   2 | ['search_flights']                       | reward=0.95
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario   3 | ['send_slack_message']                   | reward=1.00
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario   4 | []                                       | reward=0.00
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario   5 | []                                       | reward=1.00
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario   6 | ['translate_text', 'send_email']         | reward=0.98
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario   7 | ['get_account_balance', 'calculator']    | reward=0.95
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario   8 | ['web_search']                           | reward=0.00
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario   9 | []                                       | reward=0.00
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario  10 | ['get_stock_price', 'get_stock_price']   | reward=0.70
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario  11 | ['web_search', 'generate_summary']       | reward=0.93
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario  12 | []                                       | reward=1.00
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario  13 | ['get_weather', 'search_flights']        | reward=1.00
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario  14 | []                                       | reward=1.00
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario  15 | ['set_reminder']                         | reward=0.93
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario  16 | []                                       | reward=1.00
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+/root/.cache/uv/environments-v2/42727db544b49469/lib/python3.12/site-packages/transformers/modeling_attn_mask_utils.py:71: FutureWarning: The attention mask API under `transformers.modeling_attn_mask_utils` (`AttentionMaskConverter`) is deprecated and will be removed in Transformers v5.10. Please use the new API in `transformers.masking_utils`.
+  warnings.warn(DEPRECATION_MESSAGE, FutureWarning)
+/root/.cache/uv/environments-v2/42727db544b49469/lib/python3.12/site-packages/transformers/modeling_attn_mask_utils.py:281: FutureWarning: The attention mask API under `transformers.modeling_attn_mask_utils` (`AttentionMaskConverter`) is deprecated and will be removed in Transformers v5.10. Please use the new API in `transformers.masking_utils`.
+  warnings.warn(DEPRECATION_MESSAGE, FutureWarning)
+  Scenario  17 | []                                       | reward=0.00
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario  18 | []                                       | reward=0.00
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario  19 | ['web_search']                           | reward=0.00
+Both `max_new_tokens` (=256) and `max_length`(=32768) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  Scenario  20 | ['file_read', 'generate_summary', 'send_email'] | reward=0.93
+
+BASELINE: avg_reward=0.668, accuracy=65.0%
+
+======================================================================
+ROUND 1: GRPO TRAINING (no memory)
+======================================================================
+Training Round 1 on 30 scenarios...
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None}.
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs used = 1
+   \\   /|    Num examples = 30 | Num Epochs = 1 | Total steps = 30
+O^O/ \_/ \    Batch size per device = 2 | Gradient accumulation steps = 2
+\        /    Data Parallel GPUs = 1 | Total batch size (2 x 2 x 1) = 4
+ "-____-"     Trainable parameters = 29,933,568 of 3,115,872,256 (0.96% trained)
+* Run finished. Uploading logs to Trackio (please wait...)
+* Trackio project initialized: huggingface
+* Trackio metrics will be synced to Hugging Face Bucket: https://huggingface.co/buckets/GunsiGTX00/trackio-bucket
+* Creating new space: [1m[38;5;208mhttps://huggingface.co/spaces/GunsiGTX00/trackio[0m
+* Attached bucket GunsiGTX00/trackio-bucket at '/data'
+* Waiting for Space to be ready...
