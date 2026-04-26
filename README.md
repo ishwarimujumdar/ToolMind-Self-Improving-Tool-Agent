@@ -55,7 +55,7 @@ Query → Memory Retrieval → GRPO-Trained LLM → Tool Calls
 | GRPO Round 2 | ~0.82 | Trained WITH lessons from memory |
 | GRPO + Live Memory | ~0.90 | Keeps improving at inference time |
 
-![Training Results](plots/training_results.png)
+![Training Results](submission/charts/reward_trajectory.png)
 
 ## Environment
 
